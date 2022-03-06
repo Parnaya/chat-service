@@ -13,18 +13,22 @@ func Create(entity Entity) {
 }
 
 func Update(entity Entity) {
-	for _, v := range database {
-		if entity.id == v.id {
-			v.text = entity.text
-			v.tags = entity.tags
-		}
-	}
+	with(entity.id, func(i int, found *Entity) {
+		found.text = entity.text
+		found.tags = entity.tags
+	})
 }
 
 func Delete(entity Entity) {
+	with(entity.id, func(i int, _ *Entity) {
+		database[i] = nil
+	})
+}
+
+func with(id string, block func(i int, entity *Entity)) {
 	for i, v := range database {
-		if entity.id == v.id {
-			database[i] = nil
+		if v.id == id {
+			block(i, v)
 		}
 	}
 }
