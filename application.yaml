@@ -1,0 +1,5 @@
+couchbase:
+  connect: "localhost"
+  auth:
+    username: "Administrator"
+    password: "123456"

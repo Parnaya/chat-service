@@ -1,9 +1,16 @@
 version: '3.9'
 
 services:
-  cassandra:
-    image: cassandra:4.0.3
+  couchbase:
+    image: couchbase/server
     ports:
-      - 9042:9042
-    environment:
-      - CASSANDRA_CLUSTER_NAME=woop
+      - "8091:8091"
+      - "8092:8092"
+      - "8093:8093"
+      - "11210:11210"
+    deploy:
+      resources:
+        limits:
+          memory: 3500M
+        reservations:
+          memory: 3500M

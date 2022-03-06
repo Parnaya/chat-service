@@ -1,0 +1,22 @@
+package configuration
+
+import "github.com/spf13/viper"
+
+type CouchbaseConfig struct {
+	ConnectString string              `yaml:"connect"`
+	Auth          CouchbaseConfigAuth `yaml:"auth"`
+}
+
+type CouchbaseConfigAuth struct {
+	Username string `yaml:"username"`
+	Password string `yaml:"password"`
+}
+
+func ShouldParseCouchbaseConfig() *CouchbaseConfig {
+	couchbaseConfig := &CouchbaseConfig{}
+	err := viper.Unmarshal(couchbaseConfig)
+	if err != nil {
+		panic(err)
+	}
+	return couchbaseConfig
+}
