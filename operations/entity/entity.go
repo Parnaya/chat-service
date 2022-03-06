@@ -1,6 +1,6 @@
 package entity
 
-var database []Entity
+var database []*Entity
 
 type Entity struct {
 	id   string
@@ -9,7 +9,7 @@ type Entity struct {
 }
 
 func Create(entity Entity) {
-	database = append(database, entity)
+	database = append(database, &entity)
 }
 
 func Update(entity Entity) {
@@ -17,6 +17,14 @@ func Update(entity Entity) {
 		if entity.id == v.id {
 			v.text = entity.text
 			v.tags = entity.tags
+		}
+	}
+}
+
+func Delete(entity Entity) {
+	for i, v := range database {
+		if entity.id == v.id {
+			database[i] = nil
 		}
 	}
 }
