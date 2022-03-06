@@ -3,9 +3,9 @@ module chat.service
 go 1.17
 
 require (
+	github.com/gorilla/websocket v1.5.0
 	github.com/couchbase/gocb/v2 v2.4.0
 	github.com/labstack/echo/v4 v4.7.0
-	github.com/r3labs/sse/v2 v2.7.5
 	github.com/spf13/viper v1.10.1
 )
 

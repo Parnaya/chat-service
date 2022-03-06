@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>WebSocket</title>
+</head>
+
+<body>
+<p id="output"></p>
+
+<script>
+    var loc = window.location;
+    var uri = 'ws:';
+
+    // const tag = { _id: '', title: 'Вася', type: 'user' };
+    // const tag1 = { _id: '', title: 'Чат 13', type: 'chat' };
+
+    const message = {
+        text: {
+            content: ['Привет', null, 'я тебя видел', null],
+            tags: ['ojfhugierufe3r3454;lkiohsfaew', 'ojfhugierufe3r3454;lkiohsfaew'],
+        },
+        createAt: '',
+        tags: ['ojfhugierufe3r3454;lkiohsfaew', 'ojfhugierufe3r3454;lkiohsfaew', 'ojfhugierufe3r3454;lkiohsfaew']
+    }
+
+    if (loc.protocol === 'https:') {
+        uri = 'wss:';
+    }
+    uri += '//' + loc.host;
+    uri += loc.pathname + 'ws';
+
+    ws = new WebSocket(uri)
+
+    ws.onopen = function() {
+        console.log('Connected')
+    }
+
+    ws.onmessage = function(evt) {
+        var out = document.getElementById('output');
+        out.innerHTML += evt.data + '<br>';
+    }
+
+    setInterval(function() {
+        ws.send('Hello, Server!');
+    }, 1000);
+</script>
+</body>
+
+</html>

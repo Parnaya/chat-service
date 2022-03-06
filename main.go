@@ -3,8 +3,8 @@ package main
 import (
 	"chat.service/configuration"
 	"chat.service/database"
+	"chat.service/operations/subscribe"
 	"github.com/labstack/echo/v4"
-	"net/http"
 )
 
 func main() {
@@ -13,9 +13,9 @@ func main() {
 	_ = database.ShouldGetCluster(couchbaseConfig)
 
 	e := echo.New()
-	e.GET("/", func(c echo.Context) error {
-		return c.String(http.StatusOK, "Hello, World!")
-	})
+
+	e.Static("/", "./public")
+	e.GET("/ws", subscribe.Echo)
 
 	e.Logger.Fatal(e.Start(":1323"))
 }
