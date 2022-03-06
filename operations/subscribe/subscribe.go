@@ -28,6 +28,17 @@ func Echo(handleCreate func(entity entity.Entity)) echo.HandlerFunc {
 	return func(config echo.Context) error {
 		connection, _ := upgrader.Upgrade(config.Response(), config.Request(), nil)
 
+		// TODO: отправлять в 1 соединении
+		for _, v := range entity.Database {
+			item, err := json.Marshal(v)
+
+			if err != nil {
+				return err
+			}
+
+			connection.WriteMessage(websocket.TextMessage, item)
+		}
+
 		server.Clients[connection] = true
 		defer delete(server.Clients, connection)
 		defer connection.Close()

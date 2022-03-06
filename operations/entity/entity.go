@@ -1,6 +1,6 @@
 package entity
 
-var database []*Entity
+var Database []*Entity
 
 type Entity struct {
 	Id   string    `json:"id"`
@@ -9,7 +9,7 @@ type Entity struct {
 }
 
 func Create(entity Entity) {
-	database = append(database, &entity)
+	Database = append(Database, &entity)
 }
 
 func Update(entity Entity) {
@@ -21,12 +21,12 @@ func Update(entity Entity) {
 
 func Delete(entity Entity) {
 	with(entity.Id, func(i int, _ *Entity) {
-		database[i] = nil
+		Database[i] = nil
 	})
 }
 
 func with(id string, block func(i int, entity *Entity)) {
-	for i, v := range database {
+	for i, v := range Database {
 		if v.Id == id {
 			block(i, v)
 		}

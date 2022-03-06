@@ -28,7 +28,7 @@
 
     ws.onmessage = function(evt) {
         var out = document.getElementById('output');
-        console.log(evt.data, typeof evt.data)
+        console.log(JSON.parse(evt.data))
         out.innerHTML += evt.data + '<br>';
     }
 
