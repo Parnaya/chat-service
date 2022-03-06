@@ -1,7 +1,8 @@
 package subscribe
 
 import (
-	"fmt"
+	"chat.service/operations/entity"
+	"encoding/json"
 	"github.com/gorilla/websocket"
 	"github.com/labstack/echo/v4"
 	"net/http"
@@ -23,31 +24,35 @@ var (
 	}
 )
 
-func Echo(config echo.Context) error {
-	w := config.Response()
-	r := config.Request()
+func Echo(handleCreate func(entity entity.Entity)) echo.HandlerFunc {
+	return func(config echo.Context) error {
+		connection, _ := upgrader.Upgrade(config.Response(), config.Request(), nil)
 
-	connection, _ := upgrader.Upgrade(w, r, nil)
-	defer connection.Close()
+		server.Clients[connection] = true
+		defer delete(server.Clients, connection)
+		defer connection.Close()
 
-	server.Clients[connection] = true
-	defer delete(server.Clients, connection)
+		for {
+			mt, message, err := connection.ReadMessage()
 
-	for {
-		mt, message, err := connection.ReadMessage()
+			if err != nil || mt == websocket.CloseMessage {
+				return nil
+			}
 
-		if err != nil || mt == websocket.CloseMessage {
-			return nil
+			item := new(entity.Entity)
+
+			err = json.Unmarshal(message, item)
+
+			if err != nil {
+				return err
+			}
+
+			handleCreate(*item)
+
+			for conn := range server.Clients {
+				// TODO: filtration
+				conn.WriteMessage(websocket.TextMessage, message)
+			}
 		}
-
-		fmt.Println(string(message))
-
-		// TODO: operation message create
-	}
-}
-
-func Write(message []byte, filters []string) {
-	for conn := range server.Clients {
-		conn.WriteMessage(websocket.TextMessage, message)
 	}
 }

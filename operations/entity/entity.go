@@ -3,9 +3,9 @@ package entity
 var database []*Entity
 
 type Entity struct {
-	id   string
-	text []*string
-	tags []string
+	Id   string    `json:"id"`
+	Text []*string `json:"text"`
+	Tags []string  `json:"tags"`
 }
 
 func Create(entity Entity) {
@@ -13,21 +13,21 @@ func Create(entity Entity) {
 }
 
 func Update(entity Entity) {
-	with(entity.id, func(i int, found *Entity) {
-		found.text = entity.text
-		found.tags = entity.tags
+	with(entity.Id, func(i int, found *Entity) {
+		found.Text = entity.Text
+		found.Tags = entity.Tags
 	})
 }
 
 func Delete(entity Entity) {
-	with(entity.id, func(i int, _ *Entity) {
+	with(entity.Id, func(i int, _ *Entity) {
 		database[i] = nil
 	})
 }
 
 func with(id string, block func(i int, entity *Entity)) {
 	for i, v := range database {
-		if v.id == id {
+		if v.Id == id {
 			block(i, v)
 		}
 	}
