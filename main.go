@@ -6,6 +6,7 @@ import (
 	"chat.service/operations/entity"
 	"chat.service/operations/subscribe"
 	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4/middleware"
 )
 
 func main() {
@@ -15,7 +16,14 @@ func main() {
 
 	e := echo.New()
 
-	e.Static("/", "./public")
+	e.Use(middleware.StaticWithConfig(
+		middleware.StaticConfig{
+			Root:   "public",
+			Index:  "index.html",
+			Browse: false,
+			HTML5:  true,
+		},
+	))
 
 	e.GET("/ws", subscribe.Echo(entity.Create))
 

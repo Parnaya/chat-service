@@ -1,56 +1,12 @@
-<!doctype html>
-<html lang="en">
 
-<head>
-    <meta charset="utf-8">
-    <title>WebSocket</title>
-</head>
-
-<body>
-<p id="output"></p>
-<textarea id="input"></textarea>
-
-<script>
-    var loc = window.location;
-    var uri = 'ws:';
-
-    if (loc.protocol === 'https:') {
-        uri = 'wss:';
-    }
-    uri += '//' + loc.host;
-    uri += loc.pathname + 'ws';
-
-    ws = new WebSocket(uri)
-
-    ws.onopen = function() {
-        console.log('Connected')
-    }
-
-    ws.onmessage = function(evt) {
-        var out = document.getElementById('output');
-        console.log(JSON.parse(evt.data))
-        out.innerHTML += evt.data + '<br>';
-    }
-
-    const input = document.getElementById('input');
-
-    input.addEventListener('keydown', e => {
-        if (e.key === 'Enter') {
-            e.preventDefault();
-
-            const item = {
-                id: '' + new Date(),
-                text: [input.value],
-                tags: [loc.pathname]
-            };
-
-            ws.send(JSON.stringify(item));
-
-            input.value = '';
-        }
-    })
-
-</script>
-</body>
-
-</html>
+        <html>
+          <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <script defer src="/client.js"></script><link href="/assets/css/client.css" rel="stylesheet">
+          </head>
+          <body>
+            <div id="root" />
+            
+          </body>
+        </html>
+      

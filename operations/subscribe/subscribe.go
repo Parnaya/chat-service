@@ -30,11 +30,7 @@ func Echo(handleCreate func(entity entity.Entity)) echo.HandlerFunc {
 
 		// TODO: отправлять в 1 соединении
 		for _, v := range entity.Database {
-			item, err := json.Marshal(v)
-
-			if err != nil {
-				return err
-			}
+			item, _ := json.Marshal(v)
 
 			connection.WriteMessage(websocket.TextMessage, item)
 		}
@@ -52,11 +48,7 @@ func Echo(handleCreate func(entity entity.Entity)) echo.HandlerFunc {
 
 			item := new(entity.Entity)
 
-			err = json.Unmarshal(message, item)
-
-			if err != nil {
-				return err
-			}
+			json.Unmarshal(message, item)
 
 			handleCreate(*item)
 

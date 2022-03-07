@@ -3,7 +3,6 @@ module chat.service
 go 1.17
 
 require (
-	github.com/gorilla/websocket v1.5.0
 	github.com/couchbase/gocb/v2 v2.4.0
 	github.com/gorilla/websocket v1.5.0
 	github.com/labstack/echo/v4 v4.7.0
@@ -15,7 +14,7 @@ require (
 	github.com/fsnotify/fsnotify v1.5.1 // indirect
 	github.com/golang-jwt/jwt v3.2.2+incompatible // indirect
 	github.com/golang/snappy v0.0.3 // indirect
-	github.com/google/uuid v1.1.1 // indirect
+	github.com/google/uuid v1.3.0 // indirect
 	github.com/gurkankaymak/hocon v1.2.4 // indirect
 	github.com/hailocab/go-hostpool v0.0.0-20160125115350-e80d13ce29ed // indirect
 	github.com/hashicorp/hcl v1.0.0 // indirect
