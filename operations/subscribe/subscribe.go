@@ -36,7 +36,7 @@ var (
 func handleWebSocketMessage(
 	connection *websocket.Conn,
 	handleCreate func(entity entity.Entity),
-	client Client,
+	client *Client,
 	wg *sync.WaitGroup,
 ) {
 	defer wg.Done()
@@ -48,25 +48,31 @@ func handleWebSocketMessage(
 		}
 
 		request := new(Request)
-		json.Unmarshal(message, request)
+
+		err = json.Unmarshal(message, request)
 
 		for key, element := range *request {
+			fmt.Print(key)
 			switch key {
 			case "filters":
 				hh, _ := json.Marshal(element)
 				filters := new([]string)
 				json.Unmarshal(hh, filters)
 				client.filters = *filters
+				break
 			case "entity_create":
 				hh, _ := json.Marshal(element)
 				newEntity := new(entity.Entity)
 				json.Unmarshal(hh, newEntity)
 				handleCreate(*newEntity)
 				client.receiveChannel <- newEntity
+				break
 			case "entity_update":
 				fmt.Print("not handle")
+				break
 			case "entity_delete":
 				fmt.Print("not handle")
+				break
 			}
 		}
 	}
@@ -74,10 +80,11 @@ func handleWebSocketMessage(
 
 func publishMessageToWebSocket(
 	connection *websocket.Conn,
-	client Client,
+	client *Client,
 ) {
 	for it := range client.receiveChannel {
 		isMatch := containsAll(it.Tags, client.filters)
+
 		if isMatch && len(client.filters) > 0 {
 			rawMessage, _ := json.Marshal(it)
 			connection.WriteMessage(websocket.TextMessage, rawMessage)
@@ -117,8 +124,8 @@ func Echo(handleCreate func(entity entity.Entity)) echo.HandlerFunc {
 
 		var wg sync.WaitGroup
 		wg.Add(1)
-		go handleWebSocketMessage(connection, handleCreate, *client, &wg)
-		go publishMessageToWebSocket(connection, *client)
+		go handleWebSocketMessage(connection, handleCreate, client, &wg)
+		go publishMessageToWebSocket(connection, client)
 
 		defer close(receiveChannel)
 		defer delete(server.Clients, connection)

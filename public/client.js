@@ -145,7 +145,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "Input": () => (/* binding */ Input)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
 /* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/index.css */ "./src/index.css");
 /* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./index */ "./src/index.js");
 var _jsxFileName = "/Users/snipeek/Desktop/chat-service/web/src/Input.js";
@@ -157,33 +156,12 @@ var _jsxFileName = "/Users/snipeek/Desktop/chat-service/web/src/Input.js";
 const Input = ({
   onCreate
 }) => {
-  const [{
-    id: uuid
-  }] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_index__WEBPACK_IMPORTED_MODULE_2__.Context);
-  const {
-    pathname
-  } = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useLocation)();
   const ref = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
-  const tags = {
-    [pathname]: {
-      title: `Чат ${pathname}`,
-      type: 'chat'
-    },
-    [uuid]: {
-      title: 'Я',
-      type: 'from'
-    }
-  };
 
   const onKeyDown = e => {
     if (e.key === 'Enter') {
       e.preventDefault();
-      const item = {
-        id: '' + new Date(),
-        data: [ref.current.innerText],
-        tags: [pathname, uuid]
-      };
-      onCreate(item);
+      onCreate(ref.current.innerText);
       ref.current.innerText = '';
     }
   };
@@ -192,7 +170,7 @@ const Input = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41,
+      lineNumber: 21,
       columnNumber: 9
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -200,7 +178,7 @@ const Input = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42,
+      lineNumber: 22,
       columnNumber: 13
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -211,7 +189,7 @@ const Input = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43,
+      lineNumber: 23,
       columnNumber: 13
     }
   }));
@@ -235,48 +213,93 @@ __webpack_require__.r(__webpack_exports__);
 var _jsxFileName = "/Users/snipeek/Desktop/chat-service/web/src/Voice.js";
 
 
+const time = 300;
+const Voice = ({
+  onCreate = () => {}
+}) => {
+  const [pause, setPause] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  const [state, setState] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
+  const onTrigger = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(async () => {
+    // End
+    if (state !== null) {
+      const {
+        stream
+      } = state;
+      stream.getTracks().forEach(track => track.stop());
+      setState({});
+      return;
+    } // Start
 
-const init = async (send, time) => {
-  const recorder = new MediaRecorder(await navigator.mediaDevices.getUserMedia({
-    audio: true
-  }));
-  recorder.start();
-  console.log(recorder);
-  let audio = [];
-  const listeners = {
-    dataavailable: event => {
-      audio.push(event.data);
-    },
-    stop: () => {
-      const audioBlob = new Blob(audio);
+
+    let audio = [];
+    const stream = await navigator.mediaDevices.getUserMedia({
+      audio: true
+    });
+    const recorder = new MediaRecorder(stream);
+
+    recorder.onstart = () => {
       audio = [];
-      const fileReader = new FileReader({
-        onloadend: () => send(fileReader.result)
-      });
+      setTimeout(() => recorder.stop(), time);
+    };
+
+    recorder.ondataavailable = event => {
+      audio.push(event.data);
+    };
+
+    recorder.onstop = () => {
+      const audioBlob = new Blob(audio);
+      const fileReader = new FileReader();
+
+      fileReader.onloadend = () => {
+        onCreate(fileReader.result.replace('data:application/octet-stream', 'audio/ogg; codecs=opus'));
+      };
+
       fileReader.readAsDataURL(audioBlob);
       recorder.start();
-      setTimeout(recorder.stop, time);
-    }
-  };
+    };
 
-  for (const key in listeners) recorder.addEventListener(key, listeners[key]);
-
-  return () => {
-    for (const key in listeners) recorder.removeEventListener(key, listeners[key]);
-  };
-};
-
-const Voice = () => {
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => void init(ar => console.log(ar), 300), []);
+    recorder.start();
+    setState({
+      stream,
+      recorder
+    });
+  }, [state, onCreate]);
+  const {
+    recorder
+  } = state || {};
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: _Voice_css__WEBPACK_IMPORTED_MODULE_1__["default"].root,
+    onClick: () => !state && onTrigger(),
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50,
+      lineNumber: 56,
       columnNumber: 9
     }
-  }, "up");
+  }, recorder ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+    className: _Voice_css__WEBPACK_IMPORTED_MODULE_1__["default"].btn,
+    onClick: () => {
+      setPause(!pause);
+      recorder[pause ? 'resume' : 'pause']();
+    },
+    children: pause ? 'unmute' : 'mute',
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 59,
+      columnNumber: 21
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+    className: _Voice_css__WEBPACK_IMPORTED_MODULE_1__["default"].btn,
+    onClick: onTrigger,
+    children: "end",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 67,
+      columnNumber: 21
+    }
+  })) : 'to voice chat');
 };
 
 /***/ }),
@@ -337,22 +360,36 @@ const useSocket = ({
   const ws = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => {
     const {
       host,
-      pathname,
       protocol
     } = window.location;
     const isHttps = protocol === 'https:';
     return new WebSocket(`ws${isHttps ? 's' : ''}://${host}/ws`);
   }, []);
+  let items = [];
 
   ws.onopen = () => {
     console.log('Connected');
+
+    for (const item of items) ws.send(item);
+
+    items = [];
   };
 
   ws.onmessage = evt => {
     onUpdate(JSON.parse(evt.data));
   };
 
-  return item => ws.send(JSON.stringify(item));
+  return next => {
+    console.log(next);
+    const item = JSON.stringify(next);
+
+    if (ws.readyState !== ws.OPEN) {
+      items.push(item);
+      return;
+    }
+
+    ws.send(item);
+  };
 };
 
 const Message = ({
@@ -369,7 +406,7 @@ const Message = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44,
+      lineNumber: 62,
       columnNumber: 9
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -377,37 +414,71 @@ const Message = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 63,
       columnNumber: 13
     }
   }, text));
 };
 
 const Root = () => {
+  const [{
+    id: uuid
+  }] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(Context);
   const {
     pathname
   } = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_7__.useLocation)();
   const [items, setItems] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
-  const onUpdate = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(item => setItems(items => [...items, item]), []);
-  const onCreate = useSocket({
-    onUpdate
-  }); // useEffect(() => {
-  //     onCreate({ filters: [pathname] })
-  // }, []);
+  const onUpdate = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(item => {
+    const tags = {};
 
+    for (const id in item.tags) {
+      const {
+        groups: {
+          type,
+          value
+        } = {}
+      } = /(?<type>\w+)|(?<value>\w+)/gi.exec(id);
+      tags[type] = value;
+    }
+
+    console.log(item, tags);
+    setItems(items => [...items, item]);
+  }, []);
+  const onSend = useSocket({
+    onUpdate
+  }); // setTimeout(() => {
+  //     const a =new Audio(item)
+  //     a.play();
+  // }, 300);
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    onSend({
+      filters: ['chat|' + pathname]
+    });
+  }, [pathname, onSend]);
+  const onCreate = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)((data, type) => {
+    onSend({
+      entity_create: {
+        data,
+        id: '' + new Date(),
+        tags: ['user|' + uuid, 'chat|' + pathname, 'type|' + type]
+      }
+    });
+  }, [onSend, uuid, pathname]);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: _index_css__WEBPACK_IMPORTED_MODULE_2__["default"].root,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66,
+      lineNumber: 112,
       columnNumber: 9
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Voice__WEBPACK_IMPORTED_MODULE_6__.Voice, {
+    onCreate: audio => onCreate(audio, 'audio'),
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67,
+      lineNumber: 113,
       columnNumber: 13
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
@@ -415,14 +486,14 @@ const Root = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68,
+      lineNumber: 114,
       columnNumber: 13
     }
   }, "Woop"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Chats__WEBPACK_IMPORTED_MODULE_5__.Chats, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69,
+      lineNumber: 115,
       columnNumber: 13
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -430,7 +501,7 @@ const Root = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70,
+      lineNumber: 116,
       columnNumber: 13
     }
   }, items.map(item => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Message, _extends({
@@ -439,17 +510,15 @@ const Root = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71,
+      lineNumber: 117,
       columnNumber: 36
     }
   })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Input_js__WEBPACK_IMPORTED_MODULE_3__.Input, {
-    onCreate: message => onCreate({
-      message
-    }),
+    onCreate: message => onCreate(message, 'message'),
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73,
+      lineNumber: 119,
       columnNumber: 13
     }
   }));
@@ -473,7 +542,7 @@ const Store = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87,
+      lineNumber: 133,
       columnNumber: 12
     }
   });
@@ -483,21 +552,21 @@ react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPOR
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 91,
+    lineNumber: 137,
     columnNumber: 5
   }
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Store, {
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 92,
+    lineNumber: 138,
     columnNumber: 9
   }
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Root, {
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 93,
+    lineNumber: 139,
     columnNumber: 13
   }
 }))), document.getElementById('root'));
@@ -1415,7 +1484,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"root":"Voice__root--WKyPW"});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"root":"Voice__root--WKyPW","btn":"Voice__btn--BoRm2"});
 
 /***/ }),
 
