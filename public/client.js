@@ -427,6 +427,7 @@ const Root = () => {
     pathname
   } = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_7__.useLocation)();
   const [items, setItems] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
+  const [time, setTime] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(+new Date());
   const onUpdate = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(item => {
     const tags = {};
 
@@ -443,30 +444,33 @@ const Root = () => {
 
     console.log('onUpdate', item, tags);
     item.tags = tags;
+    console.log(+item.id - time);
     if (tags.type === 'message') setItems(items => [...items, item]);
 
-    if (tags.type === 'audio') {
+    if (tags.type === 'audio' && item.id - time > 0) {
       if (tags.user !== uuid) {
         const audio = new Audio(item.data);
         audio.play();
       }
     }
-  }, [uuid]);
+  }, [uuid, time]);
   const onSend = useSocket({
     onUpdate
   });
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-    console.log('rest');
     setItems([]);
-    onSend({
-      filters: ['chat|' + pathname]
-    });
+    setTime(+new Date());
+    setTimeout(() => {
+      onSend({
+        filters: ['chat|' + pathname]
+      });
+    }, 100);
   }, [pathname]);
   const onCreate = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)((data, type) => {
     onSend({
       entity_create: {
         data,
-        id: '' + new Date(),
+        id: `${+new Date()}`,
         tags: ['user|' + uuid, 'chat|' + pathname, 'type|' + type]
       }
     });
@@ -476,7 +480,7 @@ const Root = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 121,
+      lineNumber: 126,
       columnNumber: 9
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Voice__WEBPACK_IMPORTED_MODULE_6__.Voice, {
@@ -484,7 +488,7 @@ const Root = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 122,
+      lineNumber: 127,
       columnNumber: 13
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
@@ -492,14 +496,14 @@ const Root = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 123,
+      lineNumber: 128,
       columnNumber: 13
     }
   }, "Woop"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Chats__WEBPACK_IMPORTED_MODULE_5__.Chats, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 124,
+      lineNumber: 129,
       columnNumber: 13
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -507,7 +511,7 @@ const Root = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 125,
+      lineNumber: 130,
       columnNumber: 13
     }
   }, items.map(item => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Message, _extends({
@@ -517,7 +521,7 @@ const Root = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 126,
+      lineNumber: 131,
       columnNumber: 36
     }
   })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Input_js__WEBPACK_IMPORTED_MODULE_3__.Input, {
@@ -525,7 +529,7 @@ const Root = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 128,
+      lineNumber: 133,
       columnNumber: 13
     }
   }));
@@ -549,7 +553,7 @@ const Store = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 142,
+      lineNumber: 147,
       columnNumber: 12
     }
   });
@@ -559,21 +563,21 @@ react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPOR
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 146,
+    lineNumber: 151,
     columnNumber: 5
   }
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Store, {
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 147,
+    lineNumber: 152,
     columnNumber: 9
   }
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Root, {
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 148,
+    lineNumber: 153,
     columnNumber: 13
   }
 }))), document.getElementById('root'));
