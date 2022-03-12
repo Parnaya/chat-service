@@ -251,7 +251,7 @@ const Voice = ({
       const fileReader = new FileReader();
 
       fileReader.onloadend = () => {
-        onCreate(fileReader.result.replace('data:application/octet-stream', 'audio/ogg; codecs=opus'));
+        onCreate(fileReader.result.replace('data:application/octet-stream;', 'data:audio/ogg;'));
       };
 
       fileReader.readAsDataURL(audioBlob);
@@ -394,19 +394,16 @@ const useSocket = ({
 
 const Message = ({
   id,
-  text,
+  data,
+  isCurrent,
   tags
 }) => {
-  const [{
-    id: uuid
-  }] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(Context);
-  const isCurrent = tags.includes(uuid);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: classnames__WEBPACK_IMPORTED_MODULE_4___default()(isCurrent ? _index_css__WEBPACK_IMPORTED_MODULE_2__["default"].messageFrom : _index_css__WEBPACK_IMPORTED_MODULE_2__["default"].messageTo),
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62,
+      lineNumber: 59,
       columnNumber: 9
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -414,11 +411,13 @@ const Message = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63,
+      lineNumber: 60,
       columnNumber: 13
     }
-  }, text));
+  }, data));
 };
+
+const audios = () => {};
 
 const Root = () => {
   const [{
@@ -431,31 +430,36 @@ const Root = () => {
   const onUpdate = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(item => {
     const tags = {};
 
-    for (const id in item.tags) {
+    for (const id of item.tags) {
       const {
-        groups: {
-          type,
-          value
-        } = {}
-      } = /(?<type>\w+)|(?<value>\w+)/gi.exec(id);
+        groups
+      } = /(?<type>\w+)\|(?<value>.+)/.exec(id);
+      const {
+        type,
+        value
+      } = groups || {};
       tags[type] = value;
     }
 
-    console.log(item, tags);
-    setItems(items => [...items, item]);
-  }, []);
+    console.log('onUpdate', item, tags);
+    item.tags = tags;
+    if (tags.type === 'message') setItems(items => [...items, item]);
+
+    if (tags.type === 'audio') {
+      if (tags.user !== uuid) {
+        const audio = new Audio(item.data);
+        audio.play();
+      }
+    }
+  }, [uuid]);
   const onSend = useSocket({
     onUpdate
-  }); // setTimeout(() => {
-  //     const a =new Audio(item)
-  //     a.play();
-  // }, 300);
-
+  });
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
     onSend({
       filters: ['chat|' + pathname]
     });
-  }, [pathname, onSend]);
+  }, [pathname]);
   const onCreate = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)((data, type) => {
     onSend({
       entity_create: {
@@ -470,7 +474,7 @@ const Root = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 112,
+      lineNumber: 119,
       columnNumber: 9
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Voice__WEBPACK_IMPORTED_MODULE_6__.Voice, {
@@ -478,7 +482,7 @@ const Root = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 113,
+      lineNumber: 120,
       columnNumber: 13
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
@@ -486,14 +490,14 @@ const Root = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 114,
+      lineNumber: 121,
       columnNumber: 13
     }
   }, "Woop"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Chats__WEBPACK_IMPORTED_MODULE_5__.Chats, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 115,
+      lineNumber: 122,
       columnNumber: 13
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -501,16 +505,17 @@ const Root = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 116,
+      lineNumber: 123,
       columnNumber: 13
     }
   }, items.map(item => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Message, _extends({
-    key: item.id
+    key: item.id,
+    isCurrent: item.tags.user === uuid
   }, item, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 117,
+      lineNumber: 124,
       columnNumber: 36
     }
   })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Input_js__WEBPACK_IMPORTED_MODULE_3__.Input, {
@@ -518,7 +523,7 @@ const Root = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 119,
+      lineNumber: 126,
       columnNumber: 13
     }
   }));
@@ -542,7 +547,7 @@ const Store = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 133,
+      lineNumber: 140,
       columnNumber: 12
     }
   });
@@ -552,21 +557,21 @@ react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPOR
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 137,
+    lineNumber: 144,
     columnNumber: 5
   }
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Store, {
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 138,
+    lineNumber: 145,
     columnNumber: 9
   }
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Root, {
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 139,
+    lineNumber: 146,
     columnNumber: 13
   }
 }))), document.getElementById('root'));
