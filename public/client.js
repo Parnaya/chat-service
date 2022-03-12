@@ -456,6 +456,8 @@ const Root = () => {
     onUpdate
   });
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    console.log('rest');
+    setItems([]);
     onSend({
       filters: ['chat|' + pathname]
     });
@@ -474,7 +476,7 @@ const Root = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 119,
+      lineNumber: 121,
       columnNumber: 9
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Voice__WEBPACK_IMPORTED_MODULE_6__.Voice, {
@@ -482,7 +484,7 @@ const Root = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 120,
+      lineNumber: 122,
       columnNumber: 13
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
@@ -490,14 +492,14 @@ const Root = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 121,
+      lineNumber: 123,
       columnNumber: 13
     }
   }, "Woop"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Chats__WEBPACK_IMPORTED_MODULE_5__.Chats, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 122,
+      lineNumber: 124,
       columnNumber: 13
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -505,7 +507,7 @@ const Root = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 123,
+      lineNumber: 125,
       columnNumber: 13
     }
   }, items.map(item => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Message, _extends({
@@ -515,7 +517,7 @@ const Root = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 124,
+      lineNumber: 126,
       columnNumber: 36
     }
   })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Input_js__WEBPACK_IMPORTED_MODULE_3__.Input, {
@@ -523,7 +525,7 @@ const Root = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 126,
+      lineNumber: 128,
       columnNumber: 13
     }
   }));
@@ -547,7 +549,7 @@ const Store = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 140,
+      lineNumber: 142,
       columnNumber: 12
     }
   });
@@ -557,21 +559,21 @@ react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPOR
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 144,
+    lineNumber: 146,
     columnNumber: 5
   }
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Store, {
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 145,
+    lineNumber: 147,
     columnNumber: 9
   }
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Root, {
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 146,
+    lineNumber: 148,
     columnNumber: 13
   }
 }))), document.getElementById('root'));
