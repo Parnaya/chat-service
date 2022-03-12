@@ -77,7 +77,7 @@ func publishMessageToWebSocket(
 	client Client,
 ) {
 	for it := range client.receiveChannel {
-		isMatch := containsAll(client.filters, it.Tags)
+		isMatch := containsAll(it.Tags, client.filters)
 		if isMatch && len(client.filters) > 0 {
 			rawMessage, _ := json.Marshal(it)
 			connection.WriteMessage(websocket.TextMessage, rawMessage)
