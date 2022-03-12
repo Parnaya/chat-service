@@ -180,7 +180,7 @@ const Input = ({
       e.preventDefault();
       const item = {
         id: '' + new Date(),
-        text: [ref.current.innerText],
+        data: [ref.current.innerText],
         tags: [pathname, uuid]
       };
       onCreate(item);
@@ -189,6 +189,21 @@ const Input = ({
   };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 41,
+      columnNumber: 9
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: _index_css__WEBPACK_IMPORTED_MODULE_1__["default"].voice,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 42,
+      columnNumber: 13
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     ref: ref,
     className: _index_css__WEBPACK_IMPORTED_MODULE_1__["default"].input,
     onKeyDown: onKeyDown,
@@ -196,10 +211,72 @@ const Input = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41,
+      lineNumber: 43,
+      columnNumber: 13
+    }
+  }));
+};
+
+/***/ }),
+
+/***/ "./src/Voice.js":
+/*!**********************!*\
+  !*** ./src/Voice.js ***!
+  \**********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Voice": () => (/* binding */ Voice)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _Voice_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Voice.css */ "./src/Voice.css");
+var _jsxFileName = "/Users/snipeek/Desktop/chat-service/web/src/Voice.js";
+
+
+
+const init = async (send, time) => {
+  const recorder = new MediaRecorder(await navigator.mediaDevices.getUserMedia({
+    audio: true
+  }));
+  recorder.start();
+  console.log(recorder);
+  let audio = [];
+  const listeners = {
+    dataavailable: event => {
+      audio.push(event.data);
+    },
+    stop: () => {
+      const audioBlob = new Blob(audio);
+      audio = [];
+      const fileReader = new FileReader({
+        onloadend: () => send(fileReader.result)
+      });
+      fileReader.readAsDataURL(audioBlob);
+      recorder.start();
+      setTimeout(recorder.stop, time);
+    }
+  };
+
+  for (const key in listeners) recorder.addEventListener(key, listeners[key]);
+
+  return () => {
+    for (const key in listeners) recorder.removeEventListener(key, listeners[key]);
+  };
+};
+
+const Voice = () => {
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => void init(ar => console.log(ar), 300), []);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: _Voice_css__WEBPACK_IMPORTED_MODULE_1__["default"].root,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 50,
       columnNumber: 9
     }
-  });
+  }, "up");
 };
 
 /***/ }),
@@ -217,16 +294,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
 /* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./index.css */ "./src/index.css");
 /* harmony import */ var _Input_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Input.js */ "./src/Input.js");
-/* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! uuid */ "./node_modules/uuid/dist/esm-browser/v4.js");
+/* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! uuid */ "./node_modules/uuid/dist/esm-browser/v4.js");
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _Chats__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Chats */ "./src/Chats.js");
+/* harmony import */ var _Voice__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/Voice */ "./src/Voice.js");
 var _jsxFileName = "/Users/snipeek/Desktop/chat-service/web/src/index.js";
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 
 
 
@@ -289,7 +369,7 @@ const Message = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43,
+      lineNumber: 44,
       columnNumber: 9
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -297,39 +377,52 @@ const Message = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44,
+      lineNumber: 45,
       columnNumber: 13
     }
   }, text));
 };
 
 const Root = () => {
+  const {
+    pathname
+  } = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_7__.useLocation)();
   const [items, setItems] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
   const onUpdate = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(item => setItems(items => [...items, item]), []);
   const onCreate = useSocket({
     onUpdate
-  });
+  }); // useEffect(() => {
+  //     onCreate({ filters: [pathname] })
+  // }, []);
+
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: _index_css__WEBPACK_IMPORTED_MODULE_2__["default"].root,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
+      lineNumber: 66,
       columnNumber: 9
     }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Voice__WEBPACK_IMPORTED_MODULE_6__.Voice, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 67,
+      columnNumber: 13
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
     className: _index_css__WEBPACK_IMPORTED_MODULE_2__["default"].title,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60,
+      lineNumber: 68,
       columnNumber: 13
     }
   }, "Woop"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Chats__WEBPACK_IMPORTED_MODULE_5__.Chats, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 69,
       columnNumber: 13
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -337,7 +430,7 @@ const Root = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62,
+      lineNumber: 70,
       columnNumber: 13
     }
   }, items.map(item => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Message, _extends({
@@ -346,15 +439,17 @@ const Root = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63,
+      lineNumber: 71,
       columnNumber: 36
     }
   })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Input_js__WEBPACK_IMPORTED_MODULE_3__.Input, {
-    onCreate: onCreate,
+    onCreate: message => onCreate({
+      message
+    }),
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65,
+      lineNumber: 73,
       columnNumber: 13
     }
   }));
@@ -364,7 +459,7 @@ const Store = ({
   children
 }) => {
   const [state, setState] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(getStore({
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_6__["default"])()
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_8__["default"])()
   }));
   const theme = state?.theme || {};
 
@@ -378,31 +473,31 @@ const Store = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80,
+      lineNumber: 87,
       columnNumber: 12
     }
   });
 };
 
-react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.BrowserRouter, {
+react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.BrowserRouter, {
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 84,
+    lineNumber: 91,
     columnNumber: 5
   }
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Store, {
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 85,
+    lineNumber: 92,
     columnNumber: 9
   }
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Root, {
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 86,
+    lineNumber: 93,
     columnNumber: 13
   }
 }))), document.getElementById('root'));
@@ -1308,6 +1403,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/Voice.css":
+/*!***********************!*\
+  !*** ./src/Voice.css ***!
+  \***********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"root":"Voice__root--WKyPW"});
+
+/***/ }),
+
 /***/ "./src/index.css":
 /*!***********************!*\
   !*** ./src/index.css ***!
@@ -1320,7 +1431,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"root":"index__root--eFmu9","title":"index__title--rssuT","input":"index__input--HWMVn","messages":"index__messages--o3srd","message":"index__message--IeNdX","messageFrom":"index__messageFrom--g9n7N","messageTo":"index__messageTo--iNdsW","messageBody":"index__messageBody--B9HQo index__message--IeNdX"});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"voice":"index__voice--rGLl5","root":"index__root--eFmu9","title":"index__title--rssuT","input":"index__input--HWMVn","messages":"index__messages--o3srd","message":"index__message--IeNdX","messageFrom":"index__messageFrom--g9n7N","messageTo":"index__messageTo--iNdsW","messageBody":"index__messageBody--B9HQo index__message--IeNdX"});
 
 /***/ }),
 
