@@ -9,6 +9,7 @@
     --gap-s: 12px;
     --gap-m: 16px;
 
+    --border-radius-s: 8px;
     --border-radius-l: 16px;
 
     --text: #333;
@@ -16,6 +17,11 @@
 
     --bg-secondary: #f7f7f7;
     --bg-primary: rgba(0,84,255,0.16863);
+}
+
+.index__voice--rGLl5 {
+    height: 20px;
+    width: 20px;
 }
 
 body {
@@ -111,28 +117,41 @@ body {
 .Chats__row--yFlyM {
     display: flex;
     align-items: center;
-    width: -webkit-max-content;
-    width: -moz-max-content;
-    width: max-content;
+    width: 100%;
     margin: var(--gap-s) auto;
     transition: transform 0.2s ease-in-out;
 }
 
 .Chats__item--nHTE9 {
-    max-width: 300px;
-    margin-top: 0;
-    margin-right: var(--gap-m);
+    margin: 0 var(--gap-s);
+    padding: var(--gap-s);
     font-family: inherit;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
-    color: #333;
+    border-radius: var(--border-radius-s);
+    color: var(--text-secondary);
     white-space: nowrap;
     cursor: pointer;
-    opacity: 0.5;
+    transition: width .2s ease-in-out;
 }
 
 .Chats__itemActive--dDqr1 {
     opacity: 1;
+    width: 90%;
+    color: var(--text);
+    text-align: center;
+    background: var(--bg-secondary);
+}
+/*!*******************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./src/Voice.css ***!
+  \*******************************************************************************************************************************************************************/
+.Voice__root--WKyPW {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    left: 0;
+    height: 20px;
+    background: #f7f7f7;
 }
 
 /*# sourceMappingURL=client.css.map*/
