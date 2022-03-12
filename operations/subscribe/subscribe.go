@@ -58,6 +58,9 @@ func handleWebSocketMessage(
 				filters := new([]string)
 				json.Unmarshal(raw, filters)
 				client.filters = *filters
+				for _, ent := range entity.Database {
+					client.receiveChannel <- ent
+				}
 				break
 			case "entity_create":
 				raw, _ := json.Marshal(element)
