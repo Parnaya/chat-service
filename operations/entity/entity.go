@@ -3,9 +3,15 @@ package entity
 var Database []*Entity
 
 type Entity struct {
-	Id   string    `json:"id"`
-	Text []*string `json:"text"`
-	Tags []string  `json:"tags"`
+	Id   string   `json:"id"`
+	Data string   `json:"data"`
+	Tags []string `json:"tags"` //here there is a tag - a type of message (common, voice, image...)
+}
+
+type Tag struct {
+	Id   string
+	Type string
+	Data string
 }
 
 func Create(entity Entity) {
@@ -14,7 +20,7 @@ func Create(entity Entity) {
 
 func Update(entity Entity) {
 	with(entity.Id, func(i int, found *Entity) {
-		found.Text = entity.Text
+		found.Data = entity.Data
 		found.Tags = entity.Tags
 	})
 }
