@@ -52,20 +52,21 @@ func handleWebSocketMessage(
 		err = json.Unmarshal(message, request)
 
 		for key, element := range *request {
-			fmt.Print(key)
 			switch key {
 			case "filters":
-				hh, _ := json.Marshal(element)
+				raw, _ := json.Marshal(element)
 				filters := new([]string)
-				json.Unmarshal(hh, filters)
+				json.Unmarshal(raw, filters)
 				client.filters = *filters
 				break
 			case "entity_create":
-				hh, _ := json.Marshal(element)
+				raw, _ := json.Marshal(element)
 				newEntity := new(entity.Entity)
-				json.Unmarshal(hh, newEntity)
+				json.Unmarshal(raw, newEntity)
 				handleCreate(*newEntity)
-				client.receiveChannel <- newEntity
+				for _, cl := range server.Clients {
+					cl.receiveChannel <- newEntity
+				}
 				break
 			case "entity_update":
 				fmt.Print("not handle")
@@ -84,7 +85,6 @@ func publishMessageToWebSocket(
 ) {
 	for it := range client.receiveChannel {
 		isMatch := containsAll(it.Tags, client.filters)
-
 		if isMatch && len(client.filters) > 0 {
 			rawMessage, _ := json.Marshal(it)
 			connection.WriteMessage(websocket.TextMessage, rawMessage)
