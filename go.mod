@@ -7,6 +7,7 @@ require (
 	github.com/gorilla/websocket v1.5.0
 	github.com/labstack/echo/v4 v4.7.0
 	github.com/spf13/viper v1.10.1
+	google.golang.org/protobuf v1.27.1
 )
 
 require (

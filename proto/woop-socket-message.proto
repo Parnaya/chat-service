@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package dev.parnaya.woop;
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/struct.proto";
+
+option go_package = "github.com/Parnaya/woop-common";
+
+message WoopSocketMessage {
+  bytes id = 1;
+  google.protobuf.Timestamp created_at = 2;
+
+  repeated MessageWrapper wrapper = 3;
+}
+
+message MessageWrapper {
+  oneof message {
+    EntityCreate entity_create = 3;
+  }
+}
+
+message EntityCreate {
+  bytes id = 1;
+  repeated Tag tags = 2;
+  google.protobuf.Struct data = 3;
+}
+
+message Tag {
+  bytes id = 1;
+  google.protobuf.Struct data = 2;
+}
