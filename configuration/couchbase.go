@@ -14,7 +14,7 @@ type CouchbaseConfigAuth struct {
 
 func ShouldParseCouchbaseConfig() *CouchbaseConfig {
 	couchbaseConfig := &CouchbaseConfig{}
-	err := viper.Unmarshal(couchbaseConfig)
+	err := viper.UnmarshalKey("couchbase", couchbaseConfig)
 	if err != nil {
 		panic(err)
 	}
