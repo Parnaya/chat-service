@@ -3,7 +3,6 @@ package subscribe
 import (
 	woop "chat.service/gen/github.com/Parnaya/woop-common"
 	"chat.service/model"
-	"chat.service/utils"
 	"encoding/json"
 	"github.com/gorilla/websocket"
 	"github.com/labstack/echo/v4"
@@ -67,16 +66,12 @@ func handleWebSocketMessage(
 						break
 					}
 
-					if tag.Data, err = utils.ProtobufStructToMap(protoTag.Data); err != nil {
-						break
-					}
+					tag.Data = protoTag.Data.AsMap()
 
 					item.Tags[i] = tag
 				}
 
-				if item.Data, err = utils.ProtobufStructToMap(entityCreate.Data); err != nil {
-					break
-				}
+				item.Data = entityCreate.Data.AsMap()
 
 				handleCreate(item)
 
@@ -110,23 +105,6 @@ func publishMessageToWebSocket(
 		connection.WriteMessage(websocket.BinaryMessage, rawMessage)
 		//}
 	}
-}
-
-func containsAll(container []string, elements []string) bool {
-	is := true
-	for _, elem := range elements {
-		is = is && contains(container, elem)
-	}
-	return is
-}
-
-func contains(container []string, element string) bool {
-	for _, entry := range container {
-		if entry == element {
-			return true
-		}
-	}
-	return false
 }
 
 func OpenWebSocketConnection(handleCreate func(entity *model.Entity)) echo.HandlerFunc {
