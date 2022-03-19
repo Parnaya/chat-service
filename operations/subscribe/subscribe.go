@@ -1,12 +1,10 @@
 package subscribe
 
 import (
-	woop "chat.service/gen/github.com/Parnaya/woop-common"
 	"chat.service/model"
 	"encoding/json"
 	"github.com/gorilla/websocket"
 	"github.com/labstack/echo/v4"
-	"google.golang.org/protobuf/proto"
 	"net/http"
 	"sync"
 )
@@ -22,7 +20,7 @@ type Server struct {
 }
 
 type Client struct {
-	receiveChannel chan *woop.WoopSocketMessage
+	receiveChannel chan []byte
 	filters        []string
 }
 
@@ -32,9 +30,14 @@ var (
 	}
 )
 
+type SubscribeOperationSettings struct {
+	SocketRequestMapper func(message []byte) *model.SocketRequest
+	HandleEntityCreate  func(entity *model.Entity)
+}
+
 func handleWebSocketMessage(
+	settings *SubscribeOperationSettings,
 	connection *websocket.Conn,
-	handleCreate func(entity *model.Entity),
 	wg *sync.WaitGroup,
 ) {
 	defer wg.Done()
@@ -45,38 +48,23 @@ func handleWebSocketMessage(
 			return
 		}
 
-		protoMessage := &woop.WoopSocketMessage{}
-		if err := proto.Unmarshal(messageBytes, protoMessage); err != nil {
-			return
+		request := settings.SocketRequestMapper(messageBytes)
+		if request == nil {
+			continue
 		}
 
-		for _, wrapper := range protoMessage.GetWrapper() {
-			switch message := wrapper.GetMessage().(type) {
-			case *woop.MessageWrapper_EntityCreate:
-				entityCreate := message.EntityCreate
-				item := new(model.Entity)
-				if err := item.Id.UnmarshalBinary(entityCreate.Id); err != nil {
+		for _, it := range request.Messages {
+			switch it.RequestType {
+			case model.Create:
+				entity, ok := it.Data.(*model.Entity)
+				if !ok {
 					break
 				}
 
-				item.Tags = make([]model.Tag, len(entityCreate.GetTags()))
-				for i, protoTag := range entityCreate.GetTags() {
-					tag := model.Tag{}
-					if err := item.Id.UnmarshalBinary(protoTag.Id); err != nil {
-						break
-					}
-
-					tag.Data = protoTag.Data.AsMap()
-
-					item.Tags[i] = tag
-				}
-
-				item.Data = entityCreate.Data.AsMap()
-
-				handleCreate(item)
+				settings.HandleEntityCreate(entity)
 
 				for _, serverClient := range server.Clients {
-					serverClient.receiveChannel <- protoMessage
+					serverClient.receiveChannel <- messageBytes
 				}
 				break
 			}
@@ -107,7 +95,7 @@ func publishMessageToWebSocket(
 	}
 }
 
-func OpenWebSocketConnection(handleCreate func(entity *model.Entity)) echo.HandlerFunc {
+func OpenWebSocketConnection(operationSettings *SubscribeOperationSettings) echo.HandlerFunc {
 	return func(config echo.Context) error {
 		connection, err := upgrader.Upgrade(config.Response(), config.Request(), nil)
 
@@ -115,14 +103,14 @@ func OpenWebSocketConnection(handleCreate func(entity *model.Entity)) echo.Handl
 			return err
 		}
 
-		receiveChannel := make(chan *woop.WoopSocketMessage)
+		receiveChannel := make(chan []byte)
 
 		client := &Client{receiveChannel, make([]string, 0)}
 		server.Clients[connection] = client
 
 		var wg sync.WaitGroup
 		wg.Add(1)
-		go handleWebSocketMessage(connection, handleCreate, &wg)
+		go handleWebSocketMessage(operationSettings, connection, &wg)
 		go publishMessageToWebSocket(connection, client)
 
 		defer close(receiveChannel)

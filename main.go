@@ -4,6 +4,7 @@ import (
 	"chat.service/configuration"
 	"chat.service/database"
 	"chat.service/integration/entity"
+	"chat.service/mapper"
 	"chat.service/operations/subscribe"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
@@ -34,7 +35,12 @@ func main() {
 		},
 	))
 
-	e.GET("/ws", subscribe.OpenWebSocketConnection(entity.CouchbaseCreate(entityCollection)))
+	socketSettings := &subscribe.SubscribeOperationSettings{
+		SocketRequestMapper: mapper.ProtobufSocketRequestMapper,
+		HandleEntityCreate:  entity.CouchbaseCreate(entityCollection),
+	}
+
+	e.GET("/ws", subscribe.OpenWebSocketConnection(socketSettings))
 
 	e.Logger.Fatal(e.Start(":1323"))
 }
