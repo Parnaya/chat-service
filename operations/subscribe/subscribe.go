@@ -74,6 +74,10 @@ func handleWebSocketMessage(
 					item.Tags[i] = tag
 				}
 
+				if item.Data, err = utils.ProtobufStructToMap(entityCreate.Data); err != nil {
+					break
+				}
+
 				handleCreate(item)
 
 				for _, serverClient := range server.Clients {
