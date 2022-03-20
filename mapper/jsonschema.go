@@ -16,8 +16,8 @@ type JsonSocketRequest struct {
 }
 
 type JsonSocketRequestMessage struct {
-	Type string      `json:"type"`
-	Data interface{} `json:"data"`
+	Type string                 `json:"type"`
+	Data map[string]interface{} `json:"data"`
 }
 
 type CreateEntityMessage struct {
@@ -49,7 +49,7 @@ func JsonSocketRequestMapper(schema *jsonschema.Schema) func(messageBytes []byte
 			switch message.Type {
 			case "insert":
 				entityCreate := CreateEntityMessage{}
-				if err := mapstructure.Decode(jsonObject, &entityCreate); err != nil {
+				if err := mapstructure.Decode(message.Data, &entityCreate); err != nil {
 					break
 				}
 
