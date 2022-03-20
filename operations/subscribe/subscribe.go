@@ -2,7 +2,6 @@ package subscribe
 
 import (
 	"chat.service/model"
-	"encoding/json"
 	"github.com/gorilla/websocket"
 	"github.com/labstack/echo/v4"
 	"net/http"
@@ -89,8 +88,7 @@ func publishMessageToWebSocket(
 		//protoSocketMessage.Id = messageIdBytes
 		//protoSocketMessage.CreatedAt = timestamppb.Now()
 
-		rawMessage, _ := json.Marshal(it)
-		connection.WriteMessage(websocket.BinaryMessage, rawMessage)
+		connection.WriteMessage(websocket.TextMessage, it)
 		//}
 	}
 }
