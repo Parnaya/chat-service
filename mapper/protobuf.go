@@ -13,9 +13,9 @@ func ProtobufSocketRequestMapper(messageBytes []byte) *model.SocketRequest {
 	}
 
 	request := new(model.SocketRequest)
-	request.Messages = make([]model.SocketRequestMessage, len(protoMessage.GetWrapper()))
+	request.Messages = make([]model.SocketRequestMessage, len(protoMessage.GetWrappers()))
 
-	for wrapperIndex, wrapper := range protoMessage.GetWrapper() {
+	for wrapperIndex, wrapper := range protoMessage.GetWrappers() {
 		switch message := wrapper.GetMessage().(type) {
 		case *woop.MessageWrapper_EntityCreate:
 			entityCreate := message.EntityCreate
@@ -24,18 +24,7 @@ func ProtobufSocketRequestMapper(messageBytes []byte) *model.SocketRequest {
 				break
 			}
 
-			item.Tags = make([]model.Tag, len(entityCreate.GetTags()))
-			for i, protoTag := range entityCreate.GetTags() {
-				tag := model.Tag{}
-				if err := item.Id.UnmarshalBinary(protoTag.Id); err != nil {
-					break
-				}
-
-				tag.Data = protoTag.Data.AsMap()
-
-				item.Tags[i] = tag
-			}
-
+			item.Tags = entityCreate.GetTags()
 			item.Data = entityCreate.Data.AsMap()
 
 			request.Messages[wrapperIndex] = model.SocketRequestMessage{

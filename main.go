@@ -8,6 +8,7 @@ import (
 	"chat.service/operations/subscribe"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
+	"github.com/santhosh-tekuri/jsonschema/v5"
 	"time"
 )
 
@@ -35,8 +36,17 @@ func main() {
 		},
 	))
 
+	// todo вынесу отдельно
+	compiler := jsonschema.NewCompiler()
+	compiler.Draft = jsonschema.Draft2019
+
+	schema, err := compiler.Compile("schema/woop-socket-message.json")
+	if err != nil {
+		panic(err)
+	}
+
 	socketSettings := &subscribe.SubscribeOperationSettings{
-		SocketRequestMapper: mapper.ProtobufSocketRequestMapper,
+		SocketRequestMapper: mapper.JsonSocketRequestMapper(schema),
 		HandleEntityCreate:  entity.CouchbaseCreate(entityCollection),
 	}
 
