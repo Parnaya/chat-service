@@ -68,7 +68,15 @@ func JsonSocketRequestMapper(schema *jsonschema.Schema) func(messageBytes []byte
 				}
 
 				break
+			case "filter":
+				request.Messages[messageIndex] = model.SocketRequestMessage{
+					RequestType: model.Filters,
+					Data:        message.Data,
+				}
+
+				break
 			}
+
 		}
 
 		return request

@@ -73,7 +73,10 @@ func handleWebSocketMessage(
 				}
 				break
 			case model.Filters:
-				expr := it.Data.(string)
+				expr, ok := it.Data.(string)
+				if !ok {
+					break
+				}
 
 				def := regexp.MustCompile(`-|\+|&&|\|\||\(|\)`).Split(expr, -1)
 
