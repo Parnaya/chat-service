@@ -7,7 +7,8 @@ type JsonObject map[string]interface{}
 type RequestMessageType int64
 
 const (
-	Create RequestMessageType = iota
+	Create  RequestMessageType = iota
+	Filters RequestMessageType = iota
 )
 
 type SocketRequest struct {

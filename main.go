@@ -40,7 +40,7 @@ func main() {
 	compiler := jsonschema.NewCompiler()
 	compiler.Draft = jsonschema.Draft2019
 
-	schema, err := compiler.Compile("schema/woop-socket-message.json")
+	schema, err := compiler.Compile("contracts/woop-socket-message.json")
 	if err != nil {
 		panic(err)
 	}
