@@ -22,7 +22,7 @@ type Server struct {
 
 type Client struct {
 	receiveChannel chan []byte
-	isMatch        func(map[string]interface{}) bool
+	isMatch        func([]string) bool
 }
 
 var (
@@ -65,13 +65,7 @@ func handleWebSocketMessage(
 				settings.HandleEntityCreate(entity)
 
 				for _, serverClient := range server.Clients {
-					values := map[string]interface{}{}
-
-					for _, tag := range entity.Tags {
-						values[tag] = true
-					}
-
-					if !serverClient.isMatch(values) {
+					if !serverClient.isMatch(entity.Tags) {
 						continue
 					}
 
@@ -83,11 +77,11 @@ func handleWebSocketMessage(
 
 				def := regexp.MustCompile(`-|\+|&&|\|\||\(|\)`).Split(expr, -1)
 
-				server.Clients[connection].isMatch = func(values map[string]interface{}) bool {
-
-					for _, k := range def {
-						if _, ok := values[k]; ok {
-							values[k] = false
+				server.Clients[connection].isMatch = func(tags []string) bool {
+					values := map[string]interface{}{}
+					for i, tags := range [][]string{def, tags} {
+						for _, tag := range tags {
+							values[tag] = i
 						}
 					}
 
@@ -127,7 +121,7 @@ func publishMessageToWebSocket(
 	}
 }
 
-func isMatchDef(map[string]interface{}) bool {
+func isMatchDef([]string) bool {
 	return false
 }
 
