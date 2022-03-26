@@ -7,7 +7,7 @@ import (
 
 func GetCluster(couchbaseConfig *configuration.CouchbaseConfig) (*gocb.Cluster, error) {
 	return gocb.Connect(
-		couchbaseConfig.ConnectString,
+		couchbaseConfig.Connect,
 		gocb.ClusterOptions{
 			Username: couchbaseConfig.Auth.Username,
 			Password: couchbaseConfig.Auth.Password,

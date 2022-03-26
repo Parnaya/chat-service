@@ -1,5 +1,5 @@
 couchbase:
-  connect: "http://localhost:8091/pools"
+  connect: "couchbase://81.177.136.83"
   auth:
-    username: "Administrator"
-    password: "123456"
+    username: "woop"
+    password: "gAu)j)Kf*6_2ce8`"

@@ -3,8 +3,8 @@ package configuration
 import "github.com/spf13/viper"
 
 type CouchbaseConfig struct {
-	ConnectString string              `yaml:"connect"`
-	Auth          CouchbaseConfigAuth `yaml:"auth"`
+	Connect string              `yaml:"connect"`
+	Auth    CouchbaseConfigAuth `yaml:"auth"`
 }
 
 type CouchbaseConfigAuth struct {
