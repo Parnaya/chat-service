@@ -64,7 +64,13 @@ func JsonSocketRequestMapper(schema *jsonschema.Schema) func(messageBytes []byte
 
 				item.Tags = entityCreate.Tags
 
-				item.Data = entityCreate.Data.(map[string]interface{})
+				data, ok := entityCreate.Data.(map[string]interface{})
+
+				if !ok {
+					return nil
+				}
+
+				item.Data = data
 
 				request.Messages[messageIndex] = model.SocketRequestMessage{
 					RequestType: model.Create,
@@ -75,7 +81,7 @@ func JsonSocketRequestMapper(schema *jsonschema.Schema) func(messageBytes []byte
 			case "filters":
 				request.Messages[messageIndex] = model.SocketRequestMessage{
 					RequestType: model.Filters,
-					Data:        message.Data.(string),
+					Data:        message.Data,
 				}
 
 				break
