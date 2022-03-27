@@ -6,6 +6,10 @@ COPY go.mod .
 COPY go.sum .
 
 COPY configuration ./configuration
+COPY configuration ./configuration
+COPY mapper ./mapper
+COPY model ./model
+COPY integration ./integration
 COPY database ./database
 COPY operations ./operations
 COPY public ./public
