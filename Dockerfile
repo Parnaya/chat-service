@@ -2,19 +2,7 @@ FROM golang:1.16-alpine
 
 WORKDIR /app
 
-COPY go.mod .
-COPY go.sum .
-
-COPY configuration ./configuration
-COPY configuration ./configuration
-COPY mapper ./mapper
-COPY model ./model
-COPY integration ./integration
-COPY database ./database
-COPY operations ./operations
-COPY public ./public
-COPY main.go .
-COPY application.yaml .
+COPY . ./
 
 RUN go mod download
 RUN go build -o /app main.go
