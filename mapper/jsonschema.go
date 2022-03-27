@@ -1,6 +1,7 @@
 package mapper
 
 import (
+	"chat.service/integration/entity"
 	"chat.service/model"
 	"encoding/json"
 	"fmt"
@@ -21,10 +22,17 @@ type JsonSocketRequestMessage struct {
 	Data interface{} `json:"data"`
 }
 
+// TODO: в будущем автогенерить из схемы
 type CreateEntityMessage struct {
-	Id   string      `json:"id"`
-	Tags []string    `json:"tags"`
-	Data interface{} `json:"data"`
+	Id        string      `json:"id"`
+	Tags      []string    `json:"tags"`
+	CreatedAt string      `json:"createdAt"`
+	Data      interface{} `json:"data"`
+}
+
+type FetchEntityMessage struct {
+	After interface{} `json:"after"`
+	Size  interface{} `json:"size"`
 }
 
 func JsonSocketRequestMapper(schema *jsonschema.Schema) func(messageBytes []byte) *model.SocketRequest {
@@ -36,10 +44,10 @@ func JsonSocketRequestMapper(schema *jsonschema.Schema) func(messageBytes []byte
 			return nil
 		}
 
-		if err := schema.Validate(jsonObject); err != nil {
-			fmt.Println(err)
-			return nil
-		}
+		//if err := schema.Validate(jsonObject); err != nil {
+		//	fmt.Println(err)
+		//	return nil
+		//}
 
 		jsonRequest := JsonSocketRequest{}
 		if err := mapstructure.Decode(jsonObject, &jsonRequest); err != nil {
@@ -63,6 +71,7 @@ func JsonSocketRequestMapper(schema *jsonschema.Schema) func(messageBytes []byte
 				}
 
 				item.Tags = entityCreate.Tags
+				item.CreatedAt = entityCreate.CreatedAt
 
 				data, ok := entityCreate.Data.(map[string]interface{})
 
@@ -82,6 +91,24 @@ func JsonSocketRequestMapper(schema *jsonschema.Schema) func(messageBytes []byte
 				request.Messages[messageIndex] = model.SocketRequestMessage{
 					RequestType: model.Filters,
 					Data:        message.Data,
+				}
+
+				break
+			case "fetch":
+				params := FetchEntityMessage{}
+
+				if err := mapstructure.Decode(message.Data, &params); err != nil {
+					break
+				}
+
+				item := new(entity.GetParams)
+
+				item.After = params.After
+				item.Size = params.Size
+
+				request.Messages[messageIndex] = model.SocketRequestMessage{
+					RequestType: model.Fetch,
+					Data:        item,
 				}
 
 				break

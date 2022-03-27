@@ -1,8 +1,10 @@
 package subscribe
 
 import (
+	"chat.service/integration/entity"
 	"chat.service/model"
 	"chat.service/operations/log"
+	"encoding/json"
 	"github.com/5anthosh/chili"
 	"github.com/gorilla/websocket"
 	"github.com/labstack/echo/v4"
@@ -36,7 +38,7 @@ var (
 
 type SubscribeOperationSettings struct {
 	SocketRequestMapper func(message []byte) *model.SocketRequest
-	HandleEntityCreate  func(entity *model.Entity)
+	Entity              entity.Entity
 }
 
 func handleWebSocketMessage(
@@ -65,7 +67,7 @@ func handleWebSocketMessage(
 					break
 				}
 
-				settings.HandleEntityCreate(entity)
+				settings.Entity.Create(entity)
 
 				for _, serverClient := range server.Clients {
 					if !serverClient.isMatch(entity.Tags) {
@@ -101,6 +103,41 @@ func handleWebSocketMessage(
 
 					return result.(bool)
 				}
+				break
+
+			case model.Fetch:
+				params, ok := it.Data.(*entity.GetParams)
+
+				if !ok {
+					break
+				}
+
+				items := settings.Entity.Get(params)
+
+				if len(items) == 0 {
+					break
+				}
+
+				var messages []interface{}
+
+				for _, v := range settings.Entity.Get(params) {
+					// TODO: validate
+					item := make(map[string]interface{})
+
+					item["type"] = "insert"
+					item["data"] = v
+
+					messages = append(messages, item)
+				}
+
+				next := make(map[string]interface{})
+				next["id"] = ""
+				next["messages"] = messages
+
+				nextBytes := log.Proxy(json.Marshal(next)).([]byte)
+
+				server.Clients[connection].receiveChannel <- nextBytes
+
 				break
 			}
 		}

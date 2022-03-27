@@ -19,11 +19,6 @@ func main() {
 	if err := cluster.WaitUntilReady(5*time.Second, nil); err != nil {
 		panic(err)
 	}
-	bucket := cluster.Bucket("woop")
-	if err := bucket.WaitUntilReady(5*time.Second, nil); err != nil {
-		panic(err)
-	}
-	entityCollection := bucket.DefaultCollection()
 
 	e := echo.New()
 
@@ -47,7 +42,7 @@ func main() {
 
 	socketSettings := &subscribe.SubscribeOperationSettings{
 		SocketRequestMapper: mapper.JsonSocketRequestMapper(schema),
-		HandleEntityCreate:  entity.CouchbaseCreate(entityCollection),
+		Entity:              entity.Handlers(cluster),
 	}
 
 	e.GET("/ws", subscribe.OpenWebSocketConnection(socketSettings))

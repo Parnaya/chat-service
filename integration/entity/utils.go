@@ -12,3 +12,11 @@ func with(id uuid.UUID, block func(i int, entity *model.Entity)) {
 		}
 	}
 }
+
+func ter(is bool, a interface{}, b interface{}) interface{} {
+	if is {
+		return a
+	}
+
+	return b
+}

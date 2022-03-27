@@ -298,6 +298,7 @@ const Chat = props => {
   }, [pathname]);
   const onUpdate = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(next => {
     if (next.type !== 'insert') return;
+    console.log(next);
     const item = (0,_helpers__WEBPACK_IMPORTED_MODULE_5__.format)(next.data);
     setItems(items => [...items, item]);
     setTimeout(() => {
@@ -321,7 +322,7 @@ const Chat = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62,
+      lineNumber: 64,
       columnNumber: 9
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Top__WEBPACK_IMPORTED_MODULE_7__.Top, {
@@ -329,7 +330,7 @@ const Chat = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63,
+      lineNumber: 65,
       columnNumber: 13
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -337,7 +338,7 @@ const Chat = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64,
+      lineNumber: 66,
       columnNumber: 13
     }
   }, items.map(item => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Message, _extends({
@@ -347,7 +348,7 @@ const Chat = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66,
+      lineNumber: 68,
       columnNumber: 21
     }
   })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Input_Input__WEBPACK_IMPORTED_MODULE_2__.Input, {
@@ -355,7 +356,7 @@ const Chat = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73,
+      lineNumber: 75,
       columnNumber: 13
     }
   }));
@@ -1069,19 +1070,19 @@ const convert = {
   }) => {
     const base = {
       id: (0,uuid__WEBPACK_IMPORTED_MODULE_3__["default"])(),
-      createdAt: '' + new Date(),
+      createdAt: new Date().toISOString(),
       messages: []
     };
     if (type === 'message') base.messages.push({
       type: 'insert',
       data: {
         id: (0,uuid__WEBPACK_IMPORTED_MODULE_3__["default"])(),
+        createdAt: new Date().toISOString(),
         tags: ['user|' + store.id, 'chat|' + history.location.pathname],
         data
       }
-    });
-    if (type === 'filters') base.messages.push({
-      type: 'filters',
+    });else base.messages.push({
+      type,
       data
     });
     console.log(base);
@@ -36890,7 +36891,7 @@ function _extends() {
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"$id":"https://github.com/Parnaya/woop-common/schema/woop-socket-message.json","$schema":"https://json-schema.org/draft/2020-12/schema","type":"object","properties":{"id":{"description":"The unique identifier for a request","type":"string"},"createdAt":{"description":"The timestamp for a request","type":"string"},"messages":{"type":"array","items":{"type":"object","properties":{"type":{"type":"string"},"data":{"oneOf":[{"type":"object","description":"entity","properties":{"id":{"type":"string"},"tags":{"type":"array","items":{"type":"string"}},"data":{"type":"object"}},"required":["id","tags","data"]},{"type":"string","description":"filters"}]}},"required":["type"]},"required":["type","data"]}},"required":["id","createdAt","messages"]}');
+module.exports = JSON.parse('{"$id":"https://github.com/Parnaya/woop-common/schema/woop-socket-message.json","$schema":"https://json-schema.org/draft/2020-12/schema","type":"object","properties":{"id":{"description":"The unique identifier for a request","type":"string"},"createdAt":{"description":"The timestamp for a request","type":"string"},"messages":{"type":"array","items":{"type":"object","properties":{"type":{"type":"string"},"data":{"oneOf":[{"type":"object","description":"entity","properties":{"id":{"type":"string"},"createdAt":{"type":"string"},"tags":{"type":"array","items":{"type":"string"}},"data":{"type":"object"}},"required":["id","createdAt","tags","data"]},{"type":"string","description":"filters"},{"type":"object","description":"fetch","properties":{"after":{"type":"string"},"size":{"type":"integer"}}}]}},"required":["type"]},"required":["type","data"]}},"required":["id","createdAt","messages"]}');
 
 /***/ })
 
@@ -37098,6 +37099,13 @@ const Root = () => {
     onSend(_helpers__WEBPACK_IMPORTED_MODULE_12__.convert.to({
       data: `${'chat|' + pathname}`,
       type: 'filters'
+    })); // 2022-03-27T18:10:14.853Z
+
+    onSend(_helpers__WEBPACK_IMPORTED_MODULE_12__.convert.to({
+      data: {
+        size: 100
+      },
+      type: 'fetch'
     }));
   }, [pathname]);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -37105,7 +37113,7 @@ const Root = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66,
+      lineNumber: 67,
       columnNumber: 9
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -37113,7 +37121,7 @@ const Root = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67,
+      lineNumber: 68,
       columnNumber: 13
     }
   }, [/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Chats_Chats__WEBPACK_IMPORTED_MODULE_11__.Chats, {
@@ -37121,28 +37129,28 @@ const Root = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69,
+      lineNumber: 70,
       columnNumber: 21
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Chat_Chat__WEBPACK_IMPORTED_MODULE_3__.Chat, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70,
+      lineNumber: 71,
       columnNumber: 21
     }
   }), hash === '#user' && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Settings_Settings__WEBPACK_IMPORTED_MODULE_8__.Settings, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71,
+      lineNumber: 72,
       columnNumber: 41
     }
   })]), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Head, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74,
+      lineNumber: 75,
       columnNumber: 13
     }
   }));
@@ -37152,14 +37160,14 @@ react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPOR
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 80,
+    lineNumber: 81,
     columnNumber: 5
   }
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Root, {
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 81,
+    lineNumber: 82,
     columnNumber: 9
   }
 })), document.getElementById('root'));
@@ -37167,4 +37175,4 @@ react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPOR
 
 /******/ })()
 ;
-//# sourceMappingURL=client.2caf6.js.map
+//# sourceMappingURL=client.498c5.js.map
