@@ -2,9 +2,14 @@ package subscribe
 
 import (
 	"chat.service/model"
+	"chat.service/operations/log"
+	"github.com/5anthosh/chili"
 	"github.com/gorilla/websocket"
 	"github.com/labstack/echo/v4"
 	"net/http"
+	"regexp"
+	"strconv"
+	"strings"
 	"sync"
 )
 
@@ -20,7 +25,7 @@ type Server struct {
 
 type Client struct {
 	receiveChannel chan []byte
-	filters        []string
+	isMatch        func([]string) bool
 }
 
 var (
@@ -63,7 +68,38 @@ func handleWebSocketMessage(
 				settings.HandleEntityCreate(entity)
 
 				for _, serverClient := range server.Clients {
+					if !serverClient.isMatch(entity.Tags) {
+						continue
+					}
+
 					serverClient.receiveChannel <- messageBytes
+				}
+				break
+			case model.Filters:
+				expr, ok := it.Data.(string)
+				if !ok {
+					break
+				}
+
+				// TODO: сделать нормальную регулярку
+				def := regexp.MustCompile(`[ |&|\||!]+`).Split(expr, -1)
+
+				server.Clients[connection].isMatch = func(tags []string) bool {
+					next := expr
+
+					for i, tags := range [][]string{tags, def} {
+						for _, tag := range tags {
+							next = strings.Replace(next, tag, strconv.FormatBool(i == 0), -1)
+						}
+					}
+
+					result := log.Proxy(chili.Eval(next, map[string]interface{}{}))
+
+					if result == nil {
+						return false
+					}
+
+					return result.(bool)
 				}
 				break
 			}
@@ -93,6 +129,10 @@ func publishMessageToWebSocket(
 	}
 }
 
+func isMatchDef([]string) bool {
+	return false
+}
+
 func OpenWebSocketConnection(operationSettings *SubscribeOperationSettings) echo.HandlerFunc {
 	return func(config echo.Context) error {
 		connection, err := upgrader.Upgrade(config.Response(), config.Request(), nil)
@@ -103,7 +143,8 @@ func OpenWebSocketConnection(operationSettings *SubscribeOperationSettings) echo
 
 		receiveChannel := make(chan []byte)
 
-		client := &Client{receiveChannel, make([]string, 0)}
+		client := &Client{receiveChannel, isMatchDef}
+
 		server.Clients[connection] = client
 
 		var wg sync.WaitGroup

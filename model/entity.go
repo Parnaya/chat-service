@@ -8,6 +8,7 @@ type RequestMessageType int64
 
 const (
 	Create RequestMessageType = iota
+	Filters
 )
 
 type SocketRequest struct {

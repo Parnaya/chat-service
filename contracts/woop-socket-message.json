@@ -23,6 +23,7 @@
             "oneOf": [
               {
                 "type": "object",
+                "description": "entity",
                 "properties": {
                   "id": {
                     "type": "string"
@@ -42,6 +43,10 @@
                   "tags",
                   "data"
                 ]
+              },
+              {
+                "type": "string",
+                "description": "filters"
               }
             ]
           }

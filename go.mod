@@ -7,16 +7,19 @@ require (
 	github.com/google/uuid v1.3.0
 	github.com/gorilla/websocket v1.5.0
 	github.com/labstack/echo/v4 v4.7.0
+	github.com/mitchellh/mapstructure v1.4.3
 	github.com/santhosh-tekuri/jsonschema/v5 v5.0.0
 	github.com/spf13/viper v1.10.1
 	google.golang.org/protobuf v1.27.1
 )
 
 require (
+	github.com/5anthosh/chili v0.0.3 // indirect
 	github.com/couchbase/gocbcore/v10 v10.1.0 // indirect
 	github.com/fsnotify/fsnotify v1.5.1 // indirect
 	github.com/golang-jwt/jwt v3.2.2+incompatible // indirect
 	github.com/golang/snappy v0.0.3 // indirect
+	github.com/gordonklaus/portaudio v0.0.0-20200911161147-bb74aa485641 // indirect
 	github.com/gurkankaymak/hocon v1.2.4 // indirect
 	github.com/hailocab/go-hostpool v0.0.0-20160125115350-e80d13ce29ed // indirect
 	github.com/hashicorp/hcl v1.0.0 // indirect
@@ -24,10 +27,10 @@ require (
 	github.com/magiconair/properties v1.8.5 // indirect
 	github.com/mattn/go-colorable v0.1.12 // indirect
 	github.com/mattn/go-isatty v0.0.14 // indirect
-	github.com/mitchellh/mapstructure v1.4.3 // indirect
 	github.com/pelletier/go-toml v1.9.4 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/santhosh-tekuri/jsonschema v1.2.4 // indirect
+	github.com/shopspring/decimal v1.2.0 // indirect
 	github.com/spf13/afero v1.6.0 // indirect
 	github.com/spf13/cast v1.4.1 // indirect
 	github.com/spf13/jwalterweatherman v1.1.0 // indirect
