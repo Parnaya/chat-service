@@ -3,6 +3,7 @@ module chat.service
 go 1.17
 
 require (
+	github.com/5anthosh/chili v0.0.3
 	github.com/couchbase/gocb/v2 v2.4.0
 	github.com/google/uuid v1.3.0
 	github.com/gorilla/websocket v1.5.0
@@ -14,7 +15,6 @@ require (
 )
 
 require (
-	github.com/5anthosh/chili v0.0.3 // indirect
 	github.com/couchbase/gocbcore/v10 v10.1.0 // indirect
 	github.com/fsnotify/fsnotify v1.5.1 // indirect
 	github.com/golang-jwt/jwt v3.2.2+incompatible // indirect
