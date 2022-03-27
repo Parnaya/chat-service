@@ -12,7 +12,6 @@ COPY public ./public
 COPY main.go .
 COPY application.yaml .
 
-RUN go get .
 RUN go mod download
 RUN go mod vendor
 RUN go build -o /app main.go
