@@ -13,7 +13,6 @@ COPY main.go .
 COPY application.yaml .
 
 RUN go mod download
-RUN go mod vendor
 RUN go build -o /app main.go
 
 EXPOSE 80
