@@ -166,7 +166,7 @@ button {
      }
 
 .Chat__from--B7Z3L .Chat__body--KRDjC {
-    background: var(--bg-primary);
+    background: var(--custom-color);
     border-bottom-right-radius: 0;
 }
 
@@ -419,4 +419,4 @@ button {
     margin-bottom: var(--gap-xxs);
 }
 
-/*# sourceMappingURL=client.59540.css.map*/
+/*# sourceMappingURL=client.17b0b.css.map*/

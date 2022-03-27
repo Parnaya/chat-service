@@ -280,7 +280,7 @@ const Message = ({
       lineNumber: 23,
       columnNumber: 32
     }
-  }, tags.user), data));
+  }, tags.user), data.text));
 };
 
 const Chat = props => {
@@ -289,7 +289,6 @@ const Chat = props => {
     pathname
   } = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_8__.useLocation)();
   const uuid = (0,_Store__WEBPACK_IMPORTED_MODULE_6__.useSelector)(state => state?.id);
-  console.log(uuid);
   const [items, setItems] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
     setItems([]);
@@ -298,8 +297,8 @@ const Chat = props => {
     }, 0);
   }, [pathname]);
   const onUpdate = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(next => {
-    const item = (0,_helpers__WEBPACK_IMPORTED_MODULE_5__.format)(next);
-    if (item.tags.type !== 'message') return;
+    if (next.type !== 'insert') return;
+    const item = (0,_helpers__WEBPACK_IMPORTED_MODULE_5__.format)(next.data);
     setItems(items => [...items, item]);
     setTimeout(() => {
       node.current.scrollTo(0, node.current.scrollHeight);
@@ -322,7 +321,7 @@ const Chat = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64,
+      lineNumber: 62,
       columnNumber: 9
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Top__WEBPACK_IMPORTED_MODULE_7__.Top, {
@@ -330,7 +329,7 @@ const Chat = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65,
+      lineNumber: 63,
       columnNumber: 13
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -338,7 +337,7 @@ const Chat = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66,
+      lineNumber: 64,
       columnNumber: 13
     }
   }, items.map(item => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Message, _extends({
@@ -348,7 +347,7 @@ const Chat = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68,
+      lineNumber: 66,
       columnNumber: 21
     }
   })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Input_Input__WEBPACK_IMPORTED_MODULE_2__.Input, {
@@ -356,7 +355,7 @@ const Chat = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75,
+      lineNumber: 73,
       columnNumber: 13
     }
   }));
@@ -1073,22 +1072,22 @@ const convert = {
       createdAt: '' + new Date(),
       messages: []
     };
-    if (type === 'entity') base.messages.push({
+    if (type === 'message') base.messages.push({
       type: 'insert',
       data: {
         id: (0,uuid__WEBPACK_IMPORTED_MODULE_3__["default"])(),
-        tags: ['user|' + store.user.id, 'chat|' + history.location.pathname],
-        data: data
+        tags: ['user|' + store.id, 'chat|' + history.location.pathname],
+        data
       }
     });
     if (type === 'filters') base.messages.push({
       type: 'filters',
       data
     });
+    console.log(base);
     return JSON.stringify(base);
   },
   from: buffer => {
-    console.log(buffer);
     return JSON.parse(buffer);
   }
 };
@@ -1139,15 +1138,22 @@ const connect = () => {
   };
 
   ws.onmessage = evt => {
-    const item = _helpers__WEBPACK_IMPORTED_MODULE_1__.convert.from(evt);
+    const {
+      messages
+    } = _helpers__WEBPACK_IMPORTED_MODULE_1__.convert.from(evt.data);
 
-    for (const handler of handlers.keys()) handler(item);
+    for (const item of messages) {
+      for (const handler of handlers.keys()) handler(item);
+    }
   };
 };
 
 connect();
 const onCreate = item => {
-  if (ws.readyState === ws.OPEN) ws.send(item);else requests.push(item);
+  if (ws.readyState === ws.OPEN) {
+    ws.send(item);
+    console.log('SEND', item);
+  } else requests.push(item);
 };
 const useSocket = ({
   onUpdate
@@ -37161,4 +37167,4 @@ react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPOR
 
 /******/ })()
 ;
-//# sourceMappingURL=client.2e4a9.js.map
+//# sourceMappingURL=client.2caf6.js.map
