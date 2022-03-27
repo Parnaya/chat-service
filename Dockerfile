@@ -5,7 +5,9 @@ WORKDIR /app
 COPY go.mod .
 COPY go.sum .
 
+RUN go get .
 RUN go mod download
+
 COPY configuration ./configuration
 COPY database ./database
 COPY operations ./operations
