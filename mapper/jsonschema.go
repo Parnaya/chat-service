@@ -3,6 +3,7 @@ package mapper
 import (
 	"chat.service/model"
 	"encoding/json"
+	"fmt"
 	"github.com/mitchellh/mapstructure"
 	"github.com/santhosh-tekuri/jsonschema/v5"
 )
@@ -16,24 +17,27 @@ type JsonSocketRequest struct {
 }
 
 type JsonSocketRequestMessage struct {
-	Type string                 `json:"type"`
-	Data map[string]interface{} `json:"data"`
+	Type string      `json:"type"`
+	Data interface{} `json:"data"`
 }
 
 type CreateEntityMessage struct {
-	Id   string                 `json:"id"`
-	Tags []string               `json:"tags"`
-	Data map[string]interface{} `json:"data"`
+	Id   string      `json:"id"`
+	Tags []string    `json:"tags"`
+	Data interface{} `json:"data"`
 }
 
 func JsonSocketRequestMapper(schema *jsonschema.Schema) func(messageBytes []byte) *model.SocketRequest {
 	return func(messageBytes []byte) *model.SocketRequest {
 		var jsonObject map[string]interface{}
+
 		if err := json.Unmarshal(messageBytes, &jsonObject); err != nil {
+			fmt.Println(err)
 			return nil
 		}
 
 		if err := schema.Validate(jsonObject); err != nil {
+			fmt.Println(err)
 			return nil
 		}
 
@@ -60,7 +64,7 @@ func JsonSocketRequestMapper(schema *jsonschema.Schema) func(messageBytes []byte
 
 				item.Tags = entityCreate.Tags
 
-				item.Data = entityCreate.Data
+				item.Data = entityCreate.Data.(map[string]interface{})
 
 				request.Messages[messageIndex] = model.SocketRequestMessage{
 					RequestType: model.Create,
@@ -68,10 +72,10 @@ func JsonSocketRequestMapper(schema *jsonschema.Schema) func(messageBytes []byte
 				}
 
 				break
-			case "filter":
+			case "filters":
 				request.Messages[messageIndex] = model.SocketRequestMessage{
 					RequestType: model.Filters,
-					Data:        message.Data,
+					Data:        message.Data.(string),
 				}
 
 				break

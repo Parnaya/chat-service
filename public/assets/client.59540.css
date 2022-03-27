@@ -1,0 +1,422 @@
+/*!*******************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./src/index.css ***!
+  \*******************************************************************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&display=swap);
+/*!***********************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./src/index.css (1) ***!
+  \***********************************************************************************************************************************************************************/
+:root {
+    --gap-xxs: 4px;
+    --gap-xs: 8px;
+    --gap-s: 12px;
+    --gap-m: 16px;
+
+    --border-radius-s: 8px;
+    --border-radius-l: 16px;
+
+    --text: #333;
+    --text-secondary: #666;
+
+    --bg: #fff;
+    --bg-0: rgba(255,255,255,0);
+    --bg-secondary: #eee;
+
+    --custom-color: rgba(0,84,255,0.16863);
+}
+
+.index__voice--rGLl5 {
+    height: 20px;
+    width: 20px;
+}
+
+body {
+    font-family: 'Nunito Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    color: var(--text);
+    background: #eee;
+    background: var(--bg-secondary);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+button {
+    font-family: inherit;
+    font-size: inherit;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.index__root--eFmu9 {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 8px;
+    padding: var(--gap-xs);
+    padding-bottom: 0;
+}
+
+.index__head--quwVJ {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    padding: var(--gap-m);
+    font-size: 18px;
+}
+
+.index__title--rssuT {
+    text-align: center;
+    width: 100%;
+    font-size: 2em;
+    margin: 0;
+}
+
+.index__current--HH2CA {
+    flex-grow: 1;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+.index__current--HH2CA > * {
+    width: 100%;
+    margin: 0 8px;
+    margin: 0 var(--gap-xs)
+}
+
+@media (max-width: 720px) {
+
+.index__current--HH2CA > * {
+        position: absolute
+}
+    }
+
+.index__hidden--de0wY {
+    display: flex
+}
+
+@media (max-width: 720px) {
+
+.index__hidden--de0wY {
+        display: none
+}
+    }
+
+.index__btn--P8FH7 {
+    color: #666;
+    color: var(--text-secondary);
+}
+
+.index__btnSel--c1dqq {
+    color: rgba(0,84,255,0.16863);
+    color: var(--custom-color);
+}
+/*!***********************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./src/Chat/Chat.css ***!
+  \***********************************************************************************************************************************************************************/
+.Chat__root--T4jmb {
+    padding: var(--gap-m);
+    background: var(--bg);
+    border-radius: var(--border-radius-l);
+    overflow: auto;
+    height: 100%;
+}
+
+.Chat__items--JmLg1 {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+
+}
+
+.Chat__items--JmLg1 > *:first-child {
+    margin-top: auto;
+}
+
+.Chat__from--B7Z3L, .Chat__to--_2Oeq {
+    max-width: 85%;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    display: flex;
+    align-items: flex-end;
+    margin-top: var(--gap-xs);
+}
+
+.Chat__from--B7Z3L {
+    margin-left: auto;
+}
+
+.Chat__body--KRDjC {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    padding: var(--gap-s);
+    border-radius: var(--border-radius-l);
+    color: var(--text-secondary);
+    background: var(--bg-secondary)
+}
+
+.Chat__body--KRDjC:not(:last-child){
+         margin-bottom: var(--gap-s);
+     }
+
+.Chat__from--B7Z3L .Chat__body--KRDjC {
+    background: var(--bg-primary);
+    border-bottom-right-radius: 0;
+}
+
+.Chat__to--_2Oeq .Chat__body--KRDjC {
+    border-bottom-left-radius: 0;
+}
+
+.Chat__user--F5ouB {
+    position: relative;
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    background: var(--bg-secondary);
+    margin-right: var(--gap-xs);
+}
+
+.Chat__online--LBTue {
+    background: var(--custom-color);
+    border: 2px solid var(--bg);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 20%;
+    width: 20%;
+    border-radius: 50%;
+}
+
+.Chat__userName--EsvLz {
+    font-weight: 600;
+    /*width: 100%;*/
+}
+/*!*************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./src/Input/Input.css ***!
+  \*************************************************************************************************************************************************************************/
+.Input__root--Mwju6 {
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: calc(-1 * var(--gap-m));
+    background: linear-gradient(0deg, var(--bg) 0%, var(--bg-0) 100%);
+    margin: calc(-1 * var(--gap-m));
+    padding: var(--gap-m);
+}
+
+.Input__input--xnFSH {
+    padding: var(--gap-s);
+    border-radius: var(--border-radius-l);
+    margin-top: var(--gap-m);
+    color: var(--text-secondary);
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: var(--gap-m);
+    background: var(--bg-secondary);
+
+    outline: none !important;
+    border-bottom-right-radius: 0;
+}
+/*!*************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./src/Voice/Voice.css ***!
+  \*************************************************************************************************************************************************************************/
+.Voice__root--JWnSp {
+    top: 0;
+    width: 100%;
+    left: 0;
+    height: 20px;
+    text-align: center;
+    padding: var(--gap-m);
+}
+
+.Voice__btn--TEgpS {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0 var(--gap-s);
+}
+/*!**********************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./src/Chat/Top.css ***!
+  \**********************************************************************************************************************************************************************/
+.Top__root--D29nM {
+    position: -webkit-sticky;
+    position: sticky;
+    top: calc(-1 * var(--gap-m));
+    background: linear-gradient(0deg, var(--bg-0) 0%, var(--bg) 100%);
+    margin: calc(-1 * var(--gap-m));
+    padding: var(--gap-m);
+    z-index: 2;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Top__head--XYR4I {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Top__title--Yloh5 {
+    font-weight: 600;
+}
+
+.Top__desc--IzcOf {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.Top__btn--bQPAI {
+    border: none;
+    background: none;
+    padding: 0;
+    height: 2em;
+    width: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*!*************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./src/Chats/Chats.css ***!
+  \*************************************************************************************************************************************************************************/
+.Chats__root--wK8xo {
+    padding: var(--gap-m);
+    background: var(--bg);
+    border-radius: var(--border-radius-l);
+    overflow: auto;
+    height: 100%;
+    z-index: 10;
+
+    max-width: 320px;
+    flex-direction: column
+}
+
+@media (max-width: 720px) {
+
+.Chats__root--wK8xo {
+        max-width: 100%
+}
+    }
+
+.Chats__header--Ul_Oq {
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: var(--gap-m);
+}
+
+/*.row {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    width: 100%;*/
+/*    margin: var(--gap-s) auto;*/
+/*    transition: transform 0.2s ease-in-out;*/
+/*}*/
+
+.Chats__item--WNSc5 {
+    padding: var(--gap-s) var(--gap-m);
+    border-top: 1px solid var(--bg-secondary);
+    margin: 0 calc(-1 * var(--gap-m));
+    display: flex;
+    transition: width .2s ease-in-out;
+}
+
+.Chats__item--WNSc5:last-child {
+    border-bottom: 1px solid var(--bg-secondary);
+}
+
+.Chats__itemActive--loTSo {
+    background: var(--custom-color);
+    border-color: transparent !important;
+}
+
+.Chats__body--uaNAX {
+    margin-left: var(--gap-xs);
+}
+
+.Chats__title--gp3fV {
+    font-weight: 600;
+}
+/*!*******************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./src/Settings/Settings.css ***!
+  \*******************************************************************************************************************************************************************************/
+.Settings__root--3ZipV {
+    padding: var(--gap-m);
+    background: var(--bg);
+    border-radius: var(--border-radius-l);
+    overflow: auto;
+    height: 100%;
+    z-index: 2;
+
+    max-width: 400px
+}
+
+@media (max-width: 720px) {
+
+.Settings__root--3ZipV {
+        max-width: 100%
+}
+    }
+
+.Settings__header--c8z_L {
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+}
+
+.Settings__title--XHFAJ {
+    width: 100%;
+    padding-top: var(--gap-xs);
+    padding-bottom: var(--gap-xs);
+    margin-bottom: var(--gap-xs);
+    border-bottom: 1px solid var(--bg-secondary);
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 12px;
+}
+
+.Settings__options--bKmOL {
+    display: flex;
+
+}
+
+.Settings__sqrt--FXxPL {
+    height: 5em;
+    width: 4em;
+    border-radius: var(--border-radius-s);
+    margin-right: var(--gap-s);
+    background: var(--bg-secondary);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    padding: var(--gap-xs);
+    border: 2px solid var(--bg-secondary);
+}
+
+.Settings__sqrtSelect--SgBtf {
+    border: 2px solid var(--custom-color);
+}
+
+.Settings__message--jgQy4 {
+    width: 70%;
+    height: 20%;
+    border-radius: var(--gap-m);
+    background: var(--bg);
+    margin-top: var(--gap-xxs);
+    margin-bottom: var(--gap-xxs);
+}
+
+/*# sourceMappingURL=client.59540.css.map*/

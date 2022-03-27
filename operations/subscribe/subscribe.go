@@ -2,11 +2,14 @@ package subscribe
 
 import (
 	"chat.service/model"
+	"chat.service/operations/log"
 	"github.com/5anthosh/chili"
 	"github.com/gorilla/websocket"
 	"github.com/labstack/echo/v4"
 	"net/http"
 	"regexp"
+	"strconv"
+	"strings"
 	"sync"
 )
 
@@ -78,20 +81,22 @@ func handleWebSocketMessage(
 					break
 				}
 
-				def := regexp.MustCompile(`-|\+|&&|\|\||\(|\)`).Split(expr, -1)
+				// TODO: сделать нормальную регулярку
+				def := regexp.MustCompile(`[ |&|\||!]+`).Split(expr, -1)
 
 				server.Clients[connection].isMatch = func(tags []string) bool {
-					values := map[string]interface{}{}
-					for i, tags := range [][]string{def, tags} {
+					next := expr
+
+					for i, tags := range [][]string{tags, def} {
 						for _, tag := range tags {
-							values[tag] = i
+							next = strings.Replace(next, tag, strconv.FormatBool(i == 0), -1)
 						}
 					}
 
-					result, err := chili.Eval(expr, values)
+					result := log.Proxy(chili.Eval(next, map[string]interface{}{}))
 
-					if err != nil {
-						panic(err)
+					if result == nil {
+						return false
 					}
 
 					return result.(bool)

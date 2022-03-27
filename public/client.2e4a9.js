@@ -1,26 +1,492 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/Chats.js":
-/*!**********************!*\
-  !*** ./src/Chats.js ***!
-  \**********************/
+/***/ "./src/icons/burger.svg":
+/*!******************************!*\
+  !*** ./src/icons/burger.svg ***!
+  \******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Chats": () => (/* binding */ Chats)
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
-/* harmony import */ var _Chats_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Chats.css */ "./src/Chats.css");
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./index */ "./src/index.js");
-var _jsxFileName = "/Users/snipeek/Desktop/chat-service/web/src/Chats.js";
+var _path;
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+
+
+var SvgBurger = function SvgBurger(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+    width: "1em",
+    height: "1em",
+    viewBox: "0 0 95 95",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    stroke: "currentColor",
+    strokeWidth: 10,
+    strokeLinecap: "round",
+    d: "M90 24H5M5 72h85M90 49H5"
+  })));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SvgBurger);
+
+/***/ }),
+
+/***/ "./src/icons/chat.svg":
+/*!****************************!*\
+  !*** ./src/icons/chat.svg ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var _path;
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+
+
+var SvgChat = function SvgChat(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+    width: "1em",
+    height: "1em",
+    viewBox: "0 0 95 95",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    d: "M47.5 95A47.5 47.5 0 1 1 95 47.5 47.542 47.542 0 0 1 47.5 95Zm0-82.363A34.884 34.884 0 1 0 82.384 47.5 34.904 34.904 0 0 0 47.5 12.637Z",
+    fill: "currentColor"
+  })));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SvgChat);
+
+/***/ }),
+
+/***/ "./src/icons/search.svg":
+/*!******************************!*\
+  !*** ./src/icons/search.svg ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var _path, _path2;
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+
+
+var SvgSearch = function SvgSearch(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+    width: "1em",
+    height: "1em",
+    viewBox: "0 0 95 95",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    d: "M43 84a42 42 0 1 1 42-42 42.037 42.037 0 0 1-42 42Zm0-72.826A30.845 30.845 0 1 0 73.845 42 30.863 30.863 0 0 0 43 11.174Z",
+    fill: "currentColor"
+  })), _path2 || (_path2 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    d: "M87.503 95a5.503 5.503 0 0 1-3.887-1.614L65.608 75.387A5.5 5.5 0 0 1 69.51 66c1.46.002 2.86.583 3.89 1.616l17.99 18.09a5.497 5.497 0 0 1 0 7.772 5.503 5.503 0 0 1-3.888 1.521Z",
+    fill: "currentColor"
+  })));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SvgSearch);
+
+/***/ }),
+
+/***/ "./src/icons/settings.svg":
+/*!********************************!*\
+  !*** ./src/icons/settings.svg ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var _path;
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+
+
+var SvgSettings = function SvgSettings(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+    width: "1em",
+    height: "1em",
+    viewBox: "0 0 95 95",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    stroke: "currentColor",
+    strokeWidth: 10,
+    strokeLinecap: "round",
+    d: "M47 24H5M62 19v9M90 24H78M48 72h42M33 77v-9M5 72h12M90 49H5"
+  })));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SvgSettings);
+
+/***/ }),
+
+/***/ "./src/icons/sound.svg":
+/*!*****************************!*\
+  !*** ./src/icons/sound.svg ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var _path;
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+
+
+var SvgSound = function SvgSound(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+    width: "1em",
+    height: "1em",
+    viewBox: "0 0 95 95",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, props), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    stroke: "currentColor",
+    strokeWidth: 10,
+    strokeLinecap: "round",
+    d: "M5 37v19M89 42v9M47 23v46M68 30v32M26 16v59"
+  })));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SvgSound);
+
+/***/ }),
+
+/***/ "./src/Chat/Chat.js":
+/*!**************************!*\
+  !*** ./src/Chat/Chat.js ***!
+  \**************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Avatar": () => (/* binding */ Avatar),
+/* harmony export */   "Chat": () => (/* binding */ Chat)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _Chat_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Chat.css */ "./src/Chat/Chat.css");
+/* harmony import */ var _Input_Input__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Input/Input */ "./src/Input/Input.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _useSocket__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/useSocket */ "./src/useSocket.js");
+/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/helpers */ "./src/helpers.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var _Store__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/Store */ "./src/Store.js");
+/* harmony import */ var _Top__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Top */ "./src/Chat/Top.js");
+var _jsxFileName = "/Users/snipeek/Desktop/woop-web/src/Chat/Chat.js";
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+
+
+
+
+
+
+
+
+
+const Avatar = ({
+  id,
+  title,
+  isOnline
+}) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  className: _Chat_css__WEBPACK_IMPORTED_MODULE_1__["default"].user,
+  __self: undefined,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 12,
+    columnNumber: 5
+  }
+}, (title || id).slice(0, 2), isOnline && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  className: _Chat_css__WEBPACK_IMPORTED_MODULE_1__["default"].online,
+  __self: undefined,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 14,
+    columnNumber: 22
+  }
+}));
+
+const Message = ({
+  id,
+  data,
+  isCurrent,
+  tags
+}) => {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: classnames__WEBPACK_IMPORTED_MODULE_3___default()(isCurrent ? _Chat_css__WEBPACK_IMPORTED_MODULE_1__["default"].from : _Chat_css__WEBPACK_IMPORTED_MODULE_1__["default"].to),
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20,
+      columnNumber: 9
+    }
+  }, !isCurrent && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Avatar, {
+    id: tags.user,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21,
+      columnNumber: 28
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: _Chat_css__WEBPACK_IMPORTED_MODULE_1__["default"].body,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22,
+      columnNumber: 13
+    }
+  }, !isCurrent && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: _Chat_css__WEBPACK_IMPORTED_MODULE_1__["default"].userName,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23,
+      columnNumber: 32
+    }
+  }, tags.user), data));
+};
+
+const Chat = props => {
+  const node = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
+  const {
+    pathname
+  } = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_8__.useLocation)();
+  const uuid = (0,_Store__WEBPACK_IMPORTED_MODULE_6__.useSelector)(state => state?.id);
+  console.log(uuid);
+  const [items, setItems] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    setItems([]);
+    setTimeout(() => {
+      node.current.scrollTo(0, node.current.scrollHeight);
+    }, 0);
+  }, [pathname]);
+  const onUpdate = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(next => {
+    const item = (0,_helpers__WEBPACK_IMPORTED_MODULE_5__.format)(next);
+    if (item.tags.type !== 'message') return;
+    setItems(items => [...items, item]);
+    setTimeout(() => {
+      node.current.scrollTo(0, node.current.scrollHeight);
+    }, 0);
+  }, []);
+  const onSend = (0,_useSocket__WEBPACK_IMPORTED_MODULE_4__.useSocket)({
+    onUpdate
+  });
+  const onCreate = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(async text => {
+    onSend(_helpers__WEBPACK_IMPORTED_MODULE_5__.convert.to({
+      data: {
+        text
+      },
+      type: 'message'
+    }));
+  }, [onSend]);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", _extends({}, props, {
+    ref: node,
+    className: classnames__WEBPACK_IMPORTED_MODULE_3___default()(props.className, _Chat_css__WEBPACK_IMPORTED_MODULE_1__["default"].root),
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 64,
+      columnNumber: 9
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Top__WEBPACK_IMPORTED_MODULE_7__.Top, {
+    id: pathname,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 65,
+      columnNumber: 13
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: _Chat_css__WEBPACK_IMPORTED_MODULE_1__["default"].items,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 66,
+      columnNumber: 13
+    }
+  }, items.map(item => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Message, _extends({
+    key: item.id,
+    isCurrent: item.tags.user === uuid
+  }, item, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 68,
+      columnNumber: 21
+    }
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Input_Input__WEBPACK_IMPORTED_MODULE_2__.Input, {
+    onCreate: onCreate,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 75,
+      columnNumber: 13
+    }
+  }));
+};
+
+/***/ }),
+
+/***/ "./src/Chat/Top.js":
+/*!*************************!*\
+  !*** ./src/Chat/Top.js ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Top": () => (/* binding */ Top)
+/* harmony export */ });
+/* harmony import */ var _Voice_Voice__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Voice/Voice */ "./src/Voice/Voice.js");
+/* harmony import */ var _Top_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Top.css */ "./src/Chat/Top.css");
+/* harmony import */ var _icons_search_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/icons/search.svg */ "./src/icons/search.svg");
+/* harmony import */ var _icons_sound_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/icons/sound.svg */ "./src/icons/sound.svg");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _Store__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Store */ "./src/Store.js");
+/* harmony import */ var _Chats_Chats__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/Chats/Chats */ "./src/Chats/Chats.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+var _jsxFileName = "/Users/snipeek/Desktop/woop-web/src/Chat/Top.js";
+
+
+
+
+
+
+
+
+const Top = () => {
+  const {
+    pathname
+  } = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_7__.useLocation)();
+  const tag = (0,_Store__WEBPACK_IMPORTED_MODULE_5__.useSelector)((0,_Chats_Chats__WEBPACK_IMPORTED_MODULE_6__.chatSelector)(pathname));
+  const [is, set] = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)(false);
+
+  const handle = () => {
+    (is ? _Voice_Voice__WEBPACK_IMPORTED_MODULE_0__.stream.close : _Voice_Voice__WEBPACK_IMPORTED_MODULE_0__.stream.init)();
+    set(!is);
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4__.createElement("div", {
+    className: _Top_css__WEBPACK_IMPORTED_MODULE_1__["default"].root,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23,
+      columnNumber: 9
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4__.createElement("button", {
+    className: _Top_css__WEBPACK_IMPORTED_MODULE_1__["default"].btn,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24,
+      columnNumber: 13
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4__.createElement(_icons_search_svg__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24,
+      columnNumber: 44
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4__.createElement("div", {
+    className: _Top_css__WEBPACK_IMPORTED_MODULE_1__["default"].head,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 25,
+      columnNumber: 13
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4__.createElement("span", {
+    className: _Top_css__WEBPACK_IMPORTED_MODULE_1__["default"].title,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 26,
+      columnNumber: 17
+    }
+  }, tag?.title || 'Новый чат')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4__.createElement("button", {
+    className: _Top_css__WEBPACK_IMPORTED_MODULE_1__["default"].btn,
+    onClick: handle,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 29,
+      columnNumber: 13
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4__.createElement(_icons_sound_svg__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 29,
+      columnNumber: 61
+    }
+  })));
+};
+
+/***/ }),
+
+/***/ "./src/Chats/Chats.js":
+/*!****************************!*\
+  !*** ./src/Chats/Chats.js ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Chats": () => (/* binding */ Chats),
+/* harmony export */   "chatSelector": () => (/* binding */ chatSelector)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var _Chats_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Chats.css */ "./src/Chats/Chats.css");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _Store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Store */ "./src/Store.js");
+/* harmony import */ var _Chat_Chat__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Chat/Chat */ "./src/Chat/Chat.js");
+var _jsxFileName = "/Users/snipeek/Desktop/woop-web/src/Chats/Chats.js";
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 
 
 
@@ -43,7 +509,7 @@ const useCarousel = () => {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 17,
+        lineNumber: 18,
         columnNumber: 17
       }
     }),
@@ -75,7 +541,7 @@ const useCarousel = () => {
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 36,
+          lineNumber: 37,
           columnNumber: 21
         }
       }));
@@ -83,60 +549,87 @@ const useCarousel = () => {
   }), []);
 };
 
-const Chats = ({}) => {
-  const [{
-    id
-  }] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_index__WEBPACK_IMPORTED_MODULE_3__.Context);
-  const tags = [{
-    type: 'chat',
-    id: `/${id}`,
-    title: 'Личный'
-  }, {
-    type: 'chat',
-    id: '/',
-    title: 'Главный'
-  }, {
-    type: 'chat',
-    id: '/second',
-    title: 'Второй'
-  }];
-  const navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useNavigate)();
+const chatSelector = id => store => {
+  const base = store.tags || {};
+  base['chat|/'] = {
+    id: 'chat|/',
+    title: 'Главный чат'
+  };
+  if (id) return base['chat|' + id];
+  return base;
+};
+const Chats = ({
+  className
+}) => {
+  const tags = (0,_Store__WEBPACK_IMPORTED_MODULE_3__.useSelector)(chatSelector());
+  const navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_5__.useNavigate)();
   const {
-    pathname
-  } = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useLocation)();
-  const {
-    Item,
-    Carousel
-  } = useCarousel();
-  const current = tags.findIndex(item => item.id === pathname);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Carousel, {
+    pathname,
+    hash
+  } = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_5__.useLocation)();
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: classnames__WEBPACK_IMPORTED_MODULE_2___default()(className, _Chats_css__WEBPACK_IMPORTED_MODULE_1__["default"].root),
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71,
+      lineNumber: 72,
       columnNumber: 9
     }
-  }, tags.map((item, index) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Item, {
-    key: item.id,
-    index: index,
-    isCurrent: index === current,
-    onClick: () => navigate('../' + item.id),
-    children: item.title,
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: _Chats_css__WEBPACK_IMPORTED_MODULE_1__["default"].header,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 73,
+      columnNumber: 13
+    }
+  }, "\u0427\u0430\u0442\u044B"), Object.values(tags).map(item => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: classnames__WEBPACK_IMPORTED_MODULE_2___default()(_Chats_css__WEBPACK_IMPORTED_MODULE_1__["default"].item, item.id === 'chat|' + pathname && _Chats_css__WEBPACK_IMPORTED_MODULE_1__["default"].itemActive),
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 75,
       columnNumber: 17
     }
-  })));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Chat_Chat__WEBPACK_IMPORTED_MODULE_4__.Avatar, _extends({}, item, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 76,
+      columnNumber: 21
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: _Chats_css__WEBPACK_IMPORTED_MODULE_1__["default"].body,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 77,
+      columnNumber: 21
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: _Chats_css__WEBPACK_IMPORTED_MODULE_1__["default"].title,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 78,
+      columnNumber: 25
+    }
+  }, item.title || item.id), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 79,
+      columnNumber: 25
+    }
+  })))));
 };
 
 /***/ }),
 
-/***/ "./src/Input.js":
-/*!**********************!*\
-  !*** ./src/Input.js ***!
-  \**********************/
+/***/ "./src/Input/Input.js":
+/*!****************************!*\
+  !*** ./src/Input/Input.js ***!
+  \****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -145,11 +638,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "Input": () => (/* binding */ Input)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/index.css */ "./src/index.css");
-/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./index */ "./src/index.js");
-var _jsxFileName = "/Users/snipeek/Desktop/chat-service/web/src/Input.js";
-
-
+/* harmony import */ var _Input_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Input.css */ "./src/Input/Input.css");
+var _jsxFileName = "/Users/snipeek/Desktop/woop-web/src/Input/Input.js";
 
 
 
@@ -167,29 +657,30 @@ const Input = ({
   };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: _Input_css__WEBPACK_IMPORTED_MODULE_1__["default"].root,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
+      lineNumber: 19,
       columnNumber: 9
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: _index_css__WEBPACK_IMPORTED_MODULE_1__["default"].voice,
+    className: _Input_css__WEBPACK_IMPORTED_MODULE_1__["default"].voice,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22,
+      lineNumber: 20,
       columnNumber: 13
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     ref: ref,
-    className: _index_css__WEBPACK_IMPORTED_MODULE_1__["default"].input,
+    className: _Input_css__WEBPACK_IMPORTED_MODULE_1__["default"].input,
     onKeyDown: onKeyDown,
     contentEditable: true,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23,
+      lineNumber: 21,
       columnNumber: 13
     }
   }));
@@ -197,45 +688,224 @@ const Input = ({
 
 /***/ }),
 
-/***/ "./src/Voice.js":
+/***/ "./src/Settings/Settings.js":
+/*!**********************************!*\
+  !*** ./src/Settings/Settings.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Settings": () => (/* binding */ Settings)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _Settings_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Settings.css */ "./src/Settings/Settings.css");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _Store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Store */ "./src/Store.js");
+var _jsxFileName = "/Users/snipeek/Desktop/woop-web/src/Settings/Settings.js";
+
+
+
+
+const titles = {
+  color: 'Оформление'
+};
+const components = {
+  color: ({
+    value,
+    onSelect,
+    isSelected
+  }) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    onClick: onSelect,
+    className: classnames__WEBPACK_IMPORTED_MODULE_2___default()(_Settings_css__WEBPACK_IMPORTED_MODULE_1__["default"].sqrt, isSelected && _Settings_css__WEBPACK_IMPORTED_MODULE_1__["default"].sqrtSelect),
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12,
+      columnNumber: 9
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: _Settings_css__WEBPACK_IMPORTED_MODULE_1__["default"].message,
+    style: {
+      marginLeft: 'auto',
+      background: value
+    },
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13,
+      columnNumber: 13
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: _Settings_css__WEBPACK_IMPORTED_MODULE_1__["default"].message,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14,
+      columnNumber: 13
+    }
+  }))
+};
+const data = {
+  // theme: ,
+  color: ['#0000ff20', '#00800020', '#6f008020', '#ffa50020']
+};
+
+const selector = store => store || {};
+
+const Settings = () => {
+  const values = (0,_Store__WEBPACK_IMPORTED_MODULE_3__.useSelector)(selector);
+  const settings = [];
+
+  for (const key in data) {
+    const title = titles[key];
+    const options = data[key];
+    const Component = components[key];
+    settings.push( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className: _Settings_css__WEBPACK_IMPORTED_MODULE_1__["default"].title,
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 38,
+        columnNumber: 13
+      }
+    }, title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className: _Settings_css__WEBPACK_IMPORTED_MODULE_1__["default"].options,
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 39,
+        columnNumber: 13
+      }
+    }, options.map(value => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Component, {
+      onSelect: () => (0,_Store__WEBPACK_IMPORTED_MODULE_3__.dispatch)(store => {
+        store[key] = value;
+        return { ...store
+        };
+      }),
+      value: value,
+      isSelected: values[key] === value,
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 41,
+        columnNumber: 21
+      }
+    }))));
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: _Settings_css__WEBPACK_IMPORTED_MODULE_1__["default"].root,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 52,
+      columnNumber: 9
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: _Settings_css__WEBPACK_IMPORTED_MODULE_1__["default"].header,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 53,
+      columnNumber: 13
+    }
+  }, "\u041D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0438"), settings);
+};
+
+/***/ }),
+
+/***/ "./src/Store.js":
 /*!**********************!*\
-  !*** ./src/Voice.js ***!
+  !*** ./src/Store.js ***!
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Voice": () => (/* binding */ Voice)
+/* harmony export */   "dispatch": () => (/* binding */ dispatch),
+/* harmony export */   "useSelector": () => (/* binding */ useSelector),
+/* harmony export */   "useTheme": () => (/* binding */ useTheme)
+/* harmony export */ });
+/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/helpers */ "./src/helpers.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+
+const handlers = new Map();
+const useSelector = handler => {
+  const [state, setState] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(handler(_helpers__WEBPACK_IMPORTED_MODULE_0__.cache.get()));
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(() => {
+    if (typeof handler !== 'function') return;
+    handlers.set(handler, next => {
+      setState(prev => {
+        console.log({
+          prev,
+          next
+        });
+        return next;
+      });
+    });
+    return () => handlers.delete(handler);
+  }, [handler]);
+  return state;
+};
+const dispatch = change => {
+  _helpers__WEBPACK_IMPORTED_MODULE_0__.cache.set(change(_helpers__WEBPACK_IMPORTED_MODULE_0__.cache.get()));
+
+  for (const handler of handlers.keys()) {
+    const change = handlers.get(handler);
+    change(handler(_helpers__WEBPACK_IMPORTED_MODULE_0__.cache.get()));
+  }
+};
+const useTheme = () => {
+  const color = useSelector(store => store?.color || '');
+  if (color) document.documentElement.style.setProperty(`--custom-color`, color);
+};
+
+/***/ }),
+
+/***/ "./src/Voice/Voice.js":
+/*!****************************!*\
+  !*** ./src/Voice/Voice.js ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Voice": () => (/* binding */ Voice),
+/* harmony export */   "stream": () => (/* binding */ stream)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _Voice_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Voice.css */ "./src/Voice.css");
-var _jsxFileName = "/Users/snipeek/Desktop/chat-service/web/src/Voice.js";
+/* harmony import */ var _Voice_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Voice.css */ "./src/Voice/Voice.css");
+/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/helpers */ "./src/helpers.js");
+/* harmony import */ var _useSocket__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/useSocket */ "./src/useSocket.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _Store__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Store */ "./src/Store.js");
+var _jsxFileName = "/Users/snipeek/Desktop/woop-web/src/Voice/Voice.js";
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+
+
+
+
 
 
 const time = 300;
-const Voice = ({
-  onCreate = () => {}
-}) => {
-  const [pause, setPause] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
-  const [state, setState] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
-  const onTrigger = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(async () => {
-    // End
-    if (state !== null) {
-      const {
-        stream
-      } = state;
-      stream.getTracks().forEach(track => track.stop());
-      setState({});
-      return;
-    } // Start
-
-
-    let audio = [];
-    const stream = await navigator.mediaDevices.getUserMedia({
+let state, recorder;
+const stream = {
+  get: () => state,
+  init: async () => {
+    state = await navigator.mediaDevices.getUserMedia({
       audio: true
     });
-    const recorder = new MediaRecorder(stream);
+    recorder = new MediaRecorder(state);
+    let audio = [];
 
     recorder.onstart = () => {
       audio = [];
@@ -251,7 +921,11 @@ const Voice = ({
       const fileReader = new FileReader();
 
       fileReader.onloadend = () => {
-        onCreate(fileReader.result.replace('data:application/octet-stream;', 'data:audio/ogg;'));
+        const data = fileReader.result.replace('data:application/octet-stream;', 'data:audio/ogg;');
+        (0,_useSocket__WEBPACK_IMPORTED_MODULE_3__.onCreate)(_helpers__WEBPACK_IMPORTED_MODULE_2__.convert.to({
+          data,
+          type: 'audio'
+        }));
       };
 
       fileReader.readAsDataURL(audioBlob);
@@ -259,328 +933,234 @@ const Voice = ({
     };
 
     recorder.start();
-    setState({
-      stream,
-      recorder
-    });
-  }, [state, onCreate]);
+  },
+  close: () => {
+    for (const track of state.getTracks()) {
+      track.stop();
+    }
+  },
+  trigger: () => stream.get() ? stream.close() : stream.init()
+};
+const Voice = props => {
+  const uuid = (0,_Store__WEBPACK_IMPORTED_MODULE_5__.useSelector)(state => state?.id);
+  const [pause, setPause] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  const onUpdate = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(next => {
+    const {
+      tags,
+      data
+    } = (0,_helpers__WEBPACK_IMPORTED_MODULE_2__.format)(next);
+    if (tags.type !== 'audio' || tags.user !== uuid) return;
+    const audio = new Audio(data);
+    audio.play();
+  }, [uuid]);
+  (0,_useSocket__WEBPACK_IMPORTED_MODULE_3__.useSocket)({
+    onUpdate
+  });
   const {
     recorder
   } = state || {};
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: _Voice_css__WEBPACK_IMPORTED_MODULE_1__["default"].root,
-    onClick: () => !state && onTrigger(),
+  return null;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", _extends({}, props, {
+    className: classnames__WEBPACK_IMPORTED_MODULE_4___default()(props.className, _Voice_css__WEBPACK_IMPORTED_MODULE_1__["default"].root),
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56,
+      lineNumber: 75,
       columnNumber: 9
     }
-  }, recorder ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
-    className: _Voice_css__WEBPACK_IMPORTED_MODULE_1__["default"].btn,
-    onClick: () => {
-      setPause(!pause);
-      recorder[pause ? 'resume' : 'pause']();
-    },
-    children: pause ? 'unmute' : 'mute',
+  }), recorder ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
-      columnNumber: 21
+      lineNumber: 77,
+      columnNumber: 17
     }
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
     className: _Voice_css__WEBPACK_IMPORTED_MODULE_1__["default"].btn,
     onClick: onTrigger,
     children: "end",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67,
+      lineNumber: 78,
       columnNumber: 21
     }
-  })) : 'to voice chat');
+  })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+    className: _Voice_css__WEBPACK_IMPORTED_MODULE_1__["default"].btn,
+    onClick: onTrigger,
+    children: "join audio",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 85,
+      columnNumber: 17
+    }
+  }));
 };
 
 /***/ }),
 
-/***/ "./src/index.js":
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/
+/***/ "./src/helpers.js":
+/*!************************!*\
+  !*** ./src/helpers.js ***!
+  \************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Context": () => (/* binding */ Context)
+/* harmony export */   "cache": () => (/* binding */ cache),
+/* harmony export */   "convert": () => (/* binding */ convert),
+/* harmony export */   "format": () => (/* binding */ format),
+/* harmony export */   "history": () => (/* binding */ history)
 /* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
-/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./index.css */ "./src/index.css");
-/* harmony import */ var _Input_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Input.js */ "./src/Input.js");
-/* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! uuid */ "./node_modules/uuid/dist/esm-browser/v4.js");
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _Chats__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Chats */ "./src/Chats.js");
-/* harmony import */ var _Voice__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/Voice */ "./src/Voice.js");
-var _jsxFileName = "/Users/snipeek/Desktop/chat-service/web/src/index.js";
-
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+/* harmony import */ var history__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! history */ "./node_modules/history/index.js");
+/* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! uuid */ "./node_modules/uuid/dist/esm-browser/v4.js");
+/* harmony import */ var jsonschema__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jsonschema */ "./node_modules/jsonschema/lib/index.js");
+/* harmony import */ var _chat_service_contracts_woop_socket_message_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../chat-service/contracts/woop-socket-message.json */ "../chat-service/contracts/woop-socket-message.json");
 
 
 
 
+const history = (0,history__WEBPACK_IMPORTED_MODULE_2__.createBrowserHistory)({
+  window
+});
+const format = item => {
+  const tags = {};
 
-
-
-
-
-
-
-
-const getStore = def => {
-  let store = localStorage.getItem('store');
-
-  if (!store) {
-    store = JSON.stringify(def);
-    localStorage.setItem('store', store);
+  for (const id of item.tags) {
+    const {
+      groups
+    } = /(?<type>\w+)\|(?<value>.+)/.exec(id);
+    const {
+      type,
+      value
+    } = groups || {};
+    tags[type] = value;
   }
 
-  return JSON.parse(store);
+  return { ...item,
+    tags
+  };
+};
+const def = {
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_3__["default"])()
+};
+let store;
+const cache = {
+  restore: () => {
+    try {
+      store = JSON.parse(localStorage.getItem('store'));
+      if (!store) cache.set(def);
+    } catch (_) {
+      cache.set(def);
+    }
+  },
+  get: () => store,
+  set: (next = cache.get()) => {
+    store = next;
+    localStorage.setItem('store', JSON.stringify(store));
+  }
+};
+cache.restore();
+const convert = {
+  to: ({
+    data,
+    type
+  }) => {
+    const base = {
+      id: (0,uuid__WEBPACK_IMPORTED_MODULE_3__["default"])(),
+      createdAt: '' + new Date(),
+      messages: []
+    };
+    if (type === 'entity') base.messages.push({
+      type: 'insert',
+      data: {
+        id: (0,uuid__WEBPACK_IMPORTED_MODULE_3__["default"])(),
+        tags: ['user|' + store.user.id, 'chat|' + history.location.pathname],
+        data: data
+      }
+    });
+    if (type === 'filters') base.messages.push({
+      type: 'filters',
+      data
+    });
+    return JSON.stringify(base);
+  },
+  from: buffer => {
+    console.log(buffer);
+    return JSON.parse(buffer);
+  }
 };
 
-const Context = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createContext({});
+/***/ }),
 
-const useSocket = ({
-  onUpdate
-}) => {
-  const ws = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(() => {
-    const {
-      host,
-      protocol
-    } = window.location;
-    const isHttps = protocol === 'https:';
-    return new WebSocket(`ws${isHttps ? 's' : ''}://${host}/ws`);
-  }, []);
-  let items = [];
+/***/ "./src/useSocket.js":
+/*!**************************!*\
+  !*** ./src/useSocket.js ***!
+  \**************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "onCreate": () => (/* binding */ onCreate),
+/* harmony export */   "useSocket": () => (/* binding */ useSocket)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/helpers */ "./src/helpers.js");
+
+
+const {
+  host,
+  protocol
+} = window.location;
+const handlers = new Map(),
+      path = `ws${protocol === 'https:' ? 's' : ''}://${host}/ws`;
+let requests = [],
+    ws,
+    timeout;
+
+const connect = () => {
+  ws = new WebSocket(path);
 
   ws.onopen = () => {
-    console.log('Connected');
+    console.log('Connect', path, requests);
+    if (timeout) clearTimeout(timeout);
 
-    for (const item of items) ws.send(item);
+    for (const req of requests) ws.send(req);
 
-    items = [];
+    requests = [];
+  };
+
+  ws.onclose = () => {
+    console.log('Closed');
+    timeout = setTimeout(connect, 5000);
   };
 
   ws.onmessage = evt => {
-    onUpdate(JSON.parse(evt.data));
-  };
+    const item = _helpers__WEBPACK_IMPORTED_MODULE_1__.convert.from(evt);
 
-  return next => {
-    console.log(next);
-    const item = JSON.stringify(next);
-
-    if (ws.readyState !== ws.OPEN) {
-      items.push(item);
-      return;
-    }
-
-    ws.send(item);
+    for (const handler of handlers.keys()) handler(item);
   };
 };
 
-const Message = ({
-  id,
-  data,
-  isCurrent,
-  tags
-}) => {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: classnames__WEBPACK_IMPORTED_MODULE_4___default()(isCurrent ? _index_css__WEBPACK_IMPORTED_MODULE_2__["default"].messageFrom : _index_css__WEBPACK_IMPORTED_MODULE_2__["default"].messageTo),
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 59,
-      columnNumber: 9
-    }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: _index_css__WEBPACK_IMPORTED_MODULE_2__["default"].messageBody,
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 60,
-      columnNumber: 13
-    }
-  }, data));
+connect();
+const onCreate = item => {
+  if (ws.readyState === ws.OPEN) ws.send(item);else requests.push(item);
 };
-
-const audios = () => {};
-
-const Root = () => {
-  const [{
-    id: uuid
-  }] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(Context);
-  const {
-    pathname
-  } = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_7__.useLocation)();
-  const [items, setItems] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
-  const [time, setTime] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(+new Date());
-  const onUpdate = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(item => {
-    const tags = {};
-
-    for (const id of item.tags) {
-      const {
-        groups
-      } = /(?<type>\w+)\|(?<value>.+)/.exec(id);
-      const {
-        type,
-        value
-      } = groups || {};
-      tags[type] = value;
-    }
-
-    console.log('onUpdate', item, tags);
-    item.tags = tags;
-    console.log(+item.id - time);
-    if (tags.type === 'message') setItems(items => [...items, item]);
-
-    if (tags.type === 'audio' && item.id - time > 0) {
-      if (tags.user !== uuid) {
-        const audio = new Audio(item.data);
-        audio.play();
-      }
-    }
-  }, [uuid, time]);
-  const onSend = useSocket({
-    onUpdate
-  });
+const useSocket = ({
+  onUpdate
+} = {}) => {
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-    setItems([]);
-    setTime(+new Date());
-    setTimeout(() => {
-      onSend({
-        filters: ['chat|' + pathname]
-      });
-    }, 100);
-  }, [pathname]);
-  const onCreate = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)((data, type) => {
-    onSend({
-      entity_create: {
-        data,
-        id: `${+new Date()}`,
-        tags: ['user|' + uuid, 'chat|' + pathname, 'type|' + type]
-      }
-    });
-  }, [onSend, uuid, pathname]);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: _index_css__WEBPACK_IMPORTED_MODULE_2__["default"].root,
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 126,
-      columnNumber: 9
-    }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Voice__WEBPACK_IMPORTED_MODULE_6__.Voice, {
-    onCreate: audio => onCreate(audio, 'audio'),
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 127,
-      columnNumber: 13
-    }
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
-    className: _index_css__WEBPACK_IMPORTED_MODULE_2__["default"].title,
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 128,
-      columnNumber: 13
-    }
-  }, "Woop"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Chats__WEBPACK_IMPORTED_MODULE_5__.Chats, {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 129,
-      columnNumber: 13
-    }
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: _index_css__WEBPACK_IMPORTED_MODULE_2__["default"].messages,
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 130,
-      columnNumber: 13
-    }
-  }, items.map(item => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Message, _extends({
-    key: item.id,
-    isCurrent: item.tags.user === uuid
-  }, item, {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 131,
-      columnNumber: 36
-    }
-  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Input_js__WEBPACK_IMPORTED_MODULE_3__.Input, {
-    onCreate: message => onCreate(message, 'message'),
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 133,
-      columnNumber: 13
-    }
-  }));
+    if (typeof onUpdate !== 'function') return;
+    handlers.set(onUpdate, []);
+    return () => {
+      handlers.delete(onUpdate);
+    };
+  }, [onUpdate]);
+  return onCreate;
 };
-
-const Store = ({
-  children
-}) => {
-  const [state, setState] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(getStore({
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_8__["default"])()
-  }));
-  const theme = state?.theme || {};
-
-  for (const key in theme) {
-    document.documentElement.style.setProperty(key, `${theme[key]}2b`);
-  }
-
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Context.Provider, {
-    value: [state],
-    children: children,
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 147,
-      columnNumber: 12
-    }
-  });
-};
-
-react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.BrowserRouter, {
-  __self: undefined,
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 151,
-    columnNumber: 5
-  }
-}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Store, {
-  __self: undefined,
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 152,
-    columnNumber: 9
-  }
-}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Root, {
-  __self: undefined,
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 153,
-    columnNumber: 13
-  }
-}))), document.getElementById('root'));
 
 /***/ }),
 
@@ -1467,26 +2047,1801 @@ function parsePath(path) {
 
 /***/ }),
 
-/***/ "./src/Chats.css":
-/*!***********************!*\
-  !*** ./src/Chats.css ***!
-  \***********************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ "./node_modules/jsonschema/lib/attribute.js":
+/*!**************************************************!*\
+  !*** ./node_modules/jsonschema/lib/attribute.js ***!
+  \**************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"row":"Chats__row--yFlyM","item":"Chats__item--nHTE9","itemActive":"Chats__itemActive--dDqr1"});
+
+
+var helpers = __webpack_require__(/*! ./helpers */ "./node_modules/jsonschema/lib/helpers.js");
+
+/** @type ValidatorResult */
+var ValidatorResult = helpers.ValidatorResult;
+/** @type SchemaError */
+var SchemaError = helpers.SchemaError;
+
+var attribute = {};
+
+attribute.ignoreProperties = {
+  // informative properties
+  'id': true,
+  'default': true,
+  'description': true,
+  'title': true,
+  // arguments to other properties
+  'additionalItems': true,
+  'then': true,
+  'else': true,
+  // special-handled properties
+  '$schema': true,
+  '$ref': true,
+  'extends': true,
+};
+
+/**
+ * @name validators
+ */
+var validators = attribute.validators = {};
+
+/**
+ * Validates whether the instance if of a certain type
+ * @param instance
+ * @param schema
+ * @param options
+ * @param ctx
+ * @return {ValidatorResult|null}
+ */
+validators.type = function validateType (instance, schema, options, ctx) {
+  // Ignore undefined instances
+  if (instance === undefined) {
+    return null;
+  }
+  var result = new ValidatorResult(instance, schema, options, ctx);
+  var types = Array.isArray(schema.type) ? schema.type : [schema.type];
+  if (!types.some(this.testType.bind(this, instance, schema, options, ctx))) {
+    var list = types.map(function (v) {
+      if(!v) return;
+      var id = v.$id || v.id;
+      return id ? ('<' + id + '>') : (v+'');
+    });
+    result.addError({
+      name: 'type',
+      argument: list,
+      message: "is not of a type(s) " + list,
+    });
+  }
+  return result;
+};
+
+function testSchemaNoThrow(instance, options, ctx, callback, schema){
+  var throwError = options.throwError;
+  var throwAll = options.throwAll;
+  options.throwError = false;
+  options.throwAll = false;
+  var res = this.validateSchema(instance, schema, options, ctx);
+  options.throwError = throwError;
+  options.throwAll = throwAll;
+
+  if (!res.valid && callback instanceof Function) {
+    callback(res);
+  }
+  return res.valid;
+}
+
+/**
+ * Validates whether the instance matches some of the given schemas
+ * @param instance
+ * @param schema
+ * @param options
+ * @param ctx
+ * @return {ValidatorResult|null}
+ */
+validators.anyOf = function validateAnyOf (instance, schema, options, ctx) {
+  // Ignore undefined instances
+  if (instance === undefined) {
+    return null;
+  }
+  var result = new ValidatorResult(instance, schema, options, ctx);
+  var inner = new ValidatorResult(instance, schema, options, ctx);
+  if (!Array.isArray(schema.anyOf)){
+    throw new SchemaError("anyOf must be an array");
+  }
+  if (!schema.anyOf.some(
+    testSchemaNoThrow.bind(
+      this, instance, options, ctx, function(res){inner.importErrors(res);}
+    ))) {
+    var list = schema.anyOf.map(function (v, i) {
+      var id = v.$id || v.id;
+      if(id) return '<' + id + '>';
+      return(v.title && JSON.stringify(v.title)) || (v['$ref'] && ('<' + v['$ref'] + '>')) || '[subschema '+i+']';
+    });
+    if (options.nestedErrors) {
+      result.importErrors(inner);
+    }
+    result.addError({
+      name: 'anyOf',
+      argument: list,
+      message: "is not any of " + list.join(','),
+    });
+  }
+  return result;
+};
+
+/**
+ * Validates whether the instance matches every given schema
+ * @param instance
+ * @param schema
+ * @param options
+ * @param ctx
+ * @return {String|null}
+ */
+validators.allOf = function validateAllOf (instance, schema, options, ctx) {
+  // Ignore undefined instances
+  if (instance === undefined) {
+    return null;
+  }
+  if (!Array.isArray(schema.allOf)){
+    throw new SchemaError("allOf must be an array");
+  }
+  var result = new ValidatorResult(instance, schema, options, ctx);
+  var self = this;
+  schema.allOf.forEach(function(v, i){
+    var valid = self.validateSchema(instance, v, options, ctx);
+    if(!valid.valid){
+      var id = v.$id || v.id;
+      var msg = id || (v.title && JSON.stringify(v.title)) || (v['$ref'] && ('<' + v['$ref'] + '>')) || '[subschema '+i+']';
+      result.addError({
+        name: 'allOf',
+        argument: { id: msg, length: valid.errors.length, valid: valid },
+        message: 'does not match allOf schema ' + msg + ' with ' + valid.errors.length + ' error[s]:',
+      });
+      result.importErrors(valid);
+    }
+  });
+  return result;
+};
+
+/**
+ * Validates whether the instance matches exactly one of the given schemas
+ * @param instance
+ * @param schema
+ * @param options
+ * @param ctx
+ * @return {String|null}
+ */
+validators.oneOf = function validateOneOf (instance, schema, options, ctx) {
+  // Ignore undefined instances
+  if (instance === undefined) {
+    return null;
+  }
+  if (!Array.isArray(schema.oneOf)){
+    throw new SchemaError("oneOf must be an array");
+  }
+  var result = new ValidatorResult(instance, schema, options, ctx);
+  var inner = new ValidatorResult(instance, schema, options, ctx);
+  var count = schema.oneOf.filter(
+    testSchemaNoThrow.bind(
+      this, instance, options, ctx, function(res) {inner.importErrors(res);}
+    ) ).length;
+  var list = schema.oneOf.map(function (v, i) {
+    var id = v.$id || v.id;
+    return id || (v.title && JSON.stringify(v.title)) || (v['$ref'] && ('<' + v['$ref'] + '>')) || '[subschema '+i+']';
+  });
+  if (count!==1) {
+    if (options.nestedErrors) {
+      result.importErrors(inner);
+    }
+    result.addError({
+      name: 'oneOf',
+      argument: list,
+      message: "is not exactly one from " + list.join(','),
+    });
+  }
+  return result;
+};
+
+/**
+ * Validates "then" or "else" depending on the result of validating "if"
+ * @param instance
+ * @param schema
+ * @param options
+ * @param ctx
+ * @return {String|null}
+ */
+validators.if = function validateIf (instance, schema, options, ctx) {
+  // Ignore undefined instances
+  if (instance === undefined) return null;
+  if (!helpers.isSchema(schema.if)) throw new Error('Expected "if" keyword to be a schema');
+  var ifValid = testSchemaNoThrow.call(this, instance, options, ctx, null, schema.if);
+  var result = new ValidatorResult(instance, schema, options, ctx);
+  var res;
+  if(ifValid){
+    if (schema.then === undefined) return;
+    if (!helpers.isSchema(schema.then)) throw new Error('Expected "then" keyword to be a schema');
+    res = this.validateSchema(instance, schema.then, options, ctx.makeChild(schema.then));
+    result.importErrors(res);
+  }else{
+    if (schema.else === undefined) return;
+    if (!helpers.isSchema(schema.else)) throw new Error('Expected "else" keyword to be a schema');
+    res = this.validateSchema(instance, schema.else, options, ctx.makeChild(schema.else));
+    result.importErrors(res);
+  }
+  return result;
+};
+
+function getEnumerableProperty(object, key){
+  // Determine if `key` shows up in `for(var key in object)`
+  // First test Object.hasOwnProperty.call as an optimization: that guarantees it does
+  if(Object.hasOwnProperty.call(object, key)) return object[key];
+  // Test `key in object` as an optimization; false means it won't
+  if(!(key in object)) return;
+  while( (object = Object.getPrototypeOf(object)) ){
+    if(Object.propertyIsEnumerable.call(object, key)) return object[key];
+  }
+}
+
+/**
+ * Validates propertyNames
+ * @param instance
+ * @param schema
+ * @param options
+ * @param ctx
+ * @return {String|null|ValidatorResult}
+ */
+validators.propertyNames = function validatePropertyNames (instance, schema, options, ctx) {
+  if(!this.types.object(instance)) return;
+  var result = new ValidatorResult(instance, schema, options, ctx);
+  var subschema = schema.propertyNames!==undefined ? schema.propertyNames : {};
+  if(!helpers.isSchema(subschema)) throw new SchemaError('Expected "propertyNames" to be a schema (object or boolean)');
+
+  for (var property in instance) {
+    if(getEnumerableProperty(instance, property) !== undefined){
+      var res = this.validateSchema(property, subschema, options, ctx.makeChild(subschema));
+      result.importErrors(res);
+    }
+  }
+
+  return result;
+};
+
+/**
+ * Validates properties
+ * @param instance
+ * @param schema
+ * @param options
+ * @param ctx
+ * @return {String|null|ValidatorResult}
+ */
+validators.properties = function validateProperties (instance, schema, options, ctx) {
+  if(!this.types.object(instance)) return;
+  var result = new ValidatorResult(instance, schema, options, ctx);
+  var properties = schema.properties || {};
+  for (var property in properties) {
+    var subschema = properties[property];
+    if(subschema===undefined){
+      continue;
+    }else if(subschema===null){
+      throw new SchemaError('Unexpected null, expected schema in "properties"');
+    }
+    if (typeof options.preValidateProperty == 'function') {
+      options.preValidateProperty(instance, property, subschema, options, ctx);
+    }
+    var prop = getEnumerableProperty(instance, property);
+    var res = this.validateSchema(prop, subschema, options, ctx.makeChild(subschema, property));
+    if(res.instance !== result.instance[property]) result.instance[property] = res.instance;
+    result.importErrors(res);
+  }
+  return result;
+};
+
+/**
+ * Test a specific property within in instance against the additionalProperties schema attribute
+ * This ignores properties with definitions in the properties schema attribute, but no other attributes.
+ * If too many more types of property-existence tests pop up they may need their own class of tests (like `type` has)
+ * @private
+ * @return {boolean}
+ */
+function testAdditionalProperty (instance, schema, options, ctx, property, result) {
+  if(!this.types.object(instance)) return;
+  if (schema.properties && schema.properties[property] !== undefined) {
+    return;
+  }
+  if (schema.additionalProperties === false) {
+    result.addError({
+      name: 'additionalProperties',
+      argument: property,
+      message: "is not allowed to have the additional property " + JSON.stringify(property),
+    });
+  } else {
+    var additionalProperties = schema.additionalProperties || {};
+
+    if (typeof options.preValidateProperty == 'function') {
+      options.preValidateProperty(instance, property, additionalProperties, options, ctx);
+    }
+
+    var res = this.validateSchema(instance[property], additionalProperties, options, ctx.makeChild(additionalProperties, property));
+    if(res.instance !== result.instance[property]) result.instance[property] = res.instance;
+    result.importErrors(res);
+  }
+}
+
+/**
+ * Validates patternProperties
+ * @param instance
+ * @param schema
+ * @param options
+ * @param ctx
+ * @return {String|null|ValidatorResult}
+ */
+validators.patternProperties = function validatePatternProperties (instance, schema, options, ctx) {
+  if(!this.types.object(instance)) return;
+  var result = new ValidatorResult(instance, schema, options, ctx);
+  var patternProperties = schema.patternProperties || {};
+
+  for (var property in instance) {
+    var test = true;
+    for (var pattern in patternProperties) {
+      var subschema = patternProperties[pattern];
+      if(subschema===undefined){
+        continue;
+      }else if(subschema===null){
+        throw new SchemaError('Unexpected null, expected schema in "patternProperties"');
+      }
+      try {
+        var regexp = new RegExp(pattern, 'u');
+      } catch(_e) {
+        // In the event the stricter handling causes an error, fall back on the forgiving handling
+        // DEPRECATED
+        regexp = new RegExp(pattern);
+      }
+      if (!regexp.test(property)) {
+        continue;
+      }
+      test = false;
+
+      if (typeof options.preValidateProperty == 'function') {
+        options.preValidateProperty(instance, property, subschema, options, ctx);
+      }
+
+      var res = this.validateSchema(instance[property], subschema, options, ctx.makeChild(subschema, property));
+      if(res.instance !== result.instance[property]) result.instance[property] = res.instance;
+      result.importErrors(res);
+    }
+    if (test) {
+      testAdditionalProperty.call(this, instance, schema, options, ctx, property, result);
+    }
+  }
+
+  return result;
+};
+
+/**
+ * Validates additionalProperties
+ * @param instance
+ * @param schema
+ * @param options
+ * @param ctx
+ * @return {String|null|ValidatorResult}
+ */
+validators.additionalProperties = function validateAdditionalProperties (instance, schema, options, ctx) {
+  if(!this.types.object(instance)) return;
+  // if patternProperties is defined then we'll test when that one is called instead
+  if (schema.patternProperties) {
+    return null;
+  }
+  var result = new ValidatorResult(instance, schema, options, ctx);
+  for (var property in instance) {
+    testAdditionalProperty.call(this, instance, schema, options, ctx, property, result);
+  }
+  return result;
+};
+
+/**
+ * Validates whether the instance value is at least of a certain length, when the instance value is a string.
+ * @param instance
+ * @param schema
+ * @return {String|null}
+ */
+validators.minProperties = function validateMinProperties (instance, schema, options, ctx) {
+  if (!this.types.object(instance)) return;
+  var result = new ValidatorResult(instance, schema, options, ctx);
+  var keys = Object.keys(instance);
+  if (!(keys.length >= schema.minProperties)) {
+    result.addError({
+      name: 'minProperties',
+      argument: schema.minProperties,
+      message: "does not meet minimum property length of " + schema.minProperties,
+    });
+  }
+  return result;
+};
+
+/**
+ * Validates whether the instance value is at most of a certain length, when the instance value is a string.
+ * @param instance
+ * @param schema
+ * @return {String|null}
+ */
+validators.maxProperties = function validateMaxProperties (instance, schema, options, ctx) {
+  if (!this.types.object(instance)) return;
+  var result = new ValidatorResult(instance, schema, options, ctx);
+  var keys = Object.keys(instance);
+  if (!(keys.length <= schema.maxProperties)) {
+    result.addError({
+      name: 'maxProperties',
+      argument: schema.maxProperties,
+      message: "does not meet maximum property length of " + schema.maxProperties,
+    });
+  }
+  return result;
+};
+
+/**
+ * Validates items when instance is an array
+ * @param instance
+ * @param schema
+ * @param options
+ * @param ctx
+ * @return {String|null|ValidatorResult}
+ */
+validators.items = function validateItems (instance, schema, options, ctx) {
+  var self = this;
+  if (!this.types.array(instance)) return;
+  if (!schema.items) return;
+  var result = new ValidatorResult(instance, schema, options, ctx);
+  instance.every(function (value, i) {
+    var items = Array.isArray(schema.items) ? (schema.items[i] || schema.additionalItems) : schema.items;
+    if (items === undefined) {
+      return true;
+    }
+    if (items === false) {
+      result.addError({
+        name: 'items',
+        message: "additionalItems not permitted",
+      });
+      return false;
+    }
+    var res = self.validateSchema(value, items, options, ctx.makeChild(items, i));
+    if(res.instance !== result.instance[i]) result.instance[i] = res.instance;
+    result.importErrors(res);
+    return true;
+  });
+  return result;
+};
+
+/**
+ * Validates minimum and exclusiveMinimum when the type of the instance value is a number.
+ * @param instance
+ * @param schema
+ * @return {String|null}
+ */
+validators.minimum = function validateMinimum (instance, schema, options, ctx) {
+  if (!this.types.number(instance)) return;
+  var result = new ValidatorResult(instance, schema, options, ctx);
+  if (schema.exclusiveMinimum && schema.exclusiveMinimum === true) {
+    if(!(instance > schema.minimum)){
+      result.addError({
+        name: 'minimum',
+        argument: schema.minimum,
+        message: "must be greater than " + schema.minimum,
+      });
+    }
+  } else {
+    if(!(instance >= schema.minimum)){
+      result.addError({
+        name: 'minimum',
+        argument: schema.minimum,
+        message: "must be greater than or equal to " + schema.minimum,
+      });
+    }
+  }
+  return result;
+};
+
+/**
+ * Validates maximum and exclusiveMaximum when the type of the instance value is a number.
+ * @param instance
+ * @param schema
+ * @return {String|null}
+ */
+validators.maximum = function validateMaximum (instance, schema, options, ctx) {
+  if (!this.types.number(instance)) return;
+  var result = new ValidatorResult(instance, schema, options, ctx);
+  if (schema.exclusiveMaximum && schema.exclusiveMaximum === true) {
+    if(!(instance < schema.maximum)){
+      result.addError({
+        name: 'maximum',
+        argument: schema.maximum,
+        message: "must be less than " + schema.maximum,
+      });
+    }
+  } else {
+    if(!(instance <= schema.maximum)){
+      result.addError({
+        name: 'maximum',
+        argument: schema.maximum,
+        message: "must be less than or equal to " + schema.maximum,
+      });
+    }
+  }
+  return result;
+};
+
+/**
+ * Validates the number form of exclusiveMinimum when the type of the instance value is a number.
+ * @param instance
+ * @param schema
+ * @return {String|null}
+ */
+validators.exclusiveMinimum = function validateExclusiveMinimum (instance, schema, options, ctx) {
+  // Support the boolean form of exclusiveMinimum, which is handled by the "minimum" keyword.
+  if(typeof schema.exclusiveMaximum === 'boolean') return;
+  if (!this.types.number(instance)) return;
+  var result = new ValidatorResult(instance, schema, options, ctx);
+  var valid = instance > schema.exclusiveMinimum;
+  if (!valid) {
+    result.addError({
+      name: 'exclusiveMinimum',
+      argument: schema.exclusiveMinimum,
+      message: "must be strictly greater than " + schema.exclusiveMinimum,
+    });
+  }
+  return result;
+};
+
+/**
+ * Validates the number form of exclusiveMaximum when the type of the instance value is a number.
+ * @param instance
+ * @param schema
+ * @return {String|null}
+ */
+validators.exclusiveMaximum = function validateExclusiveMaximum (instance, schema, options, ctx) {
+  // Support the boolean form of exclusiveMaximum, which is handled by the "maximum" keyword.
+  if(typeof schema.exclusiveMaximum === 'boolean') return;
+  if (!this.types.number(instance)) return;
+  var result = new ValidatorResult(instance, schema, options, ctx);
+  var valid = instance < schema.exclusiveMaximum;
+  if (!valid) {
+    result.addError({
+      name: 'exclusiveMaximum',
+      argument: schema.exclusiveMaximum,
+      message: "must be strictly less than " + schema.exclusiveMaximum,
+    });
+  }
+  return result;
+};
+
+/**
+ * Perform validation for multipleOf and divisibleBy, which are essentially the same.
+ * @param instance
+ * @param schema
+ * @param validationType
+ * @param errorMessage
+ * @returns {String|null}
+ */
+var validateMultipleOfOrDivisbleBy = function validateMultipleOfOrDivisbleBy (instance, schema, options, ctx, validationType, errorMessage) {
+  if (!this.types.number(instance)) return;
+
+  var validationArgument = schema[validationType];
+  if (validationArgument == 0) {
+    throw new SchemaError(validationType + " cannot be zero");
+  }
+
+  var result = new ValidatorResult(instance, schema, options, ctx);
+
+  var instanceDecimals = helpers.getDecimalPlaces(instance);
+  var divisorDecimals = helpers.getDecimalPlaces(validationArgument);
+
+  var maxDecimals = Math.max(instanceDecimals , divisorDecimals);
+  var multiplier = Math.pow(10, maxDecimals);
+
+  if (Math.round(instance * multiplier) % Math.round(validationArgument * multiplier) !== 0) {
+    result.addError({
+      name: validationType,
+      argument:  validationArgument,
+      message: errorMessage + JSON.stringify(validationArgument),
+    });
+  }
+
+  return result;
+};
+
+/**
+ * Validates divisibleBy when the type of the instance value is a number.
+ * @param instance
+ * @param schema
+ * @return {String|null}
+ */
+validators.multipleOf = function validateMultipleOf (instance, schema, options, ctx) {
+  return validateMultipleOfOrDivisbleBy.call(this, instance, schema, options, ctx, "multipleOf", "is not a multiple of (divisible by) ");
+};
+
+/**
+ * Validates multipleOf when the type of the instance value is a number.
+ * @param instance
+ * @param schema
+ * @return {String|null}
+ */
+validators.divisibleBy = function validateDivisibleBy (instance, schema, options, ctx) {
+  return validateMultipleOfOrDivisbleBy.call(this, instance, schema, options, ctx, "divisibleBy", "is not divisible by (multiple of) ");
+};
+
+/**
+ * Validates whether the instance value is present.
+ * @param instance
+ * @param schema
+ * @return {String|null}
+ */
+validators.required = function validateRequired (instance, schema, options, ctx) {
+  var result = new ValidatorResult(instance, schema, options, ctx);
+  if (instance === undefined && schema.required === true) {
+    // A boolean form is implemented for reverse-compatibility with schemas written against older drafts
+    result.addError({
+      name: 'required',
+      message: "is required",
+    });
+  } else if (this.types.object(instance) && Array.isArray(schema.required)) {
+    schema.required.forEach(function(n){
+      if(getEnumerableProperty(instance, n)===undefined){
+        result.addError({
+          name: 'required',
+          argument: n,
+          message: "requires property " + JSON.stringify(n),
+        });
+      }
+    });
+  }
+  return result;
+};
+
+/**
+ * Validates whether the instance value matches the regular expression, when the instance value is a string.
+ * @param instance
+ * @param schema
+ * @return {String|null}
+ */
+validators.pattern = function validatePattern (instance, schema, options, ctx) {
+  if (!this.types.string(instance)) return;
+  var result = new ValidatorResult(instance, schema, options, ctx);
+  var pattern = schema.pattern;
+  try {
+    var regexp = new RegExp(pattern, 'u');
+  } catch(_e) {
+    // In the event the stricter handling causes an error, fall back on the forgiving handling
+    // DEPRECATED
+    regexp = new RegExp(pattern);
+  }
+  if (!instance.match(regexp)) {
+    result.addError({
+      name: 'pattern',
+      argument: schema.pattern,
+      message: "does not match pattern " + JSON.stringify(schema.pattern.toString()),
+    });
+  }
+  return result;
+};
+
+/**
+ * Validates whether the instance value is of a certain defined format or a custom
+ * format.
+ * The following formats are supported for string types:
+ *   - date-time
+ *   - date
+ *   - time
+ *   - ip-address
+ *   - ipv6
+ *   - uri
+ *   - color
+ *   - host-name
+ *   - alpha
+ *   - alpha-numeric
+ *   - utc-millisec
+ * @param instance
+ * @param schema
+ * @param [options]
+ * @param [ctx]
+ * @return {String|null}
+ */
+validators.format = function validateFormat (instance, schema, options, ctx) {
+  if (instance===undefined) return;
+  var result = new ValidatorResult(instance, schema, options, ctx);
+  if (!result.disableFormat && !helpers.isFormat(instance, schema.format, this)) {
+    result.addError({
+      name: 'format',
+      argument: schema.format,
+      message: "does not conform to the " + JSON.stringify(schema.format) + " format",
+    });
+  }
+  return result;
+};
+
+/**
+ * Validates whether the instance value is at least of a certain length, when the instance value is a string.
+ * @param instance
+ * @param schema
+ * @return {String|null}
+ */
+validators.minLength = function validateMinLength (instance, schema, options, ctx) {
+  if (!this.types.string(instance)) return;
+  var result = new ValidatorResult(instance, schema, options, ctx);
+  var hsp = instance.match(/[\uDC00-\uDFFF]/g);
+  var length = instance.length - (hsp ? hsp.length : 0);
+  if (!(length >= schema.minLength)) {
+    result.addError({
+      name: 'minLength',
+      argument: schema.minLength,
+      message: "does not meet minimum length of " + schema.minLength,
+    });
+  }
+  return result;
+};
+
+/**
+ * Validates whether the instance value is at most of a certain length, when the instance value is a string.
+ * @param instance
+ * @param schema
+ * @return {String|null}
+ */
+validators.maxLength = function validateMaxLength (instance, schema, options, ctx) {
+  if (!this.types.string(instance)) return;
+  var result = new ValidatorResult(instance, schema, options, ctx);
+  // TODO if this was already computed in "minLength", use that value instead of re-computing
+  var hsp = instance.match(/[\uDC00-\uDFFF]/g);
+  var length = instance.length - (hsp ? hsp.length : 0);
+  if (!(length <= schema.maxLength)) {
+    result.addError({
+      name: 'maxLength',
+      argument: schema.maxLength,
+      message: "does not meet maximum length of " + schema.maxLength,
+    });
+  }
+  return result;
+};
+
+/**
+ * Validates whether instance contains at least a minimum number of items, when the instance is an Array.
+ * @param instance
+ * @param schema
+ * @return {String|null}
+ */
+validators.minItems = function validateMinItems (instance, schema, options, ctx) {
+  if (!this.types.array(instance)) return;
+  var result = new ValidatorResult(instance, schema, options, ctx);
+  if (!(instance.length >= schema.minItems)) {
+    result.addError({
+      name: 'minItems',
+      argument: schema.minItems,
+      message: "does not meet minimum length of " + schema.minItems,
+    });
+  }
+  return result;
+};
+
+/**
+ * Validates whether instance contains no more than a maximum number of items, when the instance is an Array.
+ * @param instance
+ * @param schema
+ * @return {String|null}
+ */
+validators.maxItems = function validateMaxItems (instance, schema, options, ctx) {
+  if (!this.types.array(instance)) return;
+  var result = new ValidatorResult(instance, schema, options, ctx);
+  if (!(instance.length <= schema.maxItems)) {
+    result.addError({
+      name: 'maxItems',
+      argument: schema.maxItems,
+      message: "does not meet maximum length of " + schema.maxItems,
+    });
+  }
+  return result;
+};
+
+/**
+ * Deep compares arrays for duplicates
+ * @param v
+ * @param i
+ * @param a
+ * @private
+ * @return {boolean}
+ */
+function testArrays (v, i, a) {
+  var j, len = a.length;
+  for (j = i + 1, len; j < len; j++) {
+    if (helpers.deepCompareStrict(v, a[j])) {
+      return false;
+    }
+  }
+  return true;
+}
+
+/**
+ * Validates whether there are no duplicates, when the instance is an Array.
+ * @param instance
+ * @return {String|null}
+ */
+validators.uniqueItems = function validateUniqueItems (instance, schema, options, ctx) {
+  if (schema.uniqueItems!==true) return;
+  if (!this.types.array(instance)) return;
+  var result = new ValidatorResult(instance, schema, options, ctx);
+  if (!instance.every(testArrays)) {
+    result.addError({
+      name: 'uniqueItems',
+      message: "contains duplicate item",
+    });
+  }
+  return result;
+};
+
+/**
+ * Validate for the presence of dependency properties, if the instance is an object.
+ * @param instance
+ * @param schema
+ * @param options
+ * @param ctx
+ * @return {null|ValidatorResult}
+ */
+validators.dependencies = function validateDependencies (instance, schema, options, ctx) {
+  if (!this.types.object(instance)) return;
+  var result = new ValidatorResult(instance, schema, options, ctx);
+  for (var property in schema.dependencies) {
+    if (instance[property] === undefined) {
+      continue;
+    }
+    var dep = schema.dependencies[property];
+    var childContext = ctx.makeChild(dep, property);
+    if (typeof dep == 'string') {
+      dep = [dep];
+    }
+    if (Array.isArray(dep)) {
+      dep.forEach(function (prop) {
+        if (instance[prop] === undefined) {
+          result.addError({
+            // FIXME there's two different "dependencies" errors here with slightly different outputs
+            // Can we make these the same? Or should we create different error types?
+            name: 'dependencies',
+            argument: childContext.propertyPath,
+            message: "property " + prop + " not found, required by " + childContext.propertyPath,
+          });
+        }
+      });
+    } else {
+      var res = this.validateSchema(instance, dep, options, childContext);
+      if(result.instance !== res.instance) result.instance = res.instance;
+      if (res && res.errors.length) {
+        result.addError({
+          name: 'dependencies',
+          argument: childContext.propertyPath,
+          message: "does not meet dependency required by " + childContext.propertyPath,
+        });
+        result.importErrors(res);
+      }
+    }
+  }
+  return result;
+};
+
+/**
+ * Validates whether the instance value is one of the enumerated values.
+ *
+ * @param instance
+ * @param schema
+ * @return {ValidatorResult|null}
+ */
+validators['enum'] = function validateEnum (instance, schema, options, ctx) {
+  if (instance === undefined) {
+    return null;
+  }
+  if (!Array.isArray(schema['enum'])) {
+    throw new SchemaError("enum expects an array", schema);
+  }
+  var result = new ValidatorResult(instance, schema, options, ctx);
+  if (!schema['enum'].some(helpers.deepCompareStrict.bind(null, instance))) {
+    result.addError({
+      name: 'enum',
+      argument: schema['enum'],
+      message: "is not one of enum values: " + schema['enum'].map(String).join(','),
+    });
+  }
+  return result;
+};
+
+/**
+ * Validates whether the instance exactly matches a given value
+ *
+ * @param instance
+ * @param schema
+ * @return {ValidatorResult|null}
+ */
+validators['const'] = function validateEnum (instance, schema, options, ctx) {
+  if (instance === undefined) {
+    return null;
+  }
+  var result = new ValidatorResult(instance, schema, options, ctx);
+  if (!helpers.deepCompareStrict(schema['const'], instance)) {
+    result.addError({
+      name: 'const',
+      argument: schema['const'],
+      message: "does not exactly match expected constant: " + schema['const'],
+    });
+  }
+  return result;
+};
+
+/**
+ * Validates whether the instance if of a prohibited type.
+ * @param instance
+ * @param schema
+ * @param options
+ * @param ctx
+ * @return {null|ValidatorResult}
+ */
+validators.not = validators.disallow = function validateNot (instance, schema, options, ctx) {
+  var self = this;
+  if(instance===undefined) return null;
+  var result = new ValidatorResult(instance, schema, options, ctx);
+  var notTypes = schema.not || schema.disallow;
+  if(!notTypes) return null;
+  if(!Array.isArray(notTypes)) notTypes=[notTypes];
+  notTypes.forEach(function (type) {
+    if (self.testType(instance, schema, options, ctx, type)) {
+      var id = type && (type.$id || type.id);
+      var schemaId = id || type;
+      result.addError({
+        name: 'not',
+        argument: schemaId,
+        message: "is of prohibited type " + schemaId,
+      });
+    }
+  });
+  return result;
+};
+
+module.exports = attribute;
+
 
 /***/ }),
 
-/***/ "./src/Voice.css":
-/*!***********************!*\
-  !*** ./src/Voice.css ***!
-  \***********************/
+/***/ "./node_modules/jsonschema/lib/helpers.js":
+/*!************************************************!*\
+  !*** ./node_modules/jsonschema/lib/helpers.js ***!
+  \************************************************/
+/***/ ((module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+var uri = __webpack_require__(/*! url */ "./node_modules/url/url.js");
+
+var ValidationError = exports.ValidationError = function ValidationError (message, instance, schema, path, name, argument) {
+  if(Array.isArray(path)){
+    this.path = path;
+    this.property = path.reduce(function(sum, item){
+      return sum + makeSuffix(item);
+    }, 'instance');
+  }else if(path !== undefined){
+    this.property = path;
+  }
+  if (message) {
+    this.message = message;
+  }
+  if (schema) {
+    var id = schema.$id || schema.id;
+    this.schema = id || schema;
+  }
+  if (instance !== undefined) {
+    this.instance = instance;
+  }
+  this.name = name;
+  this.argument = argument;
+  this.stack = this.toString();
+};
+
+ValidationError.prototype.toString = function toString() {
+  return this.property + ' ' + this.message;
+};
+
+var ValidatorResult = exports.ValidatorResult = function ValidatorResult(instance, schema, options, ctx) {
+  this.instance = instance;
+  this.schema = schema;
+  this.options = options;
+  this.path = ctx.path;
+  this.propertyPath = ctx.propertyPath;
+  this.errors = [];
+  this.throwError = options && options.throwError;
+  this.throwFirst = options && options.throwFirst;
+  this.throwAll = options && options.throwAll;
+  this.disableFormat = options && options.disableFormat === true;
+};
+
+ValidatorResult.prototype.addError = function addError(detail) {
+  var err;
+  if (typeof detail == 'string') {
+    err = new ValidationError(detail, this.instance, this.schema, this.path);
+  } else {
+    if (!detail) throw new Error('Missing error detail');
+    if (!detail.message) throw new Error('Missing error message');
+    if (!detail.name) throw new Error('Missing validator type');
+    err = new ValidationError(detail.message, this.instance, this.schema, this.path, detail.name, detail.argument);
+  }
+
+  this.errors.push(err);
+  if (this.throwFirst) {
+    throw new ValidatorResultError(this);
+  }else if(this.throwError){
+    throw err;
+  }
+  return err;
+};
+
+ValidatorResult.prototype.importErrors = function importErrors(res) {
+  if (typeof res == 'string' || (res && res.validatorType)) {
+    this.addError(res);
+  } else if (res && res.errors) {
+    Array.prototype.push.apply(this.errors, res.errors);
+  }
+};
+
+function stringizer (v,i){
+  return i+': '+v.toString()+'\n';
+}
+ValidatorResult.prototype.toString = function toString(res) {
+  return this.errors.map(stringizer).join('');
+};
+
+Object.defineProperty(ValidatorResult.prototype, "valid", { get: function() {
+  return !this.errors.length;
+} });
+
+module.exports.ValidatorResultError = ValidatorResultError;
+function ValidatorResultError(result) {
+  if(Error.captureStackTrace){
+    Error.captureStackTrace(this, ValidatorResultError);
+  }
+  this.instance = result.instance;
+  this.schema = result.schema;
+  this.options = result.options;
+  this.errors = result.errors;
+}
+ValidatorResultError.prototype = new Error();
+ValidatorResultError.prototype.constructor = ValidatorResultError;
+ValidatorResultError.prototype.name = "Validation Error";
+
+/**
+ * Describes a problem with a Schema which prevents validation of an instance
+ * @name SchemaError
+ * @constructor
+ */
+var SchemaError = exports.SchemaError = function SchemaError (msg, schema) {
+  this.message = msg;
+  this.schema = schema;
+  Error.call(this, msg);
+  Error.captureStackTrace(this, SchemaError);
+};
+SchemaError.prototype = Object.create(Error.prototype,
+  {
+    constructor: {value: SchemaError, enumerable: false},
+    name: {value: 'SchemaError', enumerable: false},
+  });
+
+var SchemaContext = exports.SchemaContext = function SchemaContext (schema, options, path, base, schemas) {
+  this.schema = schema;
+  this.options = options;
+  if(Array.isArray(path)){
+    this.path = path;
+    this.propertyPath = path.reduce(function(sum, item){
+      return sum + makeSuffix(item);
+    }, 'instance');
+  }else{
+    this.propertyPath = path;
+  }
+  this.base = base;
+  this.schemas = schemas;
+};
+
+SchemaContext.prototype.resolve = function resolve (target) {
+  return uri.resolve(this.base, target);
+};
+
+SchemaContext.prototype.makeChild = function makeChild(schema, propertyName){
+  var path = (propertyName===undefined) ? this.path : this.path.concat([propertyName]);
+  var id = schema.$id || schema.id;
+  var base = uri.resolve(this.base, id||'');
+  var ctx = new SchemaContext(schema, this.options, path, base, Object.create(this.schemas));
+  if(id && !ctx.schemas[base]){
+    ctx.schemas[base] = schema;
+  }
+  return ctx;
+};
+
+var FORMAT_REGEXPS = exports.FORMAT_REGEXPS = {
+  'date-time': /^\d{4}-(?:0[0-9]{1}|1[0-2]{1})-(3[01]|0[1-9]|[12][0-9])[tT ](2[0-4]|[01][0-9]):([0-5][0-9]):(60|[0-5][0-9])(\.\d+)?([zZ]|[+-]([0-5][0-9]):(60|[0-5][0-9]))$/,
+  'date': /^\d{4}-(?:0[0-9]{1}|1[0-2]{1})-(3[01]|0[1-9]|[12][0-9])$/,
+  'time': /^(2[0-4]|[01][0-9]):([0-5][0-9]):(60|[0-5][0-9])$/,
+
+  'email': /^(?:[\w\!\#\$\%\&\'\*\+\-\/\=\?\^\`\{\|\}\~]+\.)*[\w\!\#\$\%\&\'\*\+\-\/\=\?\^\`\{\|\}\~]+@(?:(?:(?:[a-zA-Z0-9](?:[a-zA-Z0-9\-](?!\.)){0,61}[a-zA-Z0-9]?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9\-](?!$)){0,61}[a-zA-Z0-9]?)|(?:\[(?:(?:[01]?\d{1,2}|2[0-4]\d|25[0-5])\.){3}(?:[01]?\d{1,2}|2[0-4]\d|25[0-5])\]))$/,
+  'ip-address': /^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/,
+  'ipv6': /^\s*((([0-9A-Fa-f]{1,4}:){7}([0-9A-Fa-f]{1,4}|:))|(([0-9A-Fa-f]{1,4}:){6}(:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){5}(((:[0-9A-Fa-f]{1,4}){1,2})|:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){4}(((:[0-9A-Fa-f]{1,4}){1,3})|((:[0-9A-Fa-f]{1,4})?:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){3}(((:[0-9A-Fa-f]{1,4}){1,4})|((:[0-9A-Fa-f]{1,4}){0,2}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){2}(((:[0-9A-Fa-f]{1,4}){1,5})|((:[0-9A-Fa-f]{1,4}){0,3}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){1}(((:[0-9A-Fa-f]{1,4}){1,6})|((:[0-9A-Fa-f]{1,4}){0,4}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(:(((:[0-9A-Fa-f]{1,4}){1,7})|((:[0-9A-Fa-f]{1,4}){0,5}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:)))(%.+)?\s*$/,
+
+  // TODO: A more accurate regular expression for "uri" goes:
+  // [A-Za-z][+\-.0-9A-Za-z]*:((/(/((%[0-9A-Fa-f]{2}|[!$&-.0-9;=A-Z_a-z~])+|(\[(([Vv][0-9A-Fa-f]+\.[!$&-.0-;=A-Z_a-z~]+)?|[.0-:A-Fa-f]+)\])?)(:\d*)?)?)?#(%[0-9A-Fa-f]{2}|[!$&-;=?-Z_a-z~])*|(/(/((%[0-9A-Fa-f]{2}|[!$&-.0-9;=A-Z_a-z~])+|(\[(([Vv][0-9A-Fa-f]+\.[!$&-.0-;=A-Z_a-z~]+)?|[.0-:A-Fa-f]+)\])?)(:\d*)?[/?]|[!$&-.0-;=?-Z_a-z~])|/?%[0-9A-Fa-f]{2}|[!$&-.0-;=?-Z_a-z~])(%[0-9A-Fa-f]{2}|[!$&-;=?-Z_a-z~])*(#(%[0-9A-Fa-f]{2}|[!$&-;=?-Z_a-z~])*)?|/(/((%[0-9A-Fa-f]{2}|[!$&-.0-9;=A-Z_a-z~])+(:\d*)?|(\[(([Vv][0-9A-Fa-f]+\.[!$&-.0-;=A-Z_a-z~]+)?|[.0-:A-Fa-f]+)\])?:\d*|\[(([Vv][0-9A-Fa-f]+\.[!$&-.0-;=A-Z_a-z~]+)?|[.0-:A-Fa-f]+)\])?)?)?
+  'uri': /^[a-zA-Z][a-zA-Z0-9+-.]*:[^\s]*$/,
+  'uri-reference': /^(((([A-Za-z][+\-.0-9A-Za-z]*(:%[0-9A-Fa-f]{2}|:[!$&-.0-;=?-Z_a-z~]|[/?])|\?)(%[0-9A-Fa-f]{2}|[!$&-;=?-Z_a-z~])*|([A-Za-z][+\-.0-9A-Za-z]*:?)?)|([A-Za-z][+\-.0-9A-Za-z]*:)?\/((%[0-9A-Fa-f]{2}|\/((%[0-9A-Fa-f]{2}|[!$&-.0-9;=A-Z_a-z~])+|(\[(([Vv][0-9A-Fa-f]+\.[!$&-.0-;=A-Z_a-z~]+)?|[.0-:A-Fa-f]+)\])?)(:\d*)?[/?]|[!$&-.0-;=?-Z_a-z~])(%[0-9A-Fa-f]{2}|[!$&-;=?-Z_a-z~])*|(\/((%[0-9A-Fa-f]{2}|[!$&-.0-9;=A-Z_a-z~])+|(\[(([Vv][0-9A-Fa-f]+\.[!$&-.0-;=A-Z_a-z~]+)?|[.0-:A-Fa-f]+)\])?)(:\d*)?)?))#(%[0-9A-Fa-f]{2}|[!$&-;=?-Z_a-z~])*|(([A-Za-z][+\-.0-9A-Za-z]*)?%[0-9A-Fa-f]{2}|[!$&-.0-9;=@_~]|[A-Za-z][+\-.0-9A-Za-z]*[!$&-*,;=@_~])(%[0-9A-Fa-f]{2}|[!$&-.0-9;=@-Z_a-z~])*((([/?](%[0-9A-Fa-f]{2}|[!$&-;=?-Z_a-z~])*)?#|[/?])(%[0-9A-Fa-f]{2}|[!$&-;=?-Z_a-z~])*)?|([A-Za-z][+\-.0-9A-Za-z]*(:%[0-9A-Fa-f]{2}|:[!$&-.0-;=?-Z_a-z~]|[/?])|\?)(%[0-9A-Fa-f]{2}|[!$&-;=?-Z_a-z~])*|([A-Za-z][+\-.0-9A-Za-z]*:)?\/((%[0-9A-Fa-f]{2}|\/((%[0-9A-Fa-f]{2}|[!$&-.0-9;=A-Z_a-z~])+|(\[(([Vv][0-9A-Fa-f]+\.[!$&-.0-;=A-Z_a-z~]+)?|[.0-:A-Fa-f]+)\])?)(:\d*)?[/?]|[!$&-.0-;=?-Z_a-z~])(%[0-9A-Fa-f]{2}|[!$&-;=?-Z_a-z~])*|\/((%[0-9A-Fa-f]{2}|[!$&-.0-9;=A-Z_a-z~])+(:\d*)?|(\[(([Vv][0-9A-Fa-f]+\.[!$&-.0-;=A-Z_a-z~]+)?|[.0-:A-Fa-f]+)\])?:\d*|\[(([Vv][0-9A-Fa-f]+\.[!$&-.0-;=A-Z_a-z~]+)?|[.0-:A-Fa-f]+)\])?)?|[A-Za-z][+\-.0-9A-Za-z]*:?)?$/,
+
+  'color': /^(#?([0-9A-Fa-f]{3}){1,2}\b|aqua|black|blue|fuchsia|gray|green|lime|maroon|navy|olive|orange|purple|red|silver|teal|white|yellow|(rgb\(\s*\b([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\b\s*,\s*\b([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\b\s*,\s*\b([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\b\s*\))|(rgb\(\s*(\d?\d%|100%)+\s*,\s*(\d?\d%|100%)+\s*,\s*(\d?\d%|100%)+\s*\)))$/,
+
+  // hostname regex from: http://stackoverflow.com/a/1420225/5628
+  'hostname': /^(?=.{1,255}$)[0-9A-Za-z](?:(?:[0-9A-Za-z]|-){0,61}[0-9A-Za-z])?(?:\.[0-9A-Za-z](?:(?:[0-9A-Za-z]|-){0,61}[0-9A-Za-z])?)*\.?$/,
+  'host-name': /^(?=.{1,255}$)[0-9A-Za-z](?:(?:[0-9A-Za-z]|-){0,61}[0-9A-Za-z])?(?:\.[0-9A-Za-z](?:(?:[0-9A-Za-z]|-){0,61}[0-9A-Za-z])?)*\.?$/,
+
+  'alpha': /^[a-zA-Z]+$/,
+  'alphanumeric': /^[a-zA-Z0-9]+$/,
+  'utc-millisec': function (input) {
+    return (typeof input === 'string') && parseFloat(input) === parseInt(input, 10) && !isNaN(input);
+  },
+  'regex': function (input) {
+    var result = true;
+    try {
+      new RegExp(input);
+    } catch (e) {
+      result = false;
+    }
+    return result;
+  },
+  'style': /\s*(.+?):\s*([^;]+);?/,
+  'phone': /^\+(?:[0-9] ?){6,14}[0-9]$/,
+};
+
+FORMAT_REGEXPS.regexp = FORMAT_REGEXPS.regex;
+FORMAT_REGEXPS.pattern = FORMAT_REGEXPS.regex;
+FORMAT_REGEXPS.ipv4 = FORMAT_REGEXPS['ip-address'];
+
+exports.isFormat = function isFormat (input, format, validator) {
+  if (typeof input === 'string' && FORMAT_REGEXPS[format] !== undefined) {
+    if (FORMAT_REGEXPS[format] instanceof RegExp) {
+      return FORMAT_REGEXPS[format].test(input);
+    }
+    if (typeof FORMAT_REGEXPS[format] === 'function') {
+      return FORMAT_REGEXPS[format](input);
+    }
+  } else if (validator && validator.customFormats &&
+      typeof validator.customFormats[format] === 'function') {
+    return validator.customFormats[format](input);
+  }
+  return true;
+};
+
+var makeSuffix = exports.makeSuffix = function makeSuffix (key) {
+  key = key.toString();
+  // This function could be capable of outputting valid a ECMAScript string, but the
+  // resulting code for testing which form to use would be tens of thousands of characters long
+  // That means this will use the name form for some illegal forms
+  if (!key.match(/[.\s\[\]]/) && !key.match(/^[\d]/)) {
+    return '.' + key;
+  }
+  if (key.match(/^\d+$/)) {
+    return '[' + key + ']';
+  }
+  return '[' + JSON.stringify(key) + ']';
+};
+
+exports.deepCompareStrict = function deepCompareStrict (a, b) {
+  if (typeof a !== typeof b) {
+    return false;
+  }
+  if (Array.isArray(a)) {
+    if (!Array.isArray(b)) {
+      return false;
+    }
+    if (a.length !== b.length) {
+      return false;
+    }
+    return a.every(function (v, i) {
+      return deepCompareStrict(a[i], b[i]);
+    });
+  }
+  if (typeof a === 'object') {
+    if (!a || !b) {
+      return a === b;
+    }
+    var aKeys = Object.keys(a);
+    var bKeys = Object.keys(b);
+    if (aKeys.length !== bKeys.length) {
+      return false;
+    }
+    return aKeys.every(function (v) {
+      return deepCompareStrict(a[v], b[v]);
+    });
+  }
+  return a === b;
+};
+
+function deepMerger (target, dst, e, i) {
+  if (typeof e === 'object') {
+    dst[i] = deepMerge(target[i], e);
+  } else {
+    if (target.indexOf(e) === -1) {
+      dst.push(e);
+    }
+  }
+}
+
+function copyist (src, dst, key) {
+  dst[key] = src[key];
+}
+
+function copyistWithDeepMerge (target, src, dst, key) {
+  if (typeof src[key] !== 'object' || !src[key]) {
+    dst[key] = src[key];
+  }
+  else {
+    if (!target[key]) {
+      dst[key] = src[key];
+    } else {
+      dst[key] = deepMerge(target[key], src[key]);
+    }
+  }
+}
+
+function deepMerge (target, src) {
+  var array = Array.isArray(src);
+  var dst = array && [] || {};
+
+  if (array) {
+    target = target || [];
+    dst = dst.concat(target);
+    src.forEach(deepMerger.bind(null, target, dst));
+  } else {
+    if (target && typeof target === 'object') {
+      Object.keys(target).forEach(copyist.bind(null, target, dst));
+    }
+    Object.keys(src).forEach(copyistWithDeepMerge.bind(null, target, src, dst));
+  }
+
+  return dst;
+}
+
+module.exports.deepMerge = deepMerge;
+
+/**
+ * Validates instance against the provided schema
+ * Implements URI+JSON Pointer encoding, e.g. "%7e"="~0"=>"~", "~1"="%2f"=>"/"
+ * @param o
+ * @param s The path to walk o along
+ * @return any
+ */
+exports.objectGetPath = function objectGetPath(o, s) {
+  var parts = s.split('/').slice(1);
+  var k;
+  while (typeof (k=parts.shift()) == 'string') {
+    var n = decodeURIComponent(k.replace(/~0/,'~').replace(/~1/g,'/'));
+    if (!(n in o)) return;
+    o = o[n];
+  }
+  return o;
+};
+
+function pathEncoder (v) {
+  return '/'+encodeURIComponent(v).replace(/~/g,'%7E');
+}
+/**
+ * Accept an Array of property names and return a JSON Pointer URI fragment
+ * @param Array a
+ * @return {String}
+ */
+exports.encodePath = function encodePointer(a){
+  // ~ must be encoded explicitly because hacks
+  // the slash is encoded by encodeURIComponent
+  return a.map(pathEncoder).join('');
+};
+
+
+/**
+ * Calculate the number of decimal places a number uses
+ * We need this to get correct results out of multipleOf and divisibleBy
+ * when either figure is has decimal places, due to IEEE-754 float issues.
+ * @param number
+ * @returns {number}
+ */
+exports.getDecimalPlaces = function getDecimalPlaces(number) {
+
+  var decimalPlaces = 0;
+  if (isNaN(number)) return decimalPlaces;
+
+  if (typeof number !== 'number') {
+    number = Number(number);
+  }
+
+  var parts = number.toString().split('e');
+  if (parts.length === 2) {
+    if (parts[1][0] !== '-') {
+      return decimalPlaces;
+    } else {
+      decimalPlaces = Number(parts[1].slice(1));
+    }
+  }
+
+  var decimalParts = parts[0].split('.');
+  if (decimalParts.length === 2) {
+    decimalPlaces += decimalParts[1].length;
+  }
+
+  return decimalPlaces;
+};
+
+exports.isSchema = function isSchema(val){
+  return (typeof val === 'object' && val) || (typeof val === 'boolean');
+};
+
+
+
+/***/ }),
+
+/***/ "./node_modules/jsonschema/lib/index.js":
+/*!**********************************************!*\
+  !*** ./node_modules/jsonschema/lib/index.js ***!
+  \**********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+
+var Validator = module.exports.Validator = __webpack_require__(/*! ./validator */ "./node_modules/jsonschema/lib/validator.js");
+
+module.exports.ValidatorResult = __webpack_require__(/*! ./helpers */ "./node_modules/jsonschema/lib/helpers.js").ValidatorResult;
+module.exports.ValidatorResultError = __webpack_require__(/*! ./helpers */ "./node_modules/jsonschema/lib/helpers.js").ValidatorResultError;
+module.exports.ValidationError = __webpack_require__(/*! ./helpers */ "./node_modules/jsonschema/lib/helpers.js").ValidationError;
+module.exports.SchemaError = __webpack_require__(/*! ./helpers */ "./node_modules/jsonschema/lib/helpers.js").SchemaError;
+module.exports.SchemaScanResult = __webpack_require__(/*! ./scan */ "./node_modules/jsonschema/lib/scan.js").SchemaScanResult;
+module.exports.scan = __webpack_require__(/*! ./scan */ "./node_modules/jsonschema/lib/scan.js").scan;
+
+module.exports.validate = function (instance, schema, options) {
+  var v = new Validator();
+  return v.validate(instance, schema, options);
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/jsonschema/lib/scan.js":
+/*!*********************************************!*\
+  !*** ./node_modules/jsonschema/lib/scan.js ***!
+  \*********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+
+var urilib = __webpack_require__(/*! url */ "./node_modules/url/url.js");
+var helpers = __webpack_require__(/*! ./helpers */ "./node_modules/jsonschema/lib/helpers.js");
+
+module.exports.SchemaScanResult = SchemaScanResult;
+function SchemaScanResult(found, ref){
+  this.id = found;
+  this.ref = ref;
+}
+
+/**
+ * Adds a schema with a certain urn to the Validator instance.
+ * @param string uri
+ * @param object schema
+ * @return {Object}
+ */
+module.exports.scan = function scan(base, schema){
+  function scanSchema(baseuri, schema){
+    if(!schema || typeof schema!='object') return;
+    // Mark all referenced schemas so we can tell later which schemas are referred to, but never defined
+    if(schema.$ref){
+      var resolvedUri = urilib.resolve(baseuri, schema.$ref);
+      ref[resolvedUri] = ref[resolvedUri] ? ref[resolvedUri]+1 : 0;
+      return;
+    }
+    var id = schema.$id || schema.id;
+    var ourBase = id ? urilib.resolve(baseuri, id) : baseuri;
+    if (ourBase) {
+      // If there's no fragment, append an empty one
+      if(ourBase.indexOf('#')<0) ourBase += '#';
+      if(found[ourBase]){
+        if(!helpers.deepCompareStrict(found[ourBase], schema)){
+          throw new Error('Schema <'+ourBase+'> already exists with different definition');
+        }
+        return found[ourBase];
+      }
+      found[ourBase] = schema;
+      // strip trailing fragment
+      if(ourBase[ourBase.length-1]=='#'){
+        found[ourBase.substring(0, ourBase.length-1)] = schema;
+      }
+    }
+    scanArray(ourBase+'/items', (Array.isArray(schema.items)?schema.items:[schema.items]));
+    scanArray(ourBase+'/extends', (Array.isArray(schema.extends)?schema.extends:[schema.extends]));
+    scanSchema(ourBase+'/additionalItems', schema.additionalItems);
+    scanObject(ourBase+'/properties', schema.properties);
+    scanSchema(ourBase+'/additionalProperties', schema.additionalProperties);
+    scanObject(ourBase+'/definitions', schema.definitions);
+    scanObject(ourBase+'/patternProperties', schema.patternProperties);
+    scanObject(ourBase+'/dependencies', schema.dependencies);
+    scanArray(ourBase+'/disallow', schema.disallow);
+    scanArray(ourBase+'/allOf', schema.allOf);
+    scanArray(ourBase+'/anyOf', schema.anyOf);
+    scanArray(ourBase+'/oneOf', schema.oneOf);
+    scanSchema(ourBase+'/not', schema.not);
+  }
+  function scanArray(baseuri, schemas){
+    if(!Array.isArray(schemas)) return;
+    for(var i=0; i<schemas.length; i++){
+      scanSchema(baseuri+'/'+i, schemas[i]);
+    }
+  }
+  function scanObject(baseuri, schemas){
+    if(!schemas || typeof schemas!='object') return;
+    for(var p in schemas){
+      scanSchema(baseuri+'/'+p, schemas[p]);
+    }
+  }
+
+  var found = {};
+  var ref = {};
+  scanSchema(base, schema);
+  return new SchemaScanResult(found, ref);
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/jsonschema/lib/validator.js":
+/*!**************************************************!*\
+  !*** ./node_modules/jsonschema/lib/validator.js ***!
+  \**************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+
+var urilib = __webpack_require__(/*! url */ "./node_modules/url/url.js");
+
+var attribute = __webpack_require__(/*! ./attribute */ "./node_modules/jsonschema/lib/attribute.js");
+var helpers = __webpack_require__(/*! ./helpers */ "./node_modules/jsonschema/lib/helpers.js");
+var scanSchema = (__webpack_require__(/*! ./scan */ "./node_modules/jsonschema/lib/scan.js").scan);
+var ValidatorResult = helpers.ValidatorResult;
+var ValidatorResultError = helpers.ValidatorResultError;
+var SchemaError = helpers.SchemaError;
+var SchemaContext = helpers.SchemaContext;
+//var anonymousBase = 'vnd.jsonschema:///';
+var anonymousBase = '/';
+
+/**
+ * Creates a new Validator object
+ * @name Validator
+ * @constructor
+ */
+var Validator = function Validator () {
+  // Allow a validator instance to override global custom formats or to have their
+  // own custom formats.
+  this.customFormats = Object.create(Validator.prototype.customFormats);
+  this.schemas = {};
+  this.unresolvedRefs = [];
+
+  // Use Object.create to make this extensible without Validator instances stepping on each other's toes.
+  this.types = Object.create(types);
+  this.attributes = Object.create(attribute.validators);
+};
+
+// Allow formats to be registered globally.
+Validator.prototype.customFormats = {};
+
+// Hint at the presence of a property
+Validator.prototype.schemas = null;
+Validator.prototype.types = null;
+Validator.prototype.attributes = null;
+Validator.prototype.unresolvedRefs = null;
+
+/**
+ * Adds a schema with a certain urn to the Validator instance.
+ * @param schema
+ * @param urn
+ * @return {Object}
+ */
+Validator.prototype.addSchema = function addSchema (schema, base) {
+  var self = this;
+  if (!schema) {
+    return null;
+  }
+  var scan = scanSchema(base||anonymousBase, schema);
+  var ourUri = base || schema.$id || schema.id;
+  for(var uri in scan.id){
+    this.schemas[uri] = scan.id[uri];
+  }
+  for(var uri in scan.ref){
+    // If this schema is already defined, it will be filtered out by the next step
+    this.unresolvedRefs.push(uri);
+  }
+  // Remove newly defined schemas from unresolvedRefs
+  this.unresolvedRefs = this.unresolvedRefs.filter(function(uri){
+    return typeof self.schemas[uri]==='undefined';
+  });
+  return this.schemas[ourUri];
+};
+
+Validator.prototype.addSubSchemaArray = function addSubSchemaArray(baseuri, schemas) {
+  if(!Array.isArray(schemas)) return;
+  for(var i=0; i<schemas.length; i++){
+    this.addSubSchema(baseuri, schemas[i]);
+  }
+};
+
+Validator.prototype.addSubSchemaObject = function addSubSchemaArray(baseuri, schemas) {
+  if(!schemas || typeof schemas!='object') return;
+  for(var p in schemas){
+    this.addSubSchema(baseuri, schemas[p]);
+  }
+};
+
+
+
+/**
+ * Sets all the schemas of the Validator instance.
+ * @param schemas
+ */
+Validator.prototype.setSchemas = function setSchemas (schemas) {
+  this.schemas = schemas;
+};
+
+/**
+ * Returns the schema of a certain urn
+ * @param urn
+ */
+Validator.prototype.getSchema = function getSchema (urn) {
+  return this.schemas[urn];
+};
+
+/**
+ * Validates instance against the provided schema
+ * @param instance
+ * @param schema
+ * @param [options]
+ * @param [ctx]
+ * @return {Array}
+ */
+Validator.prototype.validate = function validate (instance, schema, options, ctx) {
+  if((typeof schema !== 'boolean' && typeof schema !== 'object') || schema === null){
+    throw new SchemaError('Expected `schema` to be an object or boolean');
+  }
+  if (!options) {
+    options = {};
+  }
+  // This section indexes subschemas in the provided schema, so they don't need to be added with Validator#addSchema
+  // This will work so long as the function at uri.resolve() will resolve a relative URI to a relative URI
+  var id = schema.$id || schema.id;
+  var base = urilib.resolve(options.base||anonymousBase, id||'');
+  if(!ctx){
+    ctx = new SchemaContext(schema, options, [], base, Object.create(this.schemas));
+    if (!ctx.schemas[base]) {
+      ctx.schemas[base] = schema;
+    }
+    var found = scanSchema(base, schema);
+    for(var n in found.id){
+      var sch = found.id[n];
+      ctx.schemas[n] = sch;
+    }
+  }
+  if(options.required && instance===undefined){
+    var result = new ValidatorResult(instance, schema, options, ctx);
+    result.addError('is required, but is undefined');
+    return result;
+  }
+  var result = this.validateSchema(instance, schema, options, ctx);
+  if (!result) {
+    throw new Error('Result undefined');
+  }else if(options.throwAll && result.errors.length){
+    throw new ValidatorResultError(result);
+  }
+  return result;
+};
+
+/**
+* @param Object schema
+* @return mixed schema uri or false
+*/
+function shouldResolve(schema) {
+  var ref = (typeof schema === 'string') ? schema : schema.$ref;
+  if (typeof ref=='string') return ref;
+  return false;
+}
+
+/**
+ * Validates an instance against the schema (the actual work horse)
+ * @param instance
+ * @param schema
+ * @param options
+ * @param ctx
+ * @private
+ * @return {ValidatorResult}
+ */
+Validator.prototype.validateSchema = function validateSchema (instance, schema, options, ctx) {
+  var result = new ValidatorResult(instance, schema, options, ctx);
+
+  // Support for the true/false schemas
+  if(typeof schema==='boolean') {
+    if(schema===true){
+      // `true` is always valid
+      schema = {};
+    }else if(schema===false){
+      // `false` is always invalid
+      schema = {type: []};
+    }
+  }else if(!schema){
+    // This might be a string
+    throw new Error("schema is undefined");
+  }
+
+  if (schema['extends']) {
+    if (Array.isArray(schema['extends'])) {
+      var schemaobj = {schema: schema, ctx: ctx};
+      schema['extends'].forEach(this.schemaTraverser.bind(this, schemaobj));
+      schema = schemaobj.schema;
+      schemaobj.schema = null;
+      schemaobj.ctx = null;
+      schemaobj = null;
+    } else {
+      schema = helpers.deepMerge(schema, this.superResolve(schema['extends'], ctx));
+    }
+  }
+
+  // If passed a string argument, load that schema URI
+  var switchSchema = shouldResolve(schema);
+  if (switchSchema) {
+    var resolved = this.resolve(schema, switchSchema, ctx);
+    var subctx = new SchemaContext(resolved.subschema, options, ctx.path, resolved.switchSchema, ctx.schemas);
+    return this.validateSchema(instance, resolved.subschema, options, subctx);
+  }
+
+  var skipAttributes = options && options.skipAttributes || [];
+  // Validate each schema attribute against the instance
+  for (var key in schema) {
+    if (!attribute.ignoreProperties[key] && skipAttributes.indexOf(key) < 0) {
+      var validatorErr = null;
+      var validator = this.attributes[key];
+      if (validator) {
+        validatorErr = validator.call(this, instance, schema, options, ctx);
+      } else if (options.allowUnknownAttributes === false) {
+        // This represents an error with the schema itself, not an invalid instance
+        throw new SchemaError("Unsupported attribute: " + key, schema);
+      }
+      if (validatorErr) {
+        result.importErrors(validatorErr);
+      }
+    }
+  }
+
+  if (typeof options.rewrite == 'function') {
+    var value = options.rewrite.call(this, instance, schema, options, ctx);
+    result.instance = value;
+  }
+  return result;
+};
+
+/**
+* @private
+* @param Object schema
+* @param SchemaContext ctx
+* @returns Object schema or resolved schema
+*/
+Validator.prototype.schemaTraverser = function schemaTraverser (schemaobj, s) {
+  schemaobj.schema = helpers.deepMerge(schemaobj.schema, this.superResolve(s, schemaobj.ctx));
+};
+
+/**
+* @private
+* @param Object schema
+* @param SchemaContext ctx
+* @returns Object schema or resolved schema
+*/
+Validator.prototype.superResolve = function superResolve (schema, ctx) {
+  var ref = shouldResolve(schema);
+  if(ref) {
+    return this.resolve(schema, ref, ctx).subschema;
+  }
+  return schema;
+};
+
+/**
+* @private
+* @param Object schema
+* @param Object switchSchema
+* @param SchemaContext ctx
+* @return Object resolved schemas {subschema:String, switchSchema: String}
+* @throws SchemaError
+*/
+Validator.prototype.resolve = function resolve (schema, switchSchema, ctx) {
+  switchSchema = ctx.resolve(switchSchema);
+  // First see if the schema exists under the provided URI
+  if (ctx.schemas[switchSchema]) {
+    return {subschema: ctx.schemas[switchSchema], switchSchema: switchSchema};
+  }
+  // Else try walking the property pointer
+  var parsed = urilib.parse(switchSchema);
+  var fragment = parsed && parsed.hash;
+  var document = fragment && fragment.length && switchSchema.substr(0, switchSchema.length - fragment.length);
+  if (!document || !ctx.schemas[document]) {
+    throw new SchemaError("no such schema <" + switchSchema + ">", schema);
+  }
+  var subschema = helpers.objectGetPath(ctx.schemas[document], fragment.substr(1));
+  if(subschema===undefined){
+    throw new SchemaError("no such schema " + fragment + " located in <" + document + ">", schema);
+  }
+  return {subschema: subschema, switchSchema: switchSchema};
+};
+
+/**
+ * Tests whether the instance if of a certain type.
+ * @private
+ * @param instance
+ * @param schema
+ * @param options
+ * @param ctx
+ * @param type
+ * @return {boolean}
+ */
+Validator.prototype.testType = function validateType (instance, schema, options, ctx, type) {
+  if(type===undefined){
+    return;
+  }else if(type===null){
+    throw new SchemaError('Unexpected null in "type" keyword');
+  }
+  if (typeof this.types[type] == 'function') {
+    return this.types[type].call(this, instance);
+  }
+  if (type && typeof type == 'object') {
+    var res = this.validateSchema(instance, type, options, ctx);
+    return res === undefined || !(res && res.errors.length);
+  }
+  // Undefined or properties not on the list are acceptable, same as not being defined
+  return true;
+};
+
+var types = Validator.prototype.types = {};
+types.string = function testString (instance) {
+  return typeof instance == 'string';
+};
+types.number = function testNumber (instance) {
+  // isFinite returns false for NaN, Infinity, and -Infinity
+  return typeof instance == 'number' && isFinite(instance);
+};
+types.integer = function testInteger (instance) {
+  return (typeof instance == 'number') && instance % 1 === 0;
+};
+types.boolean = function testBoolean (instance) {
+  return typeof instance == 'boolean';
+};
+types.array = function testArray (instance) {
+  return Array.isArray(instance);
+};
+types['null'] = function testNull (instance) {
+  return instance === null;
+};
+types.date = function testDate (instance) {
+  return instance instanceof Date;
+};
+types.any = function testAny (instance) {
+  return true;
+};
+types.object = function testObject (instance) {
+  // TODO: fix this - see #15
+  return instance && (typeof instance === 'object') && !(Array.isArray(instance)) && !(instance instanceof Date);
+};
+
+module.exports = Validator;
+
+
+/***/ }),
+
+/***/ "./src/Chat/Chat.css":
+/*!***************************!*\
+  !*** ./src/Chat/Chat.css ***!
+  \***************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -1495,7 +3850,87 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"root":"Voice__root--WKyPW","btn":"Voice__btn--BoRm2"});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"root":"Chat__root--T4jmb","items":"Chat__items--JmLg1","from":"Chat__from--B7Z3L","to":"Chat__to--_2Oeq","body":"Chat__body--KRDjC","user":"Chat__user--F5ouB","online":"Chat__online--LBTue","userName":"Chat__userName--EsvLz"});
+
+/***/ }),
+
+/***/ "./src/Chat/Top.css":
+/*!**************************!*\
+  !*** ./src/Chat/Top.css ***!
+  \**************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"root":"Top__root--D29nM","head":"Top__head--XYR4I","title":"Top__title--Yloh5","desc":"Top__desc--IzcOf","btn":"Top__btn--bQPAI"});
+
+/***/ }),
+
+/***/ "./src/Chats/Chats.css":
+/*!*****************************!*\
+  !*** ./src/Chats/Chats.css ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"root":"Chats__root--wK8xo","header":"Chats__header--Ul_Oq","item":"Chats__item--WNSc5","itemActive":"Chats__itemActive--loTSo","body":"Chats__body--uaNAX","title":"Chats__title--gp3fV"});
+
+/***/ }),
+
+/***/ "./src/Input/Input.css":
+/*!*****************************!*\
+  !*** ./src/Input/Input.css ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"root":"Input__root--Mwju6","input":"Input__input--xnFSH"});
+
+/***/ }),
+
+/***/ "./src/Settings/Settings.css":
+/*!***********************************!*\
+  !*** ./src/Settings/Settings.css ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"root":"Settings__root--3ZipV","header":"Settings__header--c8z_L","title":"Settings__title--XHFAJ","options":"Settings__options--bKmOL","sqrt":"Settings__sqrt--FXxPL","sqrtSelect":"Settings__sqrtSelect--SgBtf","message":"Settings__message--jgQy4"});
+
+/***/ }),
+
+/***/ "./src/Voice/Voice.css":
+/*!*****************************!*\
+  !*** ./src/Voice/Voice.css ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"root":"Voice__root--JWnSp","btn":"Voice__btn--TEgpS"});
 
 /***/ }),
 
@@ -1511,7 +3946,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"voice":"index__voice--rGLl5","root":"index__root--eFmu9","title":"index__title--rssuT","input":"index__input--HWMVn","messages":"index__messages--o3srd","message":"index__message--IeNdX","messageFrom":"index__messageFrom--g9n7N","messageTo":"index__messageTo--iNdsW","messageBody":"index__messageBody--B9HQo index__message--IeNdX"});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"voice":"index__voice--rGLl5","root":"index__root--eFmu9","head":"index__head--quwVJ","title":"index__title--rssuT","current":"index__current--HH2CA","hidden":"index__hidden--de0wY","btn":"index__btn--P8FH7","btnSel":"index__btnSel--c1dqq"});
 
 /***/ }),
 
@@ -1612,6 +4047,187 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 	return to;
 };
+
+
+/***/ }),
+
+/***/ "./node_modules/querystring/decode.js":
+/*!********************************************!*\
+  !*** ./node_modules/querystring/decode.js ***!
+  \********************************************/
+/***/ ((module) => {
+
+"use strict";
+// Copyright Joyent, Inc. and other Node contributors.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the
+// "Software"), to deal in the Software without restriction, including
+// without limitation the rights to use, copy, modify, merge, publish,
+// distribute, sublicense, and/or sell copies of the Software, and to permit
+// persons to whom the Software is furnished to do so, subject to the
+// following conditions:
+//
+// The above copyright notice and this permission notice shall be included
+// in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+// USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+
+// If obj.hasOwnProperty has been overridden, then calling
+// obj.hasOwnProperty(prop) will break.
+// See: https://github.com/joyent/node/issues/1707
+function hasOwnProperty(obj, prop) {
+  return Object.prototype.hasOwnProperty.call(obj, prop);
+}
+
+module.exports = function(qs, sep, eq, options) {
+  sep = sep || '&';
+  eq = eq || '=';
+  var obj = {};
+
+  if (typeof qs !== 'string' || qs.length === 0) {
+    return obj;
+  }
+
+  var regexp = /\+/g;
+  qs = qs.split(sep);
+
+  var maxKeys = 1000;
+  if (options && typeof options.maxKeys === 'number') {
+    maxKeys = options.maxKeys;
+  }
+
+  var len = qs.length;
+  // maxKeys <= 0 means that we should not limit keys count
+  if (maxKeys > 0 && len > maxKeys) {
+    len = maxKeys;
+  }
+
+  for (var i = 0; i < len; ++i) {
+    var x = qs[i].replace(regexp, '%20'),
+        idx = x.indexOf(eq),
+        kstr, vstr, k, v;
+
+    if (idx >= 0) {
+      kstr = x.substr(0, idx);
+      vstr = x.substr(idx + 1);
+    } else {
+      kstr = x;
+      vstr = '';
+    }
+
+    k = decodeURIComponent(kstr);
+    v = decodeURIComponent(vstr);
+
+    if (!hasOwnProperty(obj, k)) {
+      obj[k] = v;
+    } else if (Array.isArray(obj[k])) {
+      obj[k].push(v);
+    } else {
+      obj[k] = [obj[k], v];
+    }
+  }
+
+  return obj;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/querystring/encode.js":
+/*!********************************************!*\
+  !*** ./node_modules/querystring/encode.js ***!
+  \********************************************/
+/***/ ((module) => {
+
+"use strict";
+// Copyright Joyent, Inc. and other Node contributors.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the
+// "Software"), to deal in the Software without restriction, including
+// without limitation the rights to use, copy, modify, merge, publish,
+// distribute, sublicense, and/or sell copies of the Software, and to permit
+// persons to whom the Software is furnished to do so, subject to the
+// following conditions:
+//
+// The above copyright notice and this permission notice shall be included
+// in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+// USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+
+var stringifyPrimitive = function(v) {
+  switch (typeof v) {
+    case 'string':
+      return v;
+
+    case 'boolean':
+      return v ? 'true' : 'false';
+
+    case 'number':
+      return isFinite(v) ? v : '';
+
+    default:
+      return '';
+  }
+};
+
+module.exports = function(obj, sep, eq, name) {
+  sep = sep || '&';
+  eq = eq || '=';
+  if (obj === null) {
+    obj = undefined;
+  }
+
+  if (typeof obj === 'object') {
+    return Object.keys(obj).map(function(k) {
+      var ks = encodeURIComponent(stringifyPrimitive(k)) + eq;
+      if (Array.isArray(obj[k])) {
+        return obj[k].map(function(v) {
+          return ks + encodeURIComponent(stringifyPrimitive(v));
+        }).join(sep);
+      } else {
+        return ks + encodeURIComponent(stringifyPrimitive(obj[k]));
+      }
+    }).join(sep);
+
+  }
+
+  if (!name) return '';
+  return encodeURIComponent(stringifyPrimitive(name)) + eq +
+         encodeURIComponent(stringifyPrimitive(obj));
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/querystring/index.js":
+/*!*******************************************!*\
+  !*** ./node_modules/querystring/index.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+exports.decode = exports.parse = __webpack_require__(/*! ./decode */ "./node_modules/querystring/decode.js");
+exports.encode = exports.stringify = __webpack_require__(/*! ./encode */ "./node_modules/querystring/encode.js");
 
 
 /***/ }),
@@ -32775,6 +35391,1306 @@ if (false) {} else {
 
 /***/ }),
 
+/***/ "./node_modules/url/node_modules/punycode/punycode.js":
+/*!************************************************************!*\
+  !*** ./node_modules/url/node_modules/punycode/punycode.js ***!
+  \************************************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+/* module decorator */ module = __webpack_require__.nmd(module);
+var __WEBPACK_AMD_DEFINE_RESULT__;/*! https://mths.be/punycode v1.3.2 by @mathias */
+;(function(root) {
+
+	/** Detect free variables */
+	var freeExports =  true && exports &&
+		!exports.nodeType && exports;
+	var freeModule =  true && module &&
+		!module.nodeType && module;
+	var freeGlobal = typeof __webpack_require__.g == 'object' && __webpack_require__.g;
+	if (
+		freeGlobal.global === freeGlobal ||
+		freeGlobal.window === freeGlobal ||
+		freeGlobal.self === freeGlobal
+	) {
+		root = freeGlobal;
+	}
+
+	/**
+	 * The `punycode` object.
+	 * @name punycode
+	 * @type Object
+	 */
+	var punycode,
+
+	/** Highest positive signed 32-bit float value */
+	maxInt = 2147483647, // aka. 0x7FFFFFFF or 2^31-1
+
+	/** Bootstring parameters */
+	base = 36,
+	tMin = 1,
+	tMax = 26,
+	skew = 38,
+	damp = 700,
+	initialBias = 72,
+	initialN = 128, // 0x80
+	delimiter = '-', // '\x2D'
+
+	/** Regular expressions */
+	regexPunycode = /^xn--/,
+	regexNonASCII = /[^\x20-\x7E]/, // unprintable ASCII chars + non-ASCII chars
+	regexSeparators = /[\x2E\u3002\uFF0E\uFF61]/g, // RFC 3490 separators
+
+	/** Error messages */
+	errors = {
+		'overflow': 'Overflow: input needs wider integers to process',
+		'not-basic': 'Illegal input >= 0x80 (not a basic code point)',
+		'invalid-input': 'Invalid input'
+	},
+
+	/** Convenience shortcuts */
+	baseMinusTMin = base - tMin,
+	floor = Math.floor,
+	stringFromCharCode = String.fromCharCode,
+
+	/** Temporary variable */
+	key;
+
+	/*--------------------------------------------------------------------------*/
+
+	/**
+	 * A generic error utility function.
+	 * @private
+	 * @param {String} type The error type.
+	 * @returns {Error} Throws a `RangeError` with the applicable error message.
+	 */
+	function error(type) {
+		throw RangeError(errors[type]);
+	}
+
+	/**
+	 * A generic `Array#map` utility function.
+	 * @private
+	 * @param {Array} array The array to iterate over.
+	 * @param {Function} callback The function that gets called for every array
+	 * item.
+	 * @returns {Array} A new array of values returned by the callback function.
+	 */
+	function map(array, fn) {
+		var length = array.length;
+		var result = [];
+		while (length--) {
+			result[length] = fn(array[length]);
+		}
+		return result;
+	}
+
+	/**
+	 * A simple `Array#map`-like wrapper to work with domain name strings or email
+	 * addresses.
+	 * @private
+	 * @param {String} domain The domain name or email address.
+	 * @param {Function} callback The function that gets called for every
+	 * character.
+	 * @returns {Array} A new string of characters returned by the callback
+	 * function.
+	 */
+	function mapDomain(string, fn) {
+		var parts = string.split('@');
+		var result = '';
+		if (parts.length > 1) {
+			// In email addresses, only the domain name should be punycoded. Leave
+			// the local part (i.e. everything up to `@`) intact.
+			result = parts[0] + '@';
+			string = parts[1];
+		}
+		// Avoid `split(regex)` for IE8 compatibility. See #17.
+		string = string.replace(regexSeparators, '\x2E');
+		var labels = string.split('.');
+		var encoded = map(labels, fn).join('.');
+		return result + encoded;
+	}
+
+	/**
+	 * Creates an array containing the numeric code points of each Unicode
+	 * character in the string. While JavaScript uses UCS-2 internally,
+	 * this function will convert a pair of surrogate halves (each of which
+	 * UCS-2 exposes as separate characters) into a single code point,
+	 * matching UTF-16.
+	 * @see `punycode.ucs2.encode`
+	 * @see <https://mathiasbynens.be/notes/javascript-encoding>
+	 * @memberOf punycode.ucs2
+	 * @name decode
+	 * @param {String} string The Unicode input string (UCS-2).
+	 * @returns {Array} The new array of code points.
+	 */
+	function ucs2decode(string) {
+		var output = [],
+		    counter = 0,
+		    length = string.length,
+		    value,
+		    extra;
+		while (counter < length) {
+			value = string.charCodeAt(counter++);
+			if (value >= 0xD800 && value <= 0xDBFF && counter < length) {
+				// high surrogate, and there is a next character
+				extra = string.charCodeAt(counter++);
+				if ((extra & 0xFC00) == 0xDC00) { // low surrogate
+					output.push(((value & 0x3FF) << 10) + (extra & 0x3FF) + 0x10000);
+				} else {
+					// unmatched surrogate; only append this code unit, in case the next
+					// code unit is the high surrogate of a surrogate pair
+					output.push(value);
+					counter--;
+				}
+			} else {
+				output.push(value);
+			}
+		}
+		return output;
+	}
+
+	/**
+	 * Creates a string based on an array of numeric code points.
+	 * @see `punycode.ucs2.decode`
+	 * @memberOf punycode.ucs2
+	 * @name encode
+	 * @param {Array} codePoints The array of numeric code points.
+	 * @returns {String} The new Unicode string (UCS-2).
+	 */
+	function ucs2encode(array) {
+		return map(array, function(value) {
+			var output = '';
+			if (value > 0xFFFF) {
+				value -= 0x10000;
+				output += stringFromCharCode(value >>> 10 & 0x3FF | 0xD800);
+				value = 0xDC00 | value & 0x3FF;
+			}
+			output += stringFromCharCode(value);
+			return output;
+		}).join('');
+	}
+
+	/**
+	 * Converts a basic code point into a digit/integer.
+	 * @see `digitToBasic()`
+	 * @private
+	 * @param {Number} codePoint The basic numeric code point value.
+	 * @returns {Number} The numeric value of a basic code point (for use in
+	 * representing integers) in the range `0` to `base - 1`, or `base` if
+	 * the code point does not represent a value.
+	 */
+	function basicToDigit(codePoint) {
+		if (codePoint - 48 < 10) {
+			return codePoint - 22;
+		}
+		if (codePoint - 65 < 26) {
+			return codePoint - 65;
+		}
+		if (codePoint - 97 < 26) {
+			return codePoint - 97;
+		}
+		return base;
+	}
+
+	/**
+	 * Converts a digit/integer into a basic code point.
+	 * @see `basicToDigit()`
+	 * @private
+	 * @param {Number} digit The numeric value of a basic code point.
+	 * @returns {Number} The basic code point whose value (when used for
+	 * representing integers) is `digit`, which needs to be in the range
+	 * `0` to `base - 1`. If `flag` is non-zero, the uppercase form is
+	 * used; else, the lowercase form is used. The behavior is undefined
+	 * if `flag` is non-zero and `digit` has no uppercase form.
+	 */
+	function digitToBasic(digit, flag) {
+		//  0..25 map to ASCII a..z or A..Z
+		// 26..35 map to ASCII 0..9
+		return digit + 22 + 75 * (digit < 26) - ((flag != 0) << 5);
+	}
+
+	/**
+	 * Bias adaptation function as per section 3.4 of RFC 3492.
+	 * http://tools.ietf.org/html/rfc3492#section-3.4
+	 * @private
+	 */
+	function adapt(delta, numPoints, firstTime) {
+		var k = 0;
+		delta = firstTime ? floor(delta / damp) : delta >> 1;
+		delta += floor(delta / numPoints);
+		for (/* no initialization */; delta > baseMinusTMin * tMax >> 1; k += base) {
+			delta = floor(delta / baseMinusTMin);
+		}
+		return floor(k + (baseMinusTMin + 1) * delta / (delta + skew));
+	}
+
+	/**
+	 * Converts a Punycode string of ASCII-only symbols to a string of Unicode
+	 * symbols.
+	 * @memberOf punycode
+	 * @param {String} input The Punycode string of ASCII-only symbols.
+	 * @returns {String} The resulting string of Unicode symbols.
+	 */
+	function decode(input) {
+		// Don't use UCS-2
+		var output = [],
+		    inputLength = input.length,
+		    out,
+		    i = 0,
+		    n = initialN,
+		    bias = initialBias,
+		    basic,
+		    j,
+		    index,
+		    oldi,
+		    w,
+		    k,
+		    digit,
+		    t,
+		    /** Cached calculation results */
+		    baseMinusT;
+
+		// Handle the basic code points: let `basic` be the number of input code
+		// points before the last delimiter, or `0` if there is none, then copy
+		// the first basic code points to the output.
+
+		basic = input.lastIndexOf(delimiter);
+		if (basic < 0) {
+			basic = 0;
+		}
+
+		for (j = 0; j < basic; ++j) {
+			// if it's not a basic code point
+			if (input.charCodeAt(j) >= 0x80) {
+				error('not-basic');
+			}
+			output.push(input.charCodeAt(j));
+		}
+
+		// Main decoding loop: start just after the last delimiter if any basic code
+		// points were copied; start at the beginning otherwise.
+
+		for (index = basic > 0 ? basic + 1 : 0; index < inputLength; /* no final expression */) {
+
+			// `index` is the index of the next character to be consumed.
+			// Decode a generalized variable-length integer into `delta`,
+			// which gets added to `i`. The overflow checking is easier
+			// if we increase `i` as we go, then subtract off its starting
+			// value at the end to obtain `delta`.
+			for (oldi = i, w = 1, k = base; /* no condition */; k += base) {
+
+				if (index >= inputLength) {
+					error('invalid-input');
+				}
+
+				digit = basicToDigit(input.charCodeAt(index++));
+
+				if (digit >= base || digit > floor((maxInt - i) / w)) {
+					error('overflow');
+				}
+
+				i += digit * w;
+				t = k <= bias ? tMin : (k >= bias + tMax ? tMax : k - bias);
+
+				if (digit < t) {
+					break;
+				}
+
+				baseMinusT = base - t;
+				if (w > floor(maxInt / baseMinusT)) {
+					error('overflow');
+				}
+
+				w *= baseMinusT;
+
+			}
+
+			out = output.length + 1;
+			bias = adapt(i - oldi, out, oldi == 0);
+
+			// `i` was supposed to wrap around from `out` to `0`,
+			// incrementing `n` each time, so we'll fix that now:
+			if (floor(i / out) > maxInt - n) {
+				error('overflow');
+			}
+
+			n += floor(i / out);
+			i %= out;
+
+			// Insert `n` at position `i` of the output
+			output.splice(i++, 0, n);
+
+		}
+
+		return ucs2encode(output);
+	}
+
+	/**
+	 * Converts a string of Unicode symbols (e.g. a domain name label) to a
+	 * Punycode string of ASCII-only symbols.
+	 * @memberOf punycode
+	 * @param {String} input The string of Unicode symbols.
+	 * @returns {String} The resulting Punycode string of ASCII-only symbols.
+	 */
+	function encode(input) {
+		var n,
+		    delta,
+		    handledCPCount,
+		    basicLength,
+		    bias,
+		    j,
+		    m,
+		    q,
+		    k,
+		    t,
+		    currentValue,
+		    output = [],
+		    /** `inputLength` will hold the number of code points in `input`. */
+		    inputLength,
+		    /** Cached calculation results */
+		    handledCPCountPlusOne,
+		    baseMinusT,
+		    qMinusT;
+
+		// Convert the input in UCS-2 to Unicode
+		input = ucs2decode(input);
+
+		// Cache the length
+		inputLength = input.length;
+
+		// Initialize the state
+		n = initialN;
+		delta = 0;
+		bias = initialBias;
+
+		// Handle the basic code points
+		for (j = 0; j < inputLength; ++j) {
+			currentValue = input[j];
+			if (currentValue < 0x80) {
+				output.push(stringFromCharCode(currentValue));
+			}
+		}
+
+		handledCPCount = basicLength = output.length;
+
+		// `handledCPCount` is the number of code points that have been handled;
+		// `basicLength` is the number of basic code points.
+
+		// Finish the basic string - if it is not empty - with a delimiter
+		if (basicLength) {
+			output.push(delimiter);
+		}
+
+		// Main encoding loop:
+		while (handledCPCount < inputLength) {
+
+			// All non-basic code points < n have been handled already. Find the next
+			// larger one:
+			for (m = maxInt, j = 0; j < inputLength; ++j) {
+				currentValue = input[j];
+				if (currentValue >= n && currentValue < m) {
+					m = currentValue;
+				}
+			}
+
+			// Increase `delta` enough to advance the decoder's <n,i> state to <m,0>,
+			// but guard against overflow
+			handledCPCountPlusOne = handledCPCount + 1;
+			if (m - n > floor((maxInt - delta) / handledCPCountPlusOne)) {
+				error('overflow');
+			}
+
+			delta += (m - n) * handledCPCountPlusOne;
+			n = m;
+
+			for (j = 0; j < inputLength; ++j) {
+				currentValue = input[j];
+
+				if (currentValue < n && ++delta > maxInt) {
+					error('overflow');
+				}
+
+				if (currentValue == n) {
+					// Represent delta as a generalized variable-length integer
+					for (q = delta, k = base; /* no condition */; k += base) {
+						t = k <= bias ? tMin : (k >= bias + tMax ? tMax : k - bias);
+						if (q < t) {
+							break;
+						}
+						qMinusT = q - t;
+						baseMinusT = base - t;
+						output.push(
+							stringFromCharCode(digitToBasic(t + qMinusT % baseMinusT, 0))
+						);
+						q = floor(qMinusT / baseMinusT);
+					}
+
+					output.push(stringFromCharCode(digitToBasic(q, 0)));
+					bias = adapt(delta, handledCPCountPlusOne, handledCPCount == basicLength);
+					delta = 0;
+					++handledCPCount;
+				}
+			}
+
+			++delta;
+			++n;
+
+		}
+		return output.join('');
+	}
+
+	/**
+	 * Converts a Punycode string representing a domain name or an email address
+	 * to Unicode. Only the Punycoded parts of the input will be converted, i.e.
+	 * it doesn't matter if you call it on a string that has already been
+	 * converted to Unicode.
+	 * @memberOf punycode
+	 * @param {String} input The Punycoded domain name or email address to
+	 * convert to Unicode.
+	 * @returns {String} The Unicode representation of the given Punycode
+	 * string.
+	 */
+	function toUnicode(input) {
+		return mapDomain(input, function(string) {
+			return regexPunycode.test(string)
+				? decode(string.slice(4).toLowerCase())
+				: string;
+		});
+	}
+
+	/**
+	 * Converts a Unicode string representing a domain name or an email address to
+	 * Punycode. Only the non-ASCII parts of the domain name will be converted,
+	 * i.e. it doesn't matter if you call it with a domain that's already in
+	 * ASCII.
+	 * @memberOf punycode
+	 * @param {String} input The domain name or email address to convert, as a
+	 * Unicode string.
+	 * @returns {String} The Punycode representation of the given domain name or
+	 * email address.
+	 */
+	function toASCII(input) {
+		return mapDomain(input, function(string) {
+			return regexNonASCII.test(string)
+				? 'xn--' + encode(string)
+				: string;
+		});
+	}
+
+	/*--------------------------------------------------------------------------*/
+
+	/** Define the public API */
+	punycode = {
+		/**
+		 * A string representing the current Punycode.js version number.
+		 * @memberOf punycode
+		 * @type String
+		 */
+		'version': '1.3.2',
+		/**
+		 * An object of methods to convert from JavaScript's internal character
+		 * representation (UCS-2) to Unicode code points, and back.
+		 * @see <https://mathiasbynens.be/notes/javascript-encoding>
+		 * @memberOf punycode
+		 * @type Object
+		 */
+		'ucs2': {
+			'decode': ucs2decode,
+			'encode': ucs2encode
+		},
+		'decode': decode,
+		'encode': encode,
+		'toASCII': toASCII,
+		'toUnicode': toUnicode
+	};
+
+	/** Expose `punycode` */
+	// Some AMD build optimizers, like r.js, check for specific condition patterns
+	// like the following:
+	if (
+		true
+	) {
+		!(__WEBPACK_AMD_DEFINE_RESULT__ = (function() {
+			return punycode;
+		}).call(exports, __webpack_require__, exports, module),
+		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	} else {}
+
+}(this));
+
+
+/***/ }),
+
+/***/ "./node_modules/url/url.js":
+/*!*********************************!*\
+  !*** ./node_modules/url/url.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+// Copyright Joyent, Inc. and other Node contributors.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the
+// "Software"), to deal in the Software without restriction, including
+// without limitation the rights to use, copy, modify, merge, publish,
+// distribute, sublicense, and/or sell copies of the Software, and to permit
+// persons to whom the Software is furnished to do so, subject to the
+// following conditions:
+//
+// The above copyright notice and this permission notice shall be included
+// in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+// USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+
+var punycode = __webpack_require__(/*! punycode */ "./node_modules/url/node_modules/punycode/punycode.js");
+var util = __webpack_require__(/*! ./util */ "./node_modules/url/util.js");
+
+exports.parse = urlParse;
+exports.resolve = urlResolve;
+exports.resolveObject = urlResolveObject;
+exports.format = urlFormat;
+
+exports.Url = Url;
+
+function Url() {
+  this.protocol = null;
+  this.slashes = null;
+  this.auth = null;
+  this.host = null;
+  this.port = null;
+  this.hostname = null;
+  this.hash = null;
+  this.search = null;
+  this.query = null;
+  this.pathname = null;
+  this.path = null;
+  this.href = null;
+}
+
+// Reference: RFC 3986, RFC 1808, RFC 2396
+
+// define these here so at least they only have to be
+// compiled once on the first module load.
+var protocolPattern = /^([a-z0-9.+-]+:)/i,
+    portPattern = /:[0-9]*$/,
+
+    // Special case for a simple path URL
+    simplePathPattern = /^(\/\/?(?!\/)[^\?\s]*)(\?[^\s]*)?$/,
+
+    // RFC 2396: characters reserved for delimiting URLs.
+    // We actually just auto-escape these.
+    delims = ['<', '>', '"', '`', ' ', '\r', '\n', '\t'],
+
+    // RFC 2396: characters not allowed for various reasons.
+    unwise = ['{', '}', '|', '\\', '^', '`'].concat(delims),
+
+    // Allowed by RFCs, but cause of XSS attacks.  Always escape these.
+    autoEscape = ['\''].concat(unwise),
+    // Characters that are never ever allowed in a hostname.
+    // Note that any invalid chars are also handled, but these
+    // are the ones that are *expected* to be seen, so we fast-path
+    // them.
+    nonHostChars = ['%', '/', '?', ';', '#'].concat(autoEscape),
+    hostEndingChars = ['/', '?', '#'],
+    hostnameMaxLen = 255,
+    hostnamePartPattern = /^[+a-z0-9A-Z_-]{0,63}$/,
+    hostnamePartStart = /^([+a-z0-9A-Z_-]{0,63})(.*)$/,
+    // protocols that can allow "unsafe" and "unwise" chars.
+    unsafeProtocol = {
+      'javascript': true,
+      'javascript:': true
+    },
+    // protocols that never have a hostname.
+    hostlessProtocol = {
+      'javascript': true,
+      'javascript:': true
+    },
+    // protocols that always contain a // bit.
+    slashedProtocol = {
+      'http': true,
+      'https': true,
+      'ftp': true,
+      'gopher': true,
+      'file': true,
+      'http:': true,
+      'https:': true,
+      'ftp:': true,
+      'gopher:': true,
+      'file:': true
+    },
+    querystring = __webpack_require__(/*! querystring */ "./node_modules/querystring/index.js");
+
+function urlParse(url, parseQueryString, slashesDenoteHost) {
+  if (url && util.isObject(url) && url instanceof Url) return url;
+
+  var u = new Url;
+  u.parse(url, parseQueryString, slashesDenoteHost);
+  return u;
+}
+
+Url.prototype.parse = function(url, parseQueryString, slashesDenoteHost) {
+  if (!util.isString(url)) {
+    throw new TypeError("Parameter 'url' must be a string, not " + typeof url);
+  }
+
+  // Copy chrome, IE, opera backslash-handling behavior.
+  // Back slashes before the query string get converted to forward slashes
+  // See: https://code.google.com/p/chromium/issues/detail?id=25916
+  var queryIndex = url.indexOf('?'),
+      splitter =
+          (queryIndex !== -1 && queryIndex < url.indexOf('#')) ? '?' : '#',
+      uSplit = url.split(splitter),
+      slashRegex = /\\/g;
+  uSplit[0] = uSplit[0].replace(slashRegex, '/');
+  url = uSplit.join(splitter);
+
+  var rest = url;
+
+  // trim before proceeding.
+  // This is to support parse stuff like "  http://foo.com  \n"
+  rest = rest.trim();
+
+  if (!slashesDenoteHost && url.split('#').length === 1) {
+    // Try fast path regexp
+    var simplePath = simplePathPattern.exec(rest);
+    if (simplePath) {
+      this.path = rest;
+      this.href = rest;
+      this.pathname = simplePath[1];
+      if (simplePath[2]) {
+        this.search = simplePath[2];
+        if (parseQueryString) {
+          this.query = querystring.parse(this.search.substr(1));
+        } else {
+          this.query = this.search.substr(1);
+        }
+      } else if (parseQueryString) {
+        this.search = '';
+        this.query = {};
+      }
+      return this;
+    }
+  }
+
+  var proto = protocolPattern.exec(rest);
+  if (proto) {
+    proto = proto[0];
+    var lowerProto = proto.toLowerCase();
+    this.protocol = lowerProto;
+    rest = rest.substr(proto.length);
+  }
+
+  // figure out if it's got a host
+  // user@server is *always* interpreted as a hostname, and url
+  // resolution will treat //foo/bar as host=foo,path=bar because that's
+  // how the browser resolves relative URLs.
+  if (slashesDenoteHost || proto || rest.match(/^\/\/[^@\/]+@[^@\/]+/)) {
+    var slashes = rest.substr(0, 2) === '//';
+    if (slashes && !(proto && hostlessProtocol[proto])) {
+      rest = rest.substr(2);
+      this.slashes = true;
+    }
+  }
+
+  if (!hostlessProtocol[proto] &&
+      (slashes || (proto && !slashedProtocol[proto]))) {
+
+    // there's a hostname.
+    // the first instance of /, ?, ;, or # ends the host.
+    //
+    // If there is an @ in the hostname, then non-host chars *are* allowed
+    // to the left of the last @ sign, unless some host-ending character
+    // comes *before* the @-sign.
+    // URLs are obnoxious.
+    //
+    // ex:
+    // http://a@b@c/ => user:a@b host:c
+    // http://a@b?@c => user:a host:c path:/?@c
+
+    // v0.12 TODO(isaacs): This is not quite how Chrome does things.
+    // Review our test case against browsers more comprehensively.
+
+    // find the first instance of any hostEndingChars
+    var hostEnd = -1;
+    for (var i = 0; i < hostEndingChars.length; i++) {
+      var hec = rest.indexOf(hostEndingChars[i]);
+      if (hec !== -1 && (hostEnd === -1 || hec < hostEnd))
+        hostEnd = hec;
+    }
+
+    // at this point, either we have an explicit point where the
+    // auth portion cannot go past, or the last @ char is the decider.
+    var auth, atSign;
+    if (hostEnd === -1) {
+      // atSign can be anywhere.
+      atSign = rest.lastIndexOf('@');
+    } else {
+      // atSign must be in auth portion.
+      // http://a@b/c@d => host:b auth:a path:/c@d
+      atSign = rest.lastIndexOf('@', hostEnd);
+    }
+
+    // Now we have a portion which is definitely the auth.
+    // Pull that off.
+    if (atSign !== -1) {
+      auth = rest.slice(0, atSign);
+      rest = rest.slice(atSign + 1);
+      this.auth = decodeURIComponent(auth);
+    }
+
+    // the host is the remaining to the left of the first non-host char
+    hostEnd = -1;
+    for (var i = 0; i < nonHostChars.length; i++) {
+      var hec = rest.indexOf(nonHostChars[i]);
+      if (hec !== -1 && (hostEnd === -1 || hec < hostEnd))
+        hostEnd = hec;
+    }
+    // if we still have not hit it, then the entire thing is a host.
+    if (hostEnd === -1)
+      hostEnd = rest.length;
+
+    this.host = rest.slice(0, hostEnd);
+    rest = rest.slice(hostEnd);
+
+    // pull out port.
+    this.parseHost();
+
+    // we've indicated that there is a hostname,
+    // so even if it's empty, it has to be present.
+    this.hostname = this.hostname || '';
+
+    // if hostname begins with [ and ends with ]
+    // assume that it's an IPv6 address.
+    var ipv6Hostname = this.hostname[0] === '[' &&
+        this.hostname[this.hostname.length - 1] === ']';
+
+    // validate a little.
+    if (!ipv6Hostname) {
+      var hostparts = this.hostname.split(/\./);
+      for (var i = 0, l = hostparts.length; i < l; i++) {
+        var part = hostparts[i];
+        if (!part) continue;
+        if (!part.match(hostnamePartPattern)) {
+          var newpart = '';
+          for (var j = 0, k = part.length; j < k; j++) {
+            if (part.charCodeAt(j) > 127) {
+              // we replace non-ASCII char with a temporary placeholder
+              // we need this to make sure size of hostname is not
+              // broken by replacing non-ASCII by nothing
+              newpart += 'x';
+            } else {
+              newpart += part[j];
+            }
+          }
+          // we test again with ASCII char only
+          if (!newpart.match(hostnamePartPattern)) {
+            var validParts = hostparts.slice(0, i);
+            var notHost = hostparts.slice(i + 1);
+            var bit = part.match(hostnamePartStart);
+            if (bit) {
+              validParts.push(bit[1]);
+              notHost.unshift(bit[2]);
+            }
+            if (notHost.length) {
+              rest = '/' + notHost.join('.') + rest;
+            }
+            this.hostname = validParts.join('.');
+            break;
+          }
+        }
+      }
+    }
+
+    if (this.hostname.length > hostnameMaxLen) {
+      this.hostname = '';
+    } else {
+      // hostnames are always lower case.
+      this.hostname = this.hostname.toLowerCase();
+    }
+
+    if (!ipv6Hostname) {
+      // IDNA Support: Returns a punycoded representation of "domain".
+      // It only converts parts of the domain name that
+      // have non-ASCII characters, i.e. it doesn't matter if
+      // you call it with a domain that already is ASCII-only.
+      this.hostname = punycode.toASCII(this.hostname);
+    }
+
+    var p = this.port ? ':' + this.port : '';
+    var h = this.hostname || '';
+    this.host = h + p;
+    this.href += this.host;
+
+    // strip [ and ] from the hostname
+    // the host field still retains them, though
+    if (ipv6Hostname) {
+      this.hostname = this.hostname.substr(1, this.hostname.length - 2);
+      if (rest[0] !== '/') {
+        rest = '/' + rest;
+      }
+    }
+  }
+
+  // now rest is set to the post-host stuff.
+  // chop off any delim chars.
+  if (!unsafeProtocol[lowerProto]) {
+
+    // First, make 100% sure that any "autoEscape" chars get
+    // escaped, even if encodeURIComponent doesn't think they
+    // need to be.
+    for (var i = 0, l = autoEscape.length; i < l; i++) {
+      var ae = autoEscape[i];
+      if (rest.indexOf(ae) === -1)
+        continue;
+      var esc = encodeURIComponent(ae);
+      if (esc === ae) {
+        esc = escape(ae);
+      }
+      rest = rest.split(ae).join(esc);
+    }
+  }
+
+
+  // chop off from the tail first.
+  var hash = rest.indexOf('#');
+  if (hash !== -1) {
+    // got a fragment string.
+    this.hash = rest.substr(hash);
+    rest = rest.slice(0, hash);
+  }
+  var qm = rest.indexOf('?');
+  if (qm !== -1) {
+    this.search = rest.substr(qm);
+    this.query = rest.substr(qm + 1);
+    if (parseQueryString) {
+      this.query = querystring.parse(this.query);
+    }
+    rest = rest.slice(0, qm);
+  } else if (parseQueryString) {
+    // no query string, but parseQueryString still requested
+    this.search = '';
+    this.query = {};
+  }
+  if (rest) this.pathname = rest;
+  if (slashedProtocol[lowerProto] &&
+      this.hostname && !this.pathname) {
+    this.pathname = '/';
+  }
+
+  //to support http.request
+  if (this.pathname || this.search) {
+    var p = this.pathname || '';
+    var s = this.search || '';
+    this.path = p + s;
+  }
+
+  // finally, reconstruct the href based on what has been validated.
+  this.href = this.format();
+  return this;
+};
+
+// format a parsed object into a url string
+function urlFormat(obj) {
+  // ensure it's an object, and not a string url.
+  // If it's an obj, this is a no-op.
+  // this way, you can call url_format() on strings
+  // to clean up potentially wonky urls.
+  if (util.isString(obj)) obj = urlParse(obj);
+  if (!(obj instanceof Url)) return Url.prototype.format.call(obj);
+  return obj.format();
+}
+
+Url.prototype.format = function() {
+  var auth = this.auth || '';
+  if (auth) {
+    auth = encodeURIComponent(auth);
+    auth = auth.replace(/%3A/i, ':');
+    auth += '@';
+  }
+
+  var protocol = this.protocol || '',
+      pathname = this.pathname || '',
+      hash = this.hash || '',
+      host = false,
+      query = '';
+
+  if (this.host) {
+    host = auth + this.host;
+  } else if (this.hostname) {
+    host = auth + (this.hostname.indexOf(':') === -1 ?
+        this.hostname :
+        '[' + this.hostname + ']');
+    if (this.port) {
+      host += ':' + this.port;
+    }
+  }
+
+  if (this.query &&
+      util.isObject(this.query) &&
+      Object.keys(this.query).length) {
+    query = querystring.stringify(this.query);
+  }
+
+  var search = this.search || (query && ('?' + query)) || '';
+
+  if (protocol && protocol.substr(-1) !== ':') protocol += ':';
+
+  // only the slashedProtocols get the //.  Not mailto:, xmpp:, etc.
+  // unless they had them to begin with.
+  if (this.slashes ||
+      (!protocol || slashedProtocol[protocol]) && host !== false) {
+    host = '//' + (host || '');
+    if (pathname && pathname.charAt(0) !== '/') pathname = '/' + pathname;
+  } else if (!host) {
+    host = '';
+  }
+
+  if (hash && hash.charAt(0) !== '#') hash = '#' + hash;
+  if (search && search.charAt(0) !== '?') search = '?' + search;
+
+  pathname = pathname.replace(/[?#]/g, function(match) {
+    return encodeURIComponent(match);
+  });
+  search = search.replace('#', '%23');
+
+  return protocol + host + pathname + search + hash;
+};
+
+function urlResolve(source, relative) {
+  return urlParse(source, false, true).resolve(relative);
+}
+
+Url.prototype.resolve = function(relative) {
+  return this.resolveObject(urlParse(relative, false, true)).format();
+};
+
+function urlResolveObject(source, relative) {
+  if (!source) return relative;
+  return urlParse(source, false, true).resolveObject(relative);
+}
+
+Url.prototype.resolveObject = function(relative) {
+  if (util.isString(relative)) {
+    var rel = new Url();
+    rel.parse(relative, false, true);
+    relative = rel;
+  }
+
+  var result = new Url();
+  var tkeys = Object.keys(this);
+  for (var tk = 0; tk < tkeys.length; tk++) {
+    var tkey = tkeys[tk];
+    result[tkey] = this[tkey];
+  }
+
+  // hash is always overridden, no matter what.
+  // even href="" will remove it.
+  result.hash = relative.hash;
+
+  // if the relative url is empty, then there's nothing left to do here.
+  if (relative.href === '') {
+    result.href = result.format();
+    return result;
+  }
+
+  // hrefs like //foo/bar always cut to the protocol.
+  if (relative.slashes && !relative.protocol) {
+    // take everything except the protocol from relative
+    var rkeys = Object.keys(relative);
+    for (var rk = 0; rk < rkeys.length; rk++) {
+      var rkey = rkeys[rk];
+      if (rkey !== 'protocol')
+        result[rkey] = relative[rkey];
+    }
+
+    //urlParse appends trailing / to urls like http://www.example.com
+    if (slashedProtocol[result.protocol] &&
+        result.hostname && !result.pathname) {
+      result.path = result.pathname = '/';
+    }
+
+    result.href = result.format();
+    return result;
+  }
+
+  if (relative.protocol && relative.protocol !== result.protocol) {
+    // if it's a known url protocol, then changing
+    // the protocol does weird things
+    // first, if it's not file:, then we MUST have a host,
+    // and if there was a path
+    // to begin with, then we MUST have a path.
+    // if it is file:, then the host is dropped,
+    // because that's known to be hostless.
+    // anything else is assumed to be absolute.
+    if (!slashedProtocol[relative.protocol]) {
+      var keys = Object.keys(relative);
+      for (var v = 0; v < keys.length; v++) {
+        var k = keys[v];
+        result[k] = relative[k];
+      }
+      result.href = result.format();
+      return result;
+    }
+
+    result.protocol = relative.protocol;
+    if (!relative.host && !hostlessProtocol[relative.protocol]) {
+      var relPath = (relative.pathname || '').split('/');
+      while (relPath.length && !(relative.host = relPath.shift()));
+      if (!relative.host) relative.host = '';
+      if (!relative.hostname) relative.hostname = '';
+      if (relPath[0] !== '') relPath.unshift('');
+      if (relPath.length < 2) relPath.unshift('');
+      result.pathname = relPath.join('/');
+    } else {
+      result.pathname = relative.pathname;
+    }
+    result.search = relative.search;
+    result.query = relative.query;
+    result.host = relative.host || '';
+    result.auth = relative.auth;
+    result.hostname = relative.hostname || relative.host;
+    result.port = relative.port;
+    // to support http.request
+    if (result.pathname || result.search) {
+      var p = result.pathname || '';
+      var s = result.search || '';
+      result.path = p + s;
+    }
+    result.slashes = result.slashes || relative.slashes;
+    result.href = result.format();
+    return result;
+  }
+
+  var isSourceAbs = (result.pathname && result.pathname.charAt(0) === '/'),
+      isRelAbs = (
+          relative.host ||
+          relative.pathname && relative.pathname.charAt(0) === '/'
+      ),
+      mustEndAbs = (isRelAbs || isSourceAbs ||
+                    (result.host && relative.pathname)),
+      removeAllDots = mustEndAbs,
+      srcPath = result.pathname && result.pathname.split('/') || [],
+      relPath = relative.pathname && relative.pathname.split('/') || [],
+      psychotic = result.protocol && !slashedProtocol[result.protocol];
+
+  // if the url is a non-slashed url, then relative
+  // links like ../.. should be able
+  // to crawl up to the hostname, as well.  This is strange.
+  // result.protocol has already been set by now.
+  // Later on, put the first path part into the host field.
+  if (psychotic) {
+    result.hostname = '';
+    result.port = null;
+    if (result.host) {
+      if (srcPath[0] === '') srcPath[0] = result.host;
+      else srcPath.unshift(result.host);
+    }
+    result.host = '';
+    if (relative.protocol) {
+      relative.hostname = null;
+      relative.port = null;
+      if (relative.host) {
+        if (relPath[0] === '') relPath[0] = relative.host;
+        else relPath.unshift(relative.host);
+      }
+      relative.host = null;
+    }
+    mustEndAbs = mustEndAbs && (relPath[0] === '' || srcPath[0] === '');
+  }
+
+  if (isRelAbs) {
+    // it's absolute.
+    result.host = (relative.host || relative.host === '') ?
+                  relative.host : result.host;
+    result.hostname = (relative.hostname || relative.hostname === '') ?
+                      relative.hostname : result.hostname;
+    result.search = relative.search;
+    result.query = relative.query;
+    srcPath = relPath;
+    // fall through to the dot-handling below.
+  } else if (relPath.length) {
+    // it's relative
+    // throw away the existing file, and take the new path instead.
+    if (!srcPath) srcPath = [];
+    srcPath.pop();
+    srcPath = srcPath.concat(relPath);
+    result.search = relative.search;
+    result.query = relative.query;
+  } else if (!util.isNullOrUndefined(relative.search)) {
+    // just pull out the search.
+    // like href='?foo'.
+    // Put this after the other two cases because it simplifies the booleans
+    if (psychotic) {
+      result.hostname = result.host = srcPath.shift();
+      //occationaly the auth can get stuck only in host
+      //this especially happens in cases like
+      //url.resolveObject('mailto:local1@domain1', 'local2@domain2')
+      var authInHost = result.host && result.host.indexOf('@') > 0 ?
+                       result.host.split('@') : false;
+      if (authInHost) {
+        result.auth = authInHost.shift();
+        result.host = result.hostname = authInHost.shift();
+      }
+    }
+    result.search = relative.search;
+    result.query = relative.query;
+    //to support http.request
+    if (!util.isNull(result.pathname) || !util.isNull(result.search)) {
+      result.path = (result.pathname ? result.pathname : '') +
+                    (result.search ? result.search : '');
+    }
+    result.href = result.format();
+    return result;
+  }
+
+  if (!srcPath.length) {
+    // no path at all.  easy.
+    // we've already handled the other stuff above.
+    result.pathname = null;
+    //to support http.request
+    if (result.search) {
+      result.path = '/' + result.search;
+    } else {
+      result.path = null;
+    }
+    result.href = result.format();
+    return result;
+  }
+
+  // if a url ENDs in . or .., then it must get a trailing slash.
+  // however, if it ends in anything else non-slashy,
+  // then it must NOT get a trailing slash.
+  var last = srcPath.slice(-1)[0];
+  var hasTrailingSlash = (
+      (result.host || relative.host || srcPath.length > 1) &&
+      (last === '.' || last === '..') || last === '');
+
+  // strip single dots, resolve double dots to parent dir
+  // if the path tries to go above the root, `up` ends up > 0
+  var up = 0;
+  for (var i = srcPath.length; i >= 0; i--) {
+    last = srcPath[i];
+    if (last === '.') {
+      srcPath.splice(i, 1);
+    } else if (last === '..') {
+      srcPath.splice(i, 1);
+      up++;
+    } else if (up) {
+      srcPath.splice(i, 1);
+      up--;
+    }
+  }
+
+  // if the path is allowed to go above the root, restore leading ..s
+  if (!mustEndAbs && !removeAllDots) {
+    for (; up--; up) {
+      srcPath.unshift('..');
+    }
+  }
+
+  if (mustEndAbs && srcPath[0] !== '' &&
+      (!srcPath[0] || srcPath[0].charAt(0) !== '/')) {
+    srcPath.unshift('');
+  }
+
+  if (hasTrailingSlash && (srcPath.join('/').substr(-1) !== '/')) {
+    srcPath.push('');
+  }
+
+  var isAbsolute = srcPath[0] === '' ||
+      (srcPath[0] && srcPath[0].charAt(0) === '/');
+
+  // put the host back
+  if (psychotic) {
+    result.hostname = result.host = isAbsolute ? '' :
+                                    srcPath.length ? srcPath.shift() : '';
+    //occationaly the auth can get stuck only in host
+    //this especially happens in cases like
+    //url.resolveObject('mailto:local1@domain1', 'local2@domain2')
+    var authInHost = result.host && result.host.indexOf('@') > 0 ?
+                     result.host.split('@') : false;
+    if (authInHost) {
+      result.auth = authInHost.shift();
+      result.host = result.hostname = authInHost.shift();
+    }
+  }
+
+  mustEndAbs = mustEndAbs || (result.host && srcPath.length);
+
+  if (mustEndAbs && !isAbsolute) {
+    srcPath.unshift('');
+  }
+
+  if (!srcPath.length) {
+    result.pathname = null;
+    result.path = null;
+  } else {
+    result.pathname = srcPath.join('/');
+  }
+
+  //to support request.http
+  if (!util.isNull(result.pathname) || !util.isNull(result.search)) {
+    result.path = (result.pathname ? result.pathname : '') +
+                  (result.search ? result.search : '');
+  }
+  result.auth = relative.auth || result.auth;
+  result.slashes = result.slashes || relative.slashes;
+  result.href = result.format();
+  return result;
+};
+
+Url.prototype.parseHost = function() {
+  var host = this.host;
+  var port = portPattern.exec(host);
+  if (port) {
+    port = port[0];
+    if (port !== ':') {
+      this.port = port.substr(1);
+    }
+    host = host.substr(0, host.length - port.length);
+  }
+  if (host) this.hostname = host;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/url/util.js":
+/*!**********************************!*\
+  !*** ./node_modules/url/util.js ***!
+  \**********************************/
+/***/ ((module) => {
+
+"use strict";
+
+
+module.exports = {
+  isString: function(arg) {
+    return typeof(arg) === 'string';
+  },
+  isObject: function(arg) {
+    return typeof(arg) === 'object' && arg !== null;
+  },
+  isNull: function(arg) {
+    return arg === null;
+  },
+  isNullOrUndefined: function(arg) {
+    return arg == null;
+  }
+};
+
+
+/***/ }),
+
 /***/ "./node_modules/uuid/dist/esm-browser/regex.js":
 /*!*****************************************************!*\
   !*** ./node_modules/uuid/dist/esm-browser/regex.js ***!
@@ -32959,6 +36875,17 @@ function _extends() {
   return _extends.apply(this, arguments);
 }
 
+/***/ }),
+
+/***/ "../chat-service/contracts/woop-socket-message.json":
+/*!**********************************************************!*\
+  !*** ../chat-service/contracts/woop-socket-message.json ***!
+  \**********************************************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = JSON.parse('{"$id":"https://github.com/Parnaya/woop-common/schema/woop-socket-message.json","$schema":"https://json-schema.org/draft/2020-12/schema","type":"object","properties":{"id":{"description":"The unique identifier for a request","type":"string"},"createdAt":{"description":"The timestamp for a request","type":"string"},"messages":{"type":"array","items":{"type":"object","properties":{"type":{"type":"string"},"data":{"oneOf":[{"type":"object","description":"entity","properties":{"id":{"type":"string"},"tags":{"type":"array","items":{"type":"string"}},"data":{"type":"object"}},"required":["id","tags","data"]},{"type":"string","description":"filters"}]}},"required":["type"]},"required":["type","data"]}},"required":["id","createdAt","messages"]}');
+
 /***/ })
 
 /******/ 	});
@@ -32975,13 +36902,16 @@ function _extends() {
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
-/******/ 			// no module.id needed
-/******/ 			// no module.loaded needed
+/******/ 			id: moduleId,
+/******/ 			loaded: false,
 /******/ 			exports: {}
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Flag the module as loaded
+/******/ 		module.loaded = true;
 /******/ 	
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
@@ -33012,6 +36942,18 @@ function _extends() {
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
@@ -33028,13 +36970,195 @@ function _extends() {
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/node module decorator */
+/******/ 	(() => {
+/******/ 		__webpack_require__.nmd = (module) => {
+/******/ 			module.paths = [];
+/******/ 			if (!module.children) module.children = [];
+/******/ 			return module;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /************************************************************************/
-/******/ 	
-/******/ 	// startup
-/******/ 	// Load entry module and return exports
-/******/ 	// This entry module is referenced by other modules so it can't be inlined
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/index.js");
-/******/ 	
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+(() => {
+"use strict";
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Context": () => (/* binding */ Context)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./index.css */ "./src/index.css");
+/* harmony import */ var _Chat_Chat__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Chat/Chat */ "./src/Chat/Chat.js");
+/* harmony import */ var _useSocket__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/useSocket */ "./src/useSocket.js");
+/* harmony import */ var _icons_burger_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/icons/burger.svg */ "./src/icons/burger.svg");
+/* harmony import */ var _icons_chat_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/icons/chat.svg */ "./src/icons/chat.svg");
+/* harmony import */ var _icons_settings_svg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @/icons/settings.svg */ "./src/icons/settings.svg");
+/* harmony import */ var _Settings_Settings__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @/Settings/Settings */ "./src/Settings/Settings.js");
+/* harmony import */ var _Store__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @/Store */ "./src/Store.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _Chats_Chats__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @/Chats/Chats */ "./src/Chats/Chats.js");
+/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @/helpers */ "./src/helpers.js");
+var _jsxFileName = "/Users/snipeek/Desktop/woop-web/src/index.js";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const Context = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createContext({});
+
+const Head = () => {
+  const navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_13__.useNavigate)();
+  const {
+    hash = '#chat'
+  } = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_13__.useLocation)();
+  const items = {
+    list: {
+      icon: _icons_burger_svg__WEBPACK_IMPORTED_MODULE_5__["default"],
+      name: 'Чаты'
+    },
+    chat: {
+      icon: _icons_chat_svg__WEBPACK_IMPORTED_MODULE_6__["default"],
+      name: 'Чат'
+    },
+    user: {
+      icon: _icons_settings_svg__WEBPACK_IMPORTED_MODULE_7__["default"],
+      name: 'Настройки'
+    }
+  };
+  const btns = [];
+
+  for (const key in items) {
+    const {
+      icon: Icon
+    } = items[key];
+    btns.push( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+      className: classnames__WEBPACK_IMPORTED_MODULE_10___default()(_index_css__WEBPACK_IMPORTED_MODULE_2__["default"].btn, '#' + key === hash && _index_css__WEBPACK_IMPORTED_MODULE_2__["default"].btnSel),
+      onClick: () => navigate(`#${key}`),
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 43,
+        columnNumber: 13
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Icon, {
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 44,
+        columnNumber: 17
+      }
+    })));
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: _index_css__WEBPACK_IMPORTED_MODULE_2__["default"].head,
+    children: btns,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 50,
+      columnNumber: 9
+    }
+  });
+};
+
+const Root = () => {
+  const {
+    pathname,
+    hash
+  } = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_13__.useLocation)();
+  (0,_Store__WEBPACK_IMPORTED_MODULE_9__.useTheme)();
+  const onSend = (0,_useSocket__WEBPACK_IMPORTED_MODULE_4__.useSocket)();
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    onSend(_helpers__WEBPACK_IMPORTED_MODULE_12__.convert.to({
+      data: `${'chat|' + pathname}`,
+      type: 'filters'
+    }));
+  }, [pathname]);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: _index_css__WEBPACK_IMPORTED_MODULE_2__["default"].root,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 66,
+      columnNumber: 9
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: _index_css__WEBPACK_IMPORTED_MODULE_2__["default"].current,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 67,
+      columnNumber: 13
+    }
+  }, [/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Chats_Chats__WEBPACK_IMPORTED_MODULE_11__.Chats, {
+    className: hash !== '#list' && _index_css__WEBPACK_IMPORTED_MODULE_2__["default"].hidden,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 69,
+      columnNumber: 21
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Chat_Chat__WEBPACK_IMPORTED_MODULE_3__.Chat, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 70,
+      columnNumber: 21
+    }
+  }), hash === '#user' && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Settings_Settings__WEBPACK_IMPORTED_MODULE_8__.Settings, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 71,
+      columnNumber: 41
+    }
+  })]), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Head, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 74,
+      columnNumber: 13
+    }
+  }));
+};
+
+react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.BrowserRouter, {
+  __self: undefined,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 80,
+    columnNumber: 5
+  }
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Root, {
+  __self: undefined,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 81,
+    columnNumber: 9
+  }
+})), document.getElementById('root'));
+})();
+
 /******/ })()
 ;
-//# sourceMappingURL=client.js.map
+//# sourceMappingURL=client.2e4a9.js.map
