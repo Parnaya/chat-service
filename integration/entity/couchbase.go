@@ -5,6 +5,7 @@ import (
 	"chat.service/operations/log"
 	"fmt"
 	"github.com/couchbase/gocb/v2"
+	"strings"
 	"time"
 )
 
@@ -29,13 +30,13 @@ func couchbaseGet(cluster *gocb.Cluster) func(params *GetParams) []interface{} {
 		args["after"] = ter(params.After == nil, "", params.After)
 		args["size"] = ter(params.Size == nil, 20, params.Size)
 
-		//"AND ANY child IN `children` SATISFIES"
+		sql := "SELECT * FROM `woop` WHERE `createdAt` < $after $filters ORDER BY `createdAt` DESC LIMIT $size"
+
+		// TODO: разрабы коучбейс долбаебы, реплейс не могут сделать
+		sql = strings.Replace(sql, "$filters", params.Filters.(string), -1)
 
 		rows := log.Proxy(
-			cluster.Query(
-				"SELECT * FROM `woop` WHERE `createdAt` < $after ORDER BY `createdAt` DESC LIMIT $size",
-				&gocb.QueryOptions{NamedParameters: args},
-			),
+			cluster.Query(sql, &gocb.QueryOptions{NamedParameters: args}),
 		).(*gocb.QueryResult)
 
 		var item map[string]interface{}

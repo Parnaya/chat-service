@@ -5,7 +5,6 @@ import (
 	"chat.service/model"
 	"chat.service/operations/log"
 	"encoding/json"
-	"fmt"
 	"github.com/5anthosh/chili"
 	"github.com/gorilla/websocket"
 	"github.com/labstack/echo/v4"
@@ -86,19 +85,18 @@ func handleWebSocketMessage(
 				}
 
 				// TODO: сделать нормальную регулярку
-				def := regexp.MustCompile(`[ |&|\||!]+`).Split(expr, -1)
+				def := regexp.MustCompile(`\s[\&|\|]{2}\s`).Split(expr, -1)
 
 				sql := expr
 				sql = strings.Replace(sql, "&&", "AND", -1)
 				sql = strings.Replace(sql, "||", "OR", -1)
 
 				for _, tag := range def {
-					strings.Replace(tag, tag, "tag = `"+tag+"`", -1)
+					sql = strings.Replace(sql, tag, "tag = \""+tag+"\"", -1)
 				}
 
-				fmt.Println("AND ANY tag IN `tags` SATISFIES " + sql)
-
-				//server.Clients[connection].sql =
+				// TODO: придумать как можно сделать изящнее
+				server.Clients[connection].sql = "AND ANY tag IN `tags` SATISFIES " + sql + " END"
 
 				server.Clients[connection].isMatch = func(tags []string) bool {
 					next := expr
