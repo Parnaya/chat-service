@@ -9,8 +9,9 @@ import (
 )
 
 type GetParams struct {
-	After interface{} `json:"after"`
-	Size  interface{} `json:"size"`
+	After   interface{} `json:"after"`
+	Size    interface{} `json:"size"`
+	Filters interface{} `json:"filters"`
 }
 
 type Entity struct {
@@ -26,11 +27,13 @@ func couchbaseGet(cluster *gocb.Cluster) func(params *GetParams) []interface{} {
 		args := make(map[string]interface{})
 
 		args["after"] = ter(params.After == nil, "", params.After)
-		args["size"] = ter(params.Size == nil, 50, params.Size)
+		args["size"] = ter(params.Size == nil, 20, params.Size)
+
+		//"AND ANY child IN `children` SATISFIES"
 
 		rows := log.Proxy(
 			cluster.Query(
-				"SELECT * FROM `woop` WHERE `createdAt` > $after ORDER BY `createdAt` LIMIT $size",
+				"SELECT * FROM `woop` WHERE `createdAt` < $after ORDER BY `createdAt` DESC LIMIT $size",
 				&gocb.QueryOptions{NamedParameters: args},
 			),
 		).(*gocb.QueryResult)
@@ -44,7 +47,7 @@ func couchbaseGet(cluster *gocb.Cluster) func(params *GetParams) []interface{} {
 			items = append(items, item["woop"])
 		}
 
-		return items
+		return reverse(items)
 	}
 }
 

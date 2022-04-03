@@ -13,6 +13,13 @@ func with(id uuid.UUID, block func(i int, entity *model.Entity)) {
 	}
 }
 
+func reverse(items []interface{}) []interface{} {
+	for i, j := 0, len(items)-1; i < j; i, j = i+1, j-1 {
+		items[i], items[j] = items[j], items[i]
+	}
+	return items
+}
+
 func ter(is bool, a interface{}, b interface{}) interface{} {
 	if is {
 		return a

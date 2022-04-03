@@ -5,6 +5,7 @@ import (
 	"chat.service/model"
 	"chat.service/operations/log"
 	"encoding/json"
+	"fmt"
 	"github.com/5anthosh/chili"
 	"github.com/gorilla/websocket"
 	"github.com/labstack/echo/v4"
@@ -28,6 +29,7 @@ type Server struct {
 type Client struct {
 	receiveChannel chan []byte
 	isMatch        func([]string) bool
+	sql            string
 }
 
 var (
@@ -86,6 +88,18 @@ func handleWebSocketMessage(
 				// TODO: сделать нормальную регулярку
 				def := regexp.MustCompile(`[ |&|\||!]+`).Split(expr, -1)
 
+				sql := expr
+				sql = strings.Replace(sql, "&&", "AND", -1)
+				sql = strings.Replace(sql, "||", "OR", -1)
+
+				for _, tag := range def {
+					strings.Replace(tag, tag, "tag = `"+tag+"`", -1)
+				}
+
+				fmt.Println("AND ANY tag IN `tags` SATISFIES " + sql)
+
+				//server.Clients[connection].sql =
+
 				server.Clients[connection].isMatch = func(tags []string) bool {
 					next := expr
 
@@ -107,6 +121,8 @@ func handleWebSocketMessage(
 
 			case model.Fetch:
 				params, ok := it.Data.(*entity.GetParams)
+
+				params.Filters = server.Clients[connection].sql
 
 				if !ok {
 					break
@@ -150,19 +166,7 @@ func publishMessageToWebSocket(
 	client *Client,
 ) {
 	for it := range client.receiveChannel {
-		//isMatch := containsAll(it.Tags, client.filters)
-		//if isMatch && len(client.filters) > 0 {
-
-		//protoSocketMessage := new(woop.WoopSocketMessage)
-		//
-		//messageId, _ := uuid.NewUUID()
-		//messageIdBytes, _ := messageId.MarshalBinary()
-		//
-		//protoSocketMessage.Id = messageIdBytes
-		//protoSocketMessage.CreatedAt = timestamppb.Now()
-
 		connection.WriteMessage(websocket.TextMessage, it)
-		//}
 	}
 }
 
@@ -180,7 +184,7 @@ func OpenWebSocketConnection(operationSettings *SubscribeOperationSettings) echo
 
 		receiveChannel := make(chan []byte)
 
-		client := &Client{receiveChannel, isMatchDef}
+		client := &Client{receiveChannel, isMatchDef, ""}
 
 		server.Clients[connection] = client
 
