@@ -17,9 +17,12 @@
     --text: #333;
     --text-secondary: #666;
 
+    --border-color: #f7f7f7;
+
     --bg: #fff;
     --bg-0: rgba(255,255,255,0);
     --bg-secondary: #eee;
+    --bg-placeholder: #fefefe;
 
     --custom-color: rgba(0,84,255,0.16863);
 }
@@ -39,9 +42,38 @@ body {
     background: var(--bg-secondary);
 }
 
-* {
-    box-sizing: border-box;
+a {
+    text-decoration: none;
+    color: inherit;
 }
+
+* {
+    box-sizing: border-box
+}
+
+* *::-webkit-scrollbar {
+          width: 14px;
+          height: 10px;
+      }
+
+/* Track */
+
+* *::-webkit-scrollbar-track {
+          background: transparent;
+      }
+
+/* Handle */
+
+* *::-webkit-scrollbar-thumb {
+          border: 4px solid rgba(0, 0, 0, 0);
+          border-radius: 100px;
+          background-color: #d9d9d9;
+          background-clip: padding-box
+    }
+
+* *::-webkit-scrollbar-thumb:hover {
+         background-color: #999;
+     }
 
 button {
     font-family: inherit;
@@ -55,8 +87,6 @@ button {
     display: flex;
     flex-direction: column;
     height: 100%;
-    padding: 8px;
-    padding: var(--gap-xs);
     padding-bottom: 0;
 }
 
@@ -84,8 +114,9 @@ button {
 
 .index__current--HH2CA > * {
     width: 100%;
-    margin: 0 8px;
-    margin: 0 var(--gap-xs)
+    /*margin: 0 var(--gap-xs);*/
+    border: 1px solid #f7f7f7;
+    border: 1px solid var(--border-color)
 }
 
 @media (max-width: 720px) {
@@ -119,17 +150,47 @@ button {
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./src/Chat/Chat.css ***!
   \***********************************************************************************************************************************************************************/
 .Chat__root--T4jmb {
-    padding: var(--gap-m);
-    background: var(--bg);
+    height: 100%;
     border-radius: var(--border-radius-l);
+    position: relative;
+}
+
+.Chat__overflow--aiEId {
     overflow: auto;
     height: 100%;
+    width: 100%;
 }
+
+.Chat__bg--Edt44 {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background: var(--bg-placeholder);
+    z-index: -1
+}
+
+.Chat__bg--Edt44:before {
+        content: "";
+        opacity: .1;
+        background-image: url(/2ede661c760b58dbbe4d.svg);
+        background-position: top left;
+        background-size: 650px;
+        background-repeat: repeat;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+    }
 
 .Chat__items--JmLg1 {
     display: flex;
-    flex-direction: column;
+    /*flex-direction: column;*/
+    flex-direction: column-reverse;
     min-height: 100%;
+    padding: 0 var(--gap-m);
 
 }
 
@@ -145,6 +206,7 @@ button {
     display: flex;
     align-items: flex-end;
     margin-top: var(--gap-xs);
+    position: relative;
 }
 
 .Chat__from--B7Z3L {
@@ -155,10 +217,18 @@ button {
     position: relative;
     display: inline-flex;
     flex-direction: column;
-    padding: var(--gap-s);
     border-radius: var(--border-radius-l);
     color: var(--text-secondary);
-    background: var(--bg-secondary)
+
+    background: var(--bg-secondary);
+    position: relative;
+    overflow: hidden;
+
+    min-width: 3em;
+
+    padding: var(--gap-s);
+    padding-top: var(--gap-xs);
+    padding-bottom: var(--gap-m)
 }
 
 .Chat__body--KRDjC:not(:last-child){
@@ -166,9 +236,19 @@ button {
      }
 
 .Chat__from--B7Z3L .Chat__body--KRDjC {
-    background: var(--custom-color);
     border-bottom-right-radius: 0;
+    background: var(--bg)
 }
+
+.Chat__from--B7Z3L .Chat__body--KRDjC:before {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: var(--custom-color);
+        left: 0;
+        top: 0;
+    }
 
 .Chat__to--_2Oeq .Chat__body--KRDjC {
     border-bottom-left-radius: 0;
@@ -202,15 +282,23 @@ button {
     font-weight: 600;
     /*width: 100%;*/
 }
+
+.Chat__time--D8VjX {
+    position: absolute;
+    font-size: .6em;
+    right: var(--gap-xs);
+    bottom: var(--gap-xs);
+    line-height: 1;
+    opacity: .5;
+}
 /*!*************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./src/Input/Input.css ***!
   \*************************************************************************************************************************************************************************/
 .Input__root--Mwju6 {
     position: -webkit-sticky;
     position: sticky;
-    bottom: calc(-1 * var(--gap-m));
+    bottom: 0;
     background: linear-gradient(0deg, var(--bg) 0%, var(--bg-0) 100%);
-    margin: calc(-1 * var(--gap-m));
     padding: var(--gap-m);
 }
 
@@ -251,9 +339,8 @@ button {
 .Top__root--D29nM {
     position: -webkit-sticky;
     position: sticky;
-    top: calc(-1 * var(--gap-m));
+    top: 0;
     background: linear-gradient(0deg, var(--bg-0) 0%, var(--bg) 100%);
-    margin: calc(-1 * var(--gap-m));
     padding: var(--gap-m);
     z-index: 2;
     font-weight: 600;
@@ -293,7 +380,7 @@ button {
 .Chats__root--wK8xo {
     padding: var(--gap-m);
     background: var(--bg);
-    border-radius: var(--border-radius-l);
+    /*border-radius: var(--border-radius-l);*/
     overflow: auto;
     height: 100%;
     z-index: 10;
@@ -327,10 +414,12 @@ button {
 .Chats__item--WNSc5 {
     padding: var(--gap-s) var(--gap-m);
     border-top: 1px solid var(--bg-secondary);
-    margin: 0 calc(-1 * var(--gap-m));
+    margin: 0 calc(-1 * var(--gap-xs));
     display: flex;
     transition: width .2s ease-in-out;
+    border-radius: var(--border-radius-s);
 }
+
 
 .Chats__item--WNSc5:last-child {
     border-bottom: 1px solid var(--bg-secondary);
@@ -354,7 +443,7 @@ button {
 .Settings__root--3ZipV {
     padding: var(--gap-m);
     background: var(--bg);
-    border-radius: var(--border-radius-l);
+    /*border-radius: var(--border-radius-l);*/
     overflow: auto;
     height: 100%;
     z-index: 2;
@@ -373,6 +462,17 @@ button {
     width: 100%;
     text-align: center;
     font-weight: 600;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2em;
+}
+
+.Settings__close--Qd5KN {
+    position: absolute;
+    left: 0;
+    font-size: 14px;
 }
 
 .Settings__title--XHFAJ {
@@ -419,4 +519,4 @@ button {
     margin-bottom: var(--gap-xxs);
 }
 
-/*# sourceMappingURL=client.17b0b.css.map*/
+/*# sourceMappingURL=client.932d9.css.map*/

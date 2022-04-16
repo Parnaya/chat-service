@@ -9,6 +9,7 @@ type RequestMessageType int64
 const (
 	Create RequestMessageType = iota
 	Filters
+	Fetch
 )
 
 type SocketRequest struct {
@@ -21,7 +22,8 @@ type SocketRequestMessage struct {
 }
 
 type Entity struct {
-	Id   uuid.UUID  `json:"id"`
-	Tags []string   `json:"tags"`
-	Data JsonObject `json:"data"`
+	Id        uuid.UUID  `json:"id"`
+	Tags      []string   `json:"tags"`
+	CreatedAt string     `json:"createdAt"`
+	Data      JsonObject `json:"data"`
 }

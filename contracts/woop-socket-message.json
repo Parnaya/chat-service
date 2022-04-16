@@ -28,6 +28,9 @@
                   "id": {
                     "type": "string"
                   },
+                  "createdAt": {
+                    "type": "string"
+                  },
                   "tags": {
                     "type": "array",
                     "items": {
@@ -40,6 +43,7 @@
                 },
                 "required": [
                   "id",
+                  "createdAt",
                   "tags",
                   "data"
                 ]
@@ -47,6 +51,18 @@
               {
                 "type": "string",
                 "description": "filters"
+              },
+              {
+                "type": "object",
+                "description": "fetch",
+                "properties": {
+                  "after": {
+                    "type": "string"
+                  },
+                  "size": {
+                    "type": "integer"
+                  }
+                }
               }
             ]
           }

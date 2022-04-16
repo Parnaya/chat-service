@@ -1,8 +1,10 @@
 package subscribe
 
 import (
+	"chat.service/integration/entity"
 	"chat.service/model"
 	"chat.service/operations/log"
+	"encoding/json"
 	"github.com/5anthosh/chili"
 	"github.com/gorilla/websocket"
 	"github.com/labstack/echo/v4"
@@ -26,6 +28,7 @@ type Server struct {
 type Client struct {
 	receiveChannel chan []byte
 	isMatch        func([]string) bool
+	sql            string
 }
 
 var (
@@ -36,7 +39,7 @@ var (
 
 type SubscribeOperationSettings struct {
 	SocketRequestMapper func(message []byte) *model.SocketRequest
-	HandleEntityCreate  func(entity *model.Entity)
+	Entity              entity.Entity
 }
 
 func handleWebSocketMessage(
@@ -65,7 +68,7 @@ func handleWebSocketMessage(
 					break
 				}
 
-				settings.HandleEntityCreate(entity)
+				settings.Entity.Create(entity)
 
 				for _, serverClient := range server.Clients {
 					if !serverClient.isMatch(entity.Tags) {
@@ -82,7 +85,18 @@ func handleWebSocketMessage(
 				}
 
 				// TODO: сделать нормальную регулярку
-				def := regexp.MustCompile(`[ |&|\||!]+`).Split(expr, -1)
+				def := regexp.MustCompile(`\s[\&|\|]{2}\s`).Split(expr, -1)
+
+				sql := expr
+				sql = strings.Replace(sql, "&&", "AND", -1)
+				sql = strings.Replace(sql, "||", "OR", -1)
+
+				for _, tag := range def {
+					sql = strings.Replace(sql, tag, "tag = \""+tag+"\"", -1)
+				}
+
+				// TODO: придумать как можно сделать изящнее
+				server.Clients[connection].sql = "AND ANY tag IN `tags` SATISFIES " + sql + " END"
 
 				server.Clients[connection].isMatch = func(tags []string) bool {
 					next := expr
@@ -102,6 +116,43 @@ func handleWebSocketMessage(
 					return result.(bool)
 				}
 				break
+
+			case model.Fetch:
+				params, ok := it.Data.(*entity.GetParams)
+
+				params.Filters = server.Clients[connection].sql
+
+				if !ok {
+					break
+				}
+
+				items := settings.Entity.Get(params)
+
+				if len(items) == 0 {
+					break
+				}
+
+				var messages []interface{}
+
+				for _, v := range settings.Entity.Get(params) {
+					// TODO: validate
+					item := make(map[string]interface{})
+
+					item["type"] = "insert"
+					item["data"] = v
+
+					messages = append(messages, item)
+				}
+
+				next := make(map[string]interface{})
+				next["id"] = ""
+				next["messages"] = messages
+
+				nextBytes := log.Proxy(json.Marshal(next)).([]byte)
+
+				server.Clients[connection].receiveChannel <- nextBytes
+
+				break
 			}
 		}
 
@@ -113,19 +164,7 @@ func publishMessageToWebSocket(
 	client *Client,
 ) {
 	for it := range client.receiveChannel {
-		//isMatch := containsAll(it.Tags, client.filters)
-		//if isMatch && len(client.filters) > 0 {
-
-		//protoSocketMessage := new(woop.WoopSocketMessage)
-		//
-		//messageId, _ := uuid.NewUUID()
-		//messageIdBytes, _ := messageId.MarshalBinary()
-		//
-		//protoSocketMessage.Id = messageIdBytes
-		//protoSocketMessage.CreatedAt = timestamppb.Now()
-
 		connection.WriteMessage(websocket.TextMessage, it)
-		//}
 	}
 }
 
@@ -143,7 +182,7 @@ func OpenWebSocketConnection(operationSettings *SubscribeOperationSettings) echo
 
 		receiveChannel := make(chan []byte)
 
-		client := &Client{receiveChannel, isMatchDef}
+		client := &Client{receiveChannel, isMatchDef, ""}
 
 		server.Clients[connection] = client
 
